@@ -142,7 +142,7 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
 \makeatother 
 
 \makeglossaries
-% \include{glossary}
+\include{glossary}
 
 
 %  --------------------------------------------------------------------------
@@ -187,6 +187,22 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \label{cha:Einleitung}
   \pagenumbering{arabic}
   \input{chapters/einleitung.tex}
+  
+  \chapter{Fehlerkatalog}
+  \label{cha:fehlerkatalog}
+  \input{chapters/fehlerkatalog.tex}
+  
+  \chapter{Anforderungsanalyse}
+  \label{cha:anforderungsanalyse}
+  \input{chapters/anforderungsanalyse.tex}
+  
+  \chapter{Evaluation}
+  \label{cha:evaluation}
+  \input{chapters/evaluation.tex}
+
+  \chapter{Proof of Concept}
+  \label{cha:proof_of_concept}
+  \input{chapters/proof_of_concept.tex}
   
   \appendix  
   \listoffigures
