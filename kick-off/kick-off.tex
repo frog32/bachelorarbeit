@@ -1,0 +1,106 @@
+%
+%  Kick-Off Protokoll
+%
+%  Created by Marc Egli on 2013-03-27.
+%  Template by Silvan Spross
+%
+\documentclass[]{scrreprt}
+\usepackage[ngerman]{babel}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+\usepackage{fullpage}
+
+% Running Headers and footers
+%\usepackage{fancyhdr}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+\usepackage{url}
+
+\ifpdf
+    \usepackage[pdftex]{graphicx}
+\else
+    \usepackage{graphicx}
+\fi
+
+\title{Kick-Off Protokoll}
+    
+\author{Studierender - Marc Egli\\
+    Projektbetreuer - Beat Seeliger\\
+    Auftraggeber - Silvan Spross, allink\\
+    \\
+    ZHAW - Zürcher Hochschule für Angewandte Wissenschaften}
+    
+\date{27. März 2013}
+
+\begin{document}
+
+    \ifpdf
+        \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+    \else
+        \DeclareGraphicsExtensions{.eps, .jpg}
+    \fi
+
+    \maketitle
+
+    \pagenumbering{arabic}
+
+    % \tableofcontents
+
+    \chapter{Kick-Off Protokoll}
+
+    \section{Bachelorthesis}
+    IT Qualitätsmanagement für Webprojekte
+
+    \section{Fragen Kick-Off Meeting}
+    Alle Fragen aus dem Kick-Off Meeting konnten geklärt werden:
+    \begin{enumerate}
+        \item Steht die Auftraggeberin bzw. der Auftraggeber hinter dieser Bachelorarbeit? \\
+            {\bf Ja}, das Unternehmen steht hinter dieser Bachelorarbeit.
+        \item Sind die fachliche Kompetenz und die Verfügbarkeit der Betreuungsperson sicher- gestellt? \\
+            {\bf Ja}, die Betreuungsperson ist verfügbar und auf diesem Gebiet kompetent.
+        \item Sind die Urheberrechte und Publikationsrechte (u. a. auch die Ablage in der Präsenzbibliothek des Studiengangs Informatik) geklärt? \\
+            {\bf Ja}, die Arbeit kann vollständig öffentlich zugänglich gemacht
+            werden.
+        \item Bekommt die Studentin oder der Student die notwendige logistische und beratende Unterstützung durch die Auftraggeberin bzw. den Auftraggeber? \\
+            {\bf Ja}
+        \item Entsprechen das Thema und die Aufgabenstellungen den Anforderungen an eine Bachelorarbeit? \\
+            {\bf Ja}
+        \item Ist die Arbeit thematisch klar abgegrenzt und terminlich entkoppelt von den Prozessen (des Unternehmens) der Auftraggeberin bzw. des Auftraggebers? \\
+            {\bf Ja}, wo nötig wurden Vorarbeiten im Unternehmen bereits getätigt.
+        \item Ist eine Grobplanung vorhanden? Sind die nächsten Schritte klar formuliert (von der Studentin oder dem Studenten)? \\
+            {\bf Ja}
+        \item Ist die Arbeit technisch und terminlich von der Studentin oder dem Studenten umsetzbar? \\
+            {\bf Ja}
+    \end{enumerate}
+    
+    \pagebreak
+    \section{Weiteres}
+      In der Aufgabenstellung soll noch ein Satz umformuliert werden, um klar zu stellen, dass ein evaluiertes Produkt nicht nur eingesetzt sondern auch mit dem zuvor erstellten Katalog eingerichtet werden soll.
+    
+    \section{Nächster Termin}
+    \begin{tabular}{l r}
+        Review Katalogisierung & 17.4.2013 \\
+    \end{tabular}
+    
+\end{document}
