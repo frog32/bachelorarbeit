@@ -158,7 +158,7 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
 	\\
 	ZHAW}
 
-\date{Januar 2013 bis ..}
+\date{Januar 2013 bis August 2013}
 
 
 \begin{document}
@@ -188,9 +188,17 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \pagenumbering{arabic}
   \input{chapters/einleitung.tex}
   
+  \chapter{Status Quo}
+  \label{cha:status_quo}
+  \input{chapters/status_quo.tex}
+  
   \chapter{Fehlerkatalog}
   \label{cha:fehlerkatalog}
   \input{chapters/fehlerkatalog.tex}
+
+  \chapter{Kategorisierung der Fehler}
+  \label{cha:kategorisierung_der_fehler}
+  \input{chapters/fehlerkategorisierung.tex}
   
   \chapter{Anforderungsanalyse}
   \label{cha:anforderungsanalyse}
@@ -203,6 +211,9 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \chapter{Proof of Concept}
   \label{cha:proof_of_concept}
   \input{chapters/proof_of_concept.tex}
+  
+  \chapter{Fazit}
+  \label{cha:fazit}
   
   \appendix  
   \listoffigures
