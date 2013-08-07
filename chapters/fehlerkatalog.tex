@@ -3,48 +3,85 @@
 \section{Kontext}
 \label{sec:kontext}
 
-
+\makeatletter
 \newcounter{fnumber} \setcounter{fnumber}{0}
 \renewcommand\thefnumber{F\arabic{fnumber}}
-\newcommand{\newfnumber}[4]%
+\newcommand{\newfnumber}[5]%
 {%
 \midrule%
-\refstepcounter{fnumber}\label{f:#2}%
-\thefnumber & #1 & #3 & #4 \\
+\refstepcounter{fnumber}%
+\expandafter\xdef\csname f#2\endcsname {#1}%
+\thefnumber\label{f:#2} & #1 & #3 & #4 & #5 \\
 }
-
-
-
-Mögliche Kategorien:
-
-\subsection{Typ}
-\begin{itemize}
-  \item Webapplikation
-  \item Webseite
-\end{itemize}
+\makeatother
 
 \subsection{Impact}
 \label{sub:impact}
 Der Schaden welcher durch einen Fehler entstehen kann wurde unabhängig der genauen Funktion einer Webseite in drei Kategorien eingeteilt. Dies lässt ausser acht, dass eine nicht verfügbare Seite bei einem Onlineshop einen Ausfall an Umsatz bedeutet und während der genaue Schaden schwierig zu eruieren ist bei einer Webseite welche die Funktion einer Online-Visitenkarte hat.
 
-\begin{itemize}
-  \item 3 Site nicht verfügbar
-  \item 2 Seite eingeschränkt verfügbar
-  \item 1 unwesentlich
-\end{itemize}
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+    Wert & Bezeichnung\\
+  \hline
+    1 & Unwesentlich\\
+  \hline
+    2 & Seite eingeschränkt verfügbar\\
+  \hline
+    3 & Seite nicht vergüfbar\\
+  \bottomrule
+  \end{tabular}
+  \caption{Bewertung des Impact}
+  \label{tab:impact}
+\end{table}
 
 \subsection{Frequenz}
 \label{sub:frequenz}
-Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:frequency} ersichtlich.
+Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich.
 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+    Wert & Bezeichnung\\
+  \hline
+    1 & jährlich\\
+  \hline
+    2 & monatlich\\
+  \hline
+    3 & wöchentlich\\
+  \hline
+    4 & täglich\\
+  \bottomrule
+  \end{tabular}
+  \caption{Bewertung der Frequenz}
+  \label{tab:fehler_frequenz}
+\end{table}
 
-\begin{itemize}
-    \item 1 jährlich
-    \item 2 monatlich
-    \item 3 wöchentlich
-    \item 4 täglich
-\end{itemize}
+\subsection{Zeitbedarf bei Eigenimplementierung}
+\label{sub:zeitbedarf_bei_eigenimplementierung}
+Da sämtliche Fehlerszenarios welche automatisiert testbar sind, durch ein Tool abgedeckt werden sollen, der Zeitbedarf einer Eigenentwicklung geschätzt.
 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+    Wert & Bezeichnung\\
+  \hline
+    1 & Tage\\
+  \hline
+    2 & Wochen\\
+  \hline
+    3 & Monate\\
+  \hline
+    4 & Jahre\\
+  \bottomrule
+  \end{tabular}
+  \caption{Zeitbedarf bei Eigenimplementierung}
+  \label{tab:zeitbedarf_bei_eigenimplementierung}
+\end{table}
 
 \section{Backend}
 \label{sec:backend}
@@ -52,12 +89,12 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabell
 \subsection{SSL}
 \label{sub:fehler_ssl}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Zertifikat ausgelaufen}{zertifikat_ausgelaufen}{3}{1}
-    \newfnumber{Zertifikat ungültig}{zertifikat_ungultig}{3}{1}
-    \newfnumber{SSL nicht erzwungen}{ssl_nicht_erzwungen}{2}{1}
-    \newfnumber{Externe Assets ohne SSL}{externe_assets_ohne_ssl}{2}{1}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Zertifikat ausgelaufen}{zertifikatausgelaufen}{3}{1}{1}
+    \newfnumber{Zertifikat ungültig}{zertifikatungultig}{3}{1}{1}
+    \newfnumber{SSL nicht erzwungen}{sslnichterzwungen}{2}{1}{1}
+    \newfnumber{Externe Assets ohne SSL}{externeassetsohnessl}{2}{1}{2}
     \bottomrule
     \caption[Mögliche Fehler SSL]{Mögliche Fehler SSL}
     \label{tab:fehler_ssl}
@@ -65,7 +102,7 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabell
 
 
 \subsubsection{Zertifikat ausgelaufen}
-\label{ssub:zertifikat_ausgelaufen}
+\label{ssub:zertifikatausgelaufen}
 Ein ausgelaufenes Zertifikat führt auf dem Browser zu einer Fehlermeldung und ist grundsätzlich ein Sicherheitsrisiko. Da ein SSL Zertifikat normalerweise eine Gültigkeit von einem oder mehreren Jahren hat, sind diese Fehler eher selten.
 
 \subsubsection{Zertifikat ungültig}
@@ -73,154 +110,161 @@ Ein ausgelaufenes Zertifikat führt auf dem Browser zu einer Fehlermeldung und i
 Ein Ungültiges Zertifikat kann durch den Wechsel einer Domain entstehen. Weniger oft kann ein ungültiges Zertifikat auch dadurch entstehen, dass das Zertifikat widerrufen wurde. Der Browser zeigt dann normalerweise eine Warnmeldung an.
 
 \subsubsection{SSL nicht erzwungen}
-\label{ssub:ssl_nicht_erzwungen}
-Ein SSL Zertifikat nützt wenig wenn der Benutzer nicht auf HTTPS umgeleitet wird.
+\label{ssub:sslnichterzwungen}
+Wenn für eine Webseite eine sichere Verbindung benötigt wird, muss sichergestellt werden, dass Benutzer welche die Webseite nicht über SLL aufrufen, umgeleitet werden damit auch sie SSL verwenden.
 
 \subsubsection{Externe Assets ohne SSL}
-\label{ssub:externe_assets_ohne_ssl}
-Bei einer Webseite welche über mit SSL geschützt ist, ist es wichtig, dass jede Ressource welche nachgeladen wird HTTPS unterstützt. Ansonsten zeigen die meisten Browser eine Warnung an, da dies ein Sicherheitsloch darstellt.
+\label{ssub:externeassetsohnessl}
+Bei einer Webseite welche über mit SSL geschützt ist, ist es wichtig, dass jede Ressource welche nachgeladen wird HTTPS unterstützt. Ansonsten zeigen die meisten Browser eine Warnung an, da Teile der Webseite nicht geschützt sind.
 
 \subsection{DNS}
 \label{sub:fehler_dns}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Domain ausgelaufen}{domain_ausgelaufen}{3}{1}
-    \newfnumber{DNS Server nicht verfügbar}{dns_server_nicht_verfugbar}{3}{1}
-    \newfnumber{DNS Eintrag fehlerhaft}{dns_eintrag_fehlerhaft}{3}{1}
-    \newfnumber{SPF Eintrag fehlerhaft}{spf_eintrag_fehlerhaft}{2}{1}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Domain ausgelaufen}{domainausgelaufen}{3}{1}{1}
+    \newfnumber{DNS Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
+    \newfnumber{DNS Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
+    \newfnumber{SPF Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
     \bottomrule
     \caption[Mögliche Fehler DNS]{Mögliche Fehler DNS}
     \label{tab:fehler_dns}
 \end{longtable}
 
 \subsubsection{Domain ausgelaufen}
-\label{ssub:domain_ausgelaufen}
+\label{ssub:domainausgelaufen}
 Domainnamen werden gewöhnlich im Jahresrythmus bezahlt. Bei nicht bezahlen der Kosten wird einem die Domain wieder entzogen was dazu führt, dass der DNS Eintrag entfernt wird.
 
 \subsubsection{DNS Server nicht verfügbar}
 \label{ssub:dns_server_nicht_verfügbar}
-Für den Fall, dass der DNS Server nicht verfügbar ist, ist dieser mehrfach vorhanden.
+Für den Fall, dass der DNS Server nicht verfügbar ist, ist dieser normalerweise mehrfach vorhanden. Es kann jedoch trotz Redundanz dazu kommen, dass keine Domains aufgelöst werden können.
 
 \subsubsection{DNS Eintrag fehlerhaft}
-\label{ssub:dns_eintrag_fehlerhaft}
+\label{ssub:dnseintragfehlerhaft}
+Da die DNS Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern der DNS Einträge Fehler gemacht werden.
+
 
 \subsubsection{SPF Eintrag fehlerhaft}
-\label{ssub:spf_eintrag_fehlerhaft}
+\label{ssub:spfeintragfehlerhaft}
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Cronjob Fehler}{cronjob_fehler}{1}{2}
-    \newfnumber{Worker Fehler}{worker_fehler}{2}{2}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Cronjob Fehler}{cronjobfehler}{1}{2}{2}
+    \newfnumber{Worker Fehler}{workerfehler}{2}{2}{2}
     \bottomrule
     \caption[Mögliche Fehler Hintergrundprozesse]{Mögliche Fehler Hintergrundprozesse}
     \label{tab:fehler_hintergrundprozesse}
 \end{longtable}
 
 \subsubsection{Cronjob Fehler}
-\label{ssub:cronjob_fehler}
+\label{ssub:cronjobfehler}
 Ältere Webprojekte benötigen für Aufräumarbeiten einen oder mehrere Cronjobs. Fehler in diesen Cronjobs haben nicht in allen Fällen einen direkten Einfluss auf das Funktionieren der Webseite. Jedoch kann es zu Problemen kommen falls ein solcher Job längere Zeit ausfällt.
 
 \subsubsection{Worker Fehler}
-\label{ssub:worker_fehler}
-Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webapplikation auszulagern. Falls dieser Worker nicht mehr läuft, oder ein Task nicht endet kann dies dazu führen, dass sich die Taskqueue füllt und neue Tasks nicht mehr abgearbeitet werden.
+\label{ssub:workerfehler}
+Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webapplikation auszulagern. Falls dieser Worker nicht mehr läuft, oder ein Task nicht endet kann dies dazu führen, dass sich die Taskqueue füllt und neue Tasks nicht mehr abgearbeitet werden können.
 
 \subsection{Applikation}
 \label{sub:fehler_applikation}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Deprecated Librarys}{deprecated_librarys}{1}{2}
-    \newfnumber{Unittest Fehler}{unittest_fehler}{3}{3}
-    \newfnumber{Fehler im Produktivsystem}{fehler_im_produktivsystem}{2}{2}
-    \newfnumber{Missverhalten}{missverhalten}{2}{2}
-    \newfnumber{Debug Modus}{debug_modus}{2}{2}
-    \newfnumber{Abhängigkeiten mit Sicherheitslücken}{abhängigkeiten_mit_sicherheitslücken}{3}{2}
-    \newfnumber{404 Handling nicht falsch}{404_handling_nicht_falsch}{1}{1}
-    \newfnumber{Datenbank Queries laufen langsam}{datenbank_queries_laufen_langsam}{1}{1}
-    \newfnumber{Applikation läuft langsam}{applikation_läuft_langsam}{1}{1}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Deprecated Librarys}{deprecatedlibrarys}{1}{2}{3}
+    \newfnumber{Unittest Fehler}{unittestfehler}{3}{3}{2}
+    \newfnumber{Fehler im Produktivsystem}{fehlerimproduktivsystem}{2}{2}{2}
+    \newfnumber{Missverhalten}{missverhalten}{2}{2}{}
+    \newfnumber{Debug Modus}{debugmodus}{2}{2}{1}
+    \newfnumber{Abhängigkeiten mit Sicherheitslücken}{abhaengigkeitenmitsicherheitsluecken}{3}{2}{}
+    \newfnumber{404 Handling nicht falsch}{fourofourhandling}{1}{1}{2}
+    \newfnumber{Datenbank Queries laufen langsam}{datenbankquerieslaufenlangsam}{1}{1}{3}
+    \newfnumber{Applikation läuft langsam}{applikationlaeuftlangsam}{1}{1}{2}
     \bottomrule
     \caption[Mögliche Fehler Applikation]{Mögliche Fehler Applikation}
     \label{tab:fehler_applikation}
 \end{longtable}
 
 \subsubsection{Deprecated Librarys}
-\label{ssub:deprecated_librarys}
+\label{ssub:deprecatedlibrarys}
 In Webprojekten werden häufig Librarys von Drittherstellern verwendet. Falls in einer Library eine Funktion entfernt wird, wird dies meist einige Versionen vor dem eigentlichen Entfernen durch eine ``Deprecation Warning'' angekündigt. Diese Warnungen sollten durch den Programmierer bemerkt werden und er sollte wo möglich auf das Verwenden dieser Funktionen verzichten.
 
 \subsubsection{Unittest Fehler}
-\label{ssub:unittest_fehler}
+\label{ssub:unittestfehler}
+Um sicherzustellen, dass Programmteile welche funktionieren, auch nach Änderungen am Programmcode noch korrekt arbeiten, werden Unittests geschrieben. Diese sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder ausgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, werden nicht nach jeder Änderung alle Tests erneut ausgeführt. Es kann darum vorkommen, dass Programmcode die Unittests nicht besteht und dennoch auf produktiv Systemen läuft.
 
 \subsubsection{Fehler im Produktivsystem}
-\label{ssub:fehler_im_produktivsystem}
+\label{ssub:fehlerimproduktivsystem}
 Ein Fehler beim bearbeiten eines Requests wird dem Benutzer mit einer Meldung und dem Statuscode 500 mitgeteilt. Da nicht alle Benutzer solche Fehler melden wird zusätzlich ein Fehlerprotokoll angelegt.
 
 \subsubsection{Missverhalten}
 \label{ssub:missverhalten}
 Als Missverhalten wird jegliches Verhalten einer Webseite angesehen welches nicht dem vom Entwickler vorgesehenen Verhalten entspricht. Dabei muss es sich nicht zwingend um einen Fehler im Programmcode handeln.
 
-\subsubsection{Bedug Modus}
-\label{ssub:bedug_modus}
+\subsubsection{Debug Modus}
+\label{ssub:debugmodus}
 Die meisten Webframeworks besitzen einen Debug Modus. Dieser Debug Modus ist für Testsysteme und Entwicklungssysteme vorgesehen. Da Applikationen im Debug Modus nicht optimal laufen und auch Memory Leaks auftreten können sollte dieser nicht in Produktiv eingesetzten Systemen verwendet werden.
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
-\label{ssub:abhängigkeiten_mit_sicherheitslücken}
+\label{ssub:abhaengigkeitenmitsicherheitsluecken}
 Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliotheken haben, sind sie von Sicherheitslücken der verwendeten Bibliotheken betroffen. Um zu verhindern, dass eine Webapplikation von einer Sicherheitslücke betroffen ist, muss die verursachende Abhängigkeit durch eine neuere Version welche diese Lücke schliesst ersetzt werden.
 
 
 \section{Frontend}
 \label{sec:frontend}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Javascript Fehler}{javascript_fehler}{2}{3}
-    \newfnumber{CSS Fehler}{css_fehler}{3}{1}
-    \newfnumber{Seite lädt zu langsam}{site_lädt_zu_langsam}{2}{4}
-    \newfnumber{Browser spezifische Probleme}{browser_spezifische_probleme}{2}{2}
-    \newfnumber{Assets fehlen}{assets_fehlen}{2}{3}
-    \newfnumber{Externe Abhängigkeiten nicht verfügbar}{externe_abhängigkeiten}{3}{3}
-    \newfnumber{Seite funktioniert nicht auf mobilen Geräten}{seite_funktioniert_nicht_auf_mobilen_geräten}{3}{1}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Javascript Fehler}{javascriptfehler}{2}{3}{3}
+    \newfnumber{CSS Fehler}{cssfehler}{3}{1}{2}
+    \newfnumber{Seite lädt zu langsam}{seitelaedtzulangsam}{2}{4}{2}
+    \newfnumber{Browser spezifische Probleme}{browserspezifischeprobleme}{2}{2}{}
+    \newfnumber{Assets fehlen}{assetsfehlen}{2}{3}{2}
+    \newfnumber{Externe Abhängigkeiten nicht verfügbar}{externeabhaengigkeiten}{3}{3}{2}
+    \newfnumber{Seite funktioniert nicht auf mobilen Geräten}{seitefunktioniertnichtaufmobilengeraeten}{3}{1}{4}
     \bottomrule
     \caption[Mögliche Fehler Frontend]{Mögliche Fehler Frontend}
     \label{tab:fehler_frontend}
 \end{longtable}
 
 \subsubsection{Javascript Fehler}
-\label{ssub:javascript_fehler}
+\label{ssub:javascriptfehler}
+Da Javascript nicht in allen Browsern identisch implementiert ist gibt es immer wieder Probleme mit browserseitigen Applikationen welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werde. Jedoch sollte man über geeignete Fehlerreporting Tools bemerken, falls Benutzer einer Webseite Probleme beim ausführen von Javascript haben.
 
 \subsubsection{CSS Fehler}
-\label{ssub:css_fehler}
+\label{ssub:cssfehler}
+Fehler im CSS Code haben nicht zwingend in allen Browsern die selben Auswirkungen, da nicht alle Browser CSS genau gleich interpretieren. Die Auswirkungen können von einer fehlerhaften Angabe (Grösse eines Objektes) bis zum nicht interpretieren der ganzen Datei führen. Letzteres kann dazu führen, dass die Seite ohne CSS geladen wird was für gewöhnlich einer schwarz-weiss Seite entspricht.
 
 \subsubsection{Seite lädt zu langsam}
 \label{ssub:seite_lädt_zu_langsam}
+Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer welche eine Seite frühzeitig verlassen\footnote{\url{http://rigor.com/2012/11/how-page-load-time-affects-bounce-rates/}}. Darum ist es wichtig, dass eine Webseite möglichst schnell geladen werden kann. Diese Zeit ist von diversen Faktoren abhängig und muss darum immer wieder überprüft werden.
 
 \subsubsection{Browser spezifische Probleme}
-\label{ssub:browser_spezifische_probleme}
+\label{ssub:browserspezifischeprobleme}
 
 \subsubsection{Assets fehlen}
-\label{ssub:assets_fehlen}
+\label{ssub:assetsfehlen}
 Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen HTML-Datei noch Bilder, Stylesheets und Javascripts verwendet. Diese zusätzlichen Dateien, auch Assets genannt, werden vom Browser geladen. Sind im Quelltext einer Webseite Assets vermerkt welche nicht verfügbar sind, zögert dies die Darstellung der Webseite unnötig hinaus.
 
 \subsubsection{Externe Abhängigkeiten nicht verfügbar}
-\label{ssub:externe_abhängigkeiten_nicht_verfügbar}
+\label{ssub:externeabhaengigkeiten_nicht_verfügbar}
 
 \subsubsection{Seite funktioniert nicht auf mobilen Geräten}
-\label{ssub:seite_funktioniert_nicht_auf_mobilen_geräten}
+\label{ssub:seitefunktioniertnichtaufmobilengeraeten}
+Da der der Anteil mobiler Geräte welche eine Webseite besuchen immer grösser wird, ist es wichtig, dass jede Webseite auch auf mobilen Entgeräten funktioniert. Da diese Geräte sehr divers sind, muss für jedes Projekt festgelegt werden, auf welchen Geräten die Webseite funktionieren muss.
 
 
 \section{Inhalt}
 \label{sec:inhalt}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Seite enthält tote Links}{seite_enthält_tote_links}{1}{3}
-    \newfnumber{Rechtschreibefehler}{rechtschreibefehler}{1}{2}
-    \newfnumber{Falsch aufbereitete Bilder}{falsch_aufbereitete_bilder}{1}{2}
-    \newfnumber{Design verletzt}{design_verletzt}{1}{2}
-    \newfnumber{Fehlmanipulation durch den Kunden}{fehlmanipulation_durch_den_kunden}{2}{2}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Seite enthält tote Links}{seiteenthaelttotelinks}{1}{3}{2}
+    \newfnumber{Rechtschreibefehler}{rechtschreibefehler}{1}{2}{}
+    \newfnumber{Falsch aufbereitete Bilder}{falschaufbereitetebilder}{1}{2}{}
+    \newfnumber{Design verletzt}{designverletzt}{1}{2}{}
+    \newfnumber{Fehlmanipulation durch den Kunden}{fehlmanipulationdurchdenkunden}{2}{2}{}
     \bottomrule
     \caption[Mögliche Fehler Inhalt]{Mögliche Fehler Inhalt}
     \label{tab:fehler_inhalt}
@@ -228,59 +272,61 @@ Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen
 
 \subsubsection{Seite enthält tote Links}
 \label{ssub:seite_enthält_tote_links}
-Da URL's im Internet einem ständigen Wandel unterstellt sind, kann es vor kommen, dass ein Link plötzlich ins Leere zeigt. Solche Links werden als tote Links bezeichnet und sind normalerweise nicht erwünscht, da sie die Benutzer einer Webseite auf eine Fehlermeldung weiterleiten.
+Da URL's im Internet einem ständigen Wandel unterstellt sind, kann es vor kommen, dass ein Link plötzlich ins Leere zeigt. Solche Links werden tote Links genannt und sind normalerweise nicht erwünscht, da sie die Benutzer einer Webseite auf eine Fehlermeldung weiterleiten.
 
 \subsubsection{Rechtschreibefehler}
 \label{ssub:rechtschreibefehler}
 
 \subsubsection{Falsch aufbereitete Bilder}
 \label{ssub:falsch_aufbereitete_bilder}
+Bandbreite ist für die meisten Benutzer kein Thema, wenn sie von einem Computer über einen gewöhnlichen Internetanschluss im Internet surfen. Ist ein Benutzer über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Darum ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
 
 \subsubsection{Design verletzt}
 \label{ssub:design_verletzt}
+Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Seite entworfen hat, meist aktiv am Kontrollieren, ob das Design überall richtig umgesetzt wurde. Danach merkt der Screendesigner meist nur durch Zufall falls das Design, einer Seite durch zufügen von unpassendem Inhalt oder durch falsch Verwenden von Elementen verletzt wurde.
 
 \subsubsection{Fehlmanipulation durch den Kunden}
-\label{ssub:fehlmanipulation_durch_den_kunden}
+\label{ssub:fehlmanipulationdurchdenkunden}
 
 
 \section{SEO and Sharing}
 \label{sec:seo_and_sharing}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{OG Tags fehlerhaft oder nicht vorhanden}{og_tags_fehlerhaft_oder_nicht_vorhanden}{2}{1}
-    \newfnumber{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}{meta_description_und_seitentitel}{2}{2}
-    \newfnumber{Deeplinks funktionieren nicht}{deeplinks_funktionieren_nicht}{2}{1}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{OG Tags fehlerhaft oder nicht vorhanden}{ogtagsfehlerhaftodernichtvorhanden}{2}{1}{3}
+    \newfnumber{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}{metadescriptionundseitentitel}{2}{2}{3}
+    \newfnumber{Deeplinks funktionieren nicht}{deeplinksfunktionierennicht}{2}{1}{3}
     \bottomrule
     \caption[Mögliche Fehler SEO und Sharing]{Mögliche Fehler SEO und Sharing}
     \label{tab:fehler_seo_sharing}
 \end{longtable}
 
 \subsubsection{OG Tags fehlerhaft oder nicht vorhanden}
-\label{ssub:og_tags_fehlerhaft_oder_nicht_vorhanden}
+\label{ssub:ogtagsfehlerhaftodernichtvorhanden}
 Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite zusätzliche Informationen anzuhängen. Diese Informationen werden von verschiedenen sozialen Netzwerken verwendet um Links mit einer Beschreibung und einem Bild anzureichern. Fehlen diese Tags oder sind sie fehlerhaft, werden die falschen oder gar keine zusätzliche Informationen angezeigt was zu einer niedrigeren Klick-Rate führen kann.
 
 \subsubsection{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}
-\label{ssub:_meta_description_und_seitentitel_fehlerhaft_oder_nicht_vorhanden}
+\label{ssub:_metadescriptionundseitentitel_fehlerhaft_oder_nicht_vorhanden}
 Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die ``Meta Description'' zurück. Fehlen diese Angaben versuchen Suchmaschinen den Titel und die Beschreibung aus einer Webseite zu extrahieren. Diese Resultate sind jedoch meist weniger gut als von Hand erfasste Titel und Beschreibungen. Dies führt dazu, dass Benutzer weniger auf diese Suchergebnisse klicken.
 
 \subsubsection{Deeplinks funktionieren nicht}
-\label{ssub:deeplinks_funktionieren_nicht}
+\label{ssub:deeplinksfunktionierennicht}
 
 \section{Programmcode}
 \label{sec:programmcode}
 
-\begin{longtable}{l>{\raggedright}p{8cm} r r}
-    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} \\
-    \newfnumber{Code Conventions nicht eingehalten}{code_conventions}{1}{4}
-    \newfnumber{Programmcode enthält Syntaxfehler}{syntaxfehler}{3}{3}
+\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
+    \newfnumber{Code Conventions nicht eingehalten}{codeconventions}{1}{4}{1}
+    \newfnumber{Programmcode enthält Syntaxfehler}{syntaxfehler}{3}{3}{2}
     \bottomrule
     \caption[Mögliche Fehler Programmcode]{Mögliche Fehler Programmcode}
     \label{tab:fehler_programmcode}
 \end{longtable}
 
 \subsubsection{Code Conventions nicht eingehalten}
-\label{ssub:code_conventions_nicht_eingehalten}
+\label{ssub:codeconventions_nicht_eingehalten}
 Um häufiges Umformatieren von Programmcode zu vermeiden sollten sich alle Programmierer innerhalb eines Projektes an die jeweils gültigen Code Konventionen halten. Diese bestehen meist aus einem Style-Guide und Namenskonventionen.
 
 \subsubsection{Programmcode enthält Syntaxfehler}

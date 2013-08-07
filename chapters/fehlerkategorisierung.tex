@@ -1,28 +1,56 @@
 %!TEX root = ../index.tex
 
+\section{Nicht automatisiert Testbare Fehlerszenarios}
+\label{sec:nicht_automatisiert_testbare_fehlerszenarios}
+Einige Fehlerszenarios sind nicht oder nur mit unverhältnismässigem Aufwand automatisiert testbar.
+
+\ref{f:missverhalten}, \ref{f:fourofourhandling}, \ref{f:seitefunktioniertnichtaufmobilengeraeten}, \ref{f:rechtschreibefehler}, \ref{f:falschaufbereitetebilder}, \ref{f:designverletzt}, \ref{f:fehlmanipulationdurchdenkunden}, \ref{f:deeplinksfunktionierennicht}
+
+\section{Teilautomatisiert Testbare Fehlerszenarios}
+\label{sec:teilautomatisiert_testbare_fehlerszenarios}
+Zwei Fehlerszenarios können nicht komplett automatisiert werden, sie können jedoch zu einem hohen Grad durch ein System unterstützt werden.
+
+\subsubsection{Abhängigkeiten mit Sicherheitslücken}
+\label{ssub:kat_abhaengigkeitenmitsicherheitsluecken}
+\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt ein System verwendet welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
+
+\subsubsection{Browser spezifische Probleme}
+\label{ssub:kat_browser_spezifische_probleme}
+\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``Real User Monitoring'' verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerden und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
+
 \section{Fehlerszenarios welche bereits abgedeckt werden}
 \label{sec:fehlerszenarios_welche_bereits_abgedeckt_werden}
-In der allink wird bereits vor dieser Arbeit Wert auf Qualität gesetzt. Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab.
+Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab. Diese Fehlerszenarios müssen nicht von den zu evaluierenen Systemen abgedeckt werden. Jedoch kann es sein, dass nach dieser Arbeit einige Fehlerszenarios mehrfach abgedeckt sind, was dazu führen kann, dass in den Mitteln aus Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} diese Szenarios nicht mehr abgedeckt werden müssten. 
 
-
-Abgedeckt durch B2, Precommit Hook:
-
-F35, F36
-
-Abgedeckt durch B3 Sentry:
-
-F10, F13, F20 (möglich)
-
-Abgedeckt durch B4, Go-Live Checkliste:
-
-F8, F12, F15, F17, F32, F33, F34
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{lll}
+  \toprule
+    Nummer & Bezeichnung & Abgedeckte Fehler\\
+  \hline
+    \ref{b:precommithook} & Precommit Hook & \ref{f:codeconventions}, \ref{f:syntaxfehler}\\
+  \hline
+    \ref{b:sentry} & Sentry & \ref{f:cronjobfehler}, \ref{f:workerfehler}, \ref{f:fehlerimproduktivsystem}, \ref{f:javascriptfehler}\\
+  \hline
+    \ref{b:golivecheckliste} & Go-Live Checkliste & \ref{f:fourofourhandling}, \ref{f:seitefunktioniertnichtaufmobilengeraeten}, \ref{f:ogtagsfehlerhaftodernichtvorhanden}, \ref{f:metadescriptionundseitentitel}, \ref{f:deeplinksfunktionierennicht} \\
+  \hline
+    \ref{b:deploymentprozess} & Deployment-Prozess & \ref{f:cssfehler}\\
+  \bottomrule
+  \end{tabular}
+  \caption{Abdeckung von Fehlerszenarios durch bestehende Massnahmen}
+  \label{tab:abdeckung_von_fehlerszenarios_durch_bestehende_massnahmen}
+\end{table}
 
 \section{Fehlerszenarios welche abgedeckt werden müssen}
 \label{sec:fehlerszenarios_welche_abgedeckt_werden_müssen}
+Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert Prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
 
-F1, F2, F3, F4, F5, F6, F7, F9, F11, F14, F16, F18, F19, F21, F22, F23, F24, F25, F26, F27, F28, F29, F30, F31
+\subsubsection{Automatisiert testbar}
+\label{ssub:automatisiert_testbar}
 
+\ref{f:zertifikatausgelaufen} \fzertifikatausgelaufen, \ref{f:zertifikatungultig} \fzertifikatungultig, \ref{f:sslnichterzwungen} \fsslnichterzwungen, \ref{f:externeassetsohnessl} \fexterneassetsohnessl, \ref{f:domainausgelaufen} \fdomainausgelaufen, \ref{f:dnsservernichtverfuegbar} \fdnsservernichtverfuegbar, \ref{f:dnseintragfehlerhaft} \fdnseintragfehlerhaft, \ref{f:spfeintragfehlerhaft} \fspfeintragfehlerhaft, \ref{f:deprecatedlibrarys} \fdeprecatedlibrarys, \ref{f:unittestfehler} \funittestfehler, \ref{f:debugmodus} \fdebugmodus, \ref{f:datenbankquerieslaufenlangsam} \fdatenbankquerieslaufenlangsam, \ref{f:applikationlaeuftlangsam} \fapplikationlaeuftlangsam, \ref{f:seitelaedtzulangsam} \fseitelaedtzulangsam, \ref{f:assetsfehlen} \fassetsfehlen, \ref{f:externeabhaengigkeiten} \fassetsfehlen, \ref{f:seiteenthaelttotelinks} \fseiteenthaelttotelinks
 
-\section{Kritische Fehler}
-\label{sec:kritische_fehler}
+\subsubsection{Manuell testbar}
+\label{ssub:manuel_testbar}
 
+\ref{f:missverhalten} \fmissverhalten, \ref{f:abhaengigkeitenmitsicherheitsluecken} \fabhaengigkeitenmitsicherheitsluecken, \ref{f:browserspezifischeprobleme} \fbrowserspezifischeprobleme, \ref{f:rechtschreibefehler} \frechtschreibefehler, \ref{f:falschaufbereitetebilder} \ffalschaufbereitetebilder, \ref{f:designverletzt} \fdesignverletzt, \ref{f:fehlmanipulationdurchdenkunden} \ffehlmanipulationdurchdenkunden

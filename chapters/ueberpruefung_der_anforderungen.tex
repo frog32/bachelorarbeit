@@ -1,0 +1,43 @@
+%!TEX root = ../index.tex
+\begin{longtable}{l>{\raggedright}p{7cm} p{6cm}}
+    \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Abgedeckt durch} \\
+    \midrule\ref{f:zertifikatausgelaufen} & \fzertifikatausgelaufen & \ref{l:statuscake} \lstatuscake \\
+    \midrule\ref{f:zertifikatungultig} & \fzertifikatungultig & \ref{l:statuscake} \lstatuscake \\
+    \midrule\ref{f:sslnichterzwungen} & \fsslnichterzwungen & \\
+    \midrule\ref{f:externeassetsohnessl} & \fexterneassetsohnessl & \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:domainausgelaufen} & \fdomainausgelaufen & \ref{l:statuscake} \lstatuscake, \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:dnsservernichtverfuegbar} & \fdnsservernichtverfuegbar & \ref{l:statuscake} \lstatuscake, \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:dnseintragfehlerhaft} & \fdnseintragfehlerhaft & \ref{l:statuscake} \lstatuscake, \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:spfeintragfehlerhaft} & \fspfeintragfehlerhaft & \\
+    \midrule\ref{f:cronjobfehler} & \fcronjobfehler & \ref{b:sentry} \bsentry \\
+    \midrule\ref{f:workerfehler} & \fworkerfehler & \ref{b:sentry} \bsentry \\
+    \midrule\ref{f:deprecatedlibrarys} & \fdeprecatedlibrarys & \\
+    \midrule\ref{f:unittestfehler} & \funittestfehler & \ref{l:travis} \ltravis \\
+    \midrule\ref{f:fehlerimproduktivsystem} & \ffehlerimproduktivsystem & \ref{b:sentry} \bsentry \\
+    \midrule\ref{f:missverhalten} & \fmissverhalten & Manuelle Tests \\
+    \midrule\ref{f:debugmodus} & \fdebugmodus & \\
+    \midrule\ref{f:abhaengigkeitenmitsicherheitsluecken} & \fabhaengigkeitenmitsicherheitsluecken & \\
+    \midrule\ref{f:fourofourhandling} & \ffourofourhandling & \ref{b:golivecheckliste} \bgolivecheckliste \\
+    \midrule\ref{f:datenbankquerieslaufenlangsam} & \fdatenbankquerieslaufenlangsam & \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:applikationlaeuftlangsam} & \fapplikationlaeuftlangsam & \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:javascriptfehler} & \fjavascriptfehler & \ref{b:sentry} \bsentry \\
+    \midrule\ref{f:cssfehler} & \fcssfehler & \ref{b:deploymentprozess} \bdeploymentprozess \\
+    \midrule\ref{f:seitelaedtzulangsam} & \fseitelaedtzulangsam & \ref{l:statuscake} \lstatuscake, \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:browserspezifischeprobleme} & \fbrowserspezifischeprobleme & \\
+    \midrule\ref{f:assetsfehlen} & \fassetsfehlen & \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:externeabhaengigkeiten} & \fexterneabhaengigkeiten & \ref{l:newrelic} \lnewrelic \\
+    \midrule\ref{f:seitefunktioniertnichtaufmobilengeraeten} & \fseitefunktioniertnichtaufmobilengeraeten & \ref{b:golivecheckliste} \bgolivecheckliste \\
+    \midrule\ref{f:seiteenthaelttotelinks} & \fseiteenthaelttotelinks & \ref{l:statuscake} \lstatuscake \\
+    \midrule\ref{f:rechtschreibefehler} & \frechtschreibefehler & Manuelle Tests \\
+    \midrule\ref{f:falschaufbereitetebilder} & \ffalschaufbereitetebilder & Manuelle Tests \\
+    \midrule\ref{f:designverletzt} & \fdesignverletzt & Manuelle Tests \\
+    \midrule\ref{f:fehlmanipulationdurchdenkunden} & \ffehlmanipulationdurchdenkunden & \\
+    \midrule\ref{f:ogtagsfehlerhaftodernichtvorhanden} & \fogtagsfehlerhaftodernichtvorhanden & \ref{b:golivecheckliste} \bgolivecheckliste \\
+    \midrule\ref{f:metadescriptionundseitentitel} & \fmetadescriptionundseitentitel & \ref{b:golivecheckliste} \bgolivecheckliste \\
+    \midrule\ref{f:deeplinksfunktionierennicht} & \fdeeplinksfunktionierennicht & \ref{b:golivecheckliste} \bgolivecheckliste \\
+    \midrule\ref{f:codeconventions} & \fcodeconventions & \ref{b:precommithook} \bprecommithook, \ref{l:travis} \ltravis \\
+    \midrule\ref{f:syntaxfehler} & \fsyntaxfehler & \ref{b:precommithook} \bprecommithook, \ref{l:travis} \ltravis \\
+    \bottomrule
+    \caption[Abdeckung der Fehlerszenarios]{Abdeckung der Fehlerszenarios}
+    \label{tab:ueberpruefung_der_anforderungen}
+\end{longtable}

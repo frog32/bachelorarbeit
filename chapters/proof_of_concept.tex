@@ -1,2 +1,40 @@
 %!TEX root = ../index.tex
 
+\section{Manuelle Tests}
+\label{sec:manuelle_tests}
+Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt, welche bei Webprojekten nach dem Go-Live regelmässig durchgegangen wird. Diese Checkliste ist in Tabelle~\ref{tab:recuring_checklist} ersichtlich.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{l p{10cm}}
+  \toprule
+    1. & Funktioniert die Webseite und alle Applikationen?\\
+  \hline
+    2. & Sind die verwendeten Versionen von Django, feincms etc noch aktuell? (nur neuere Patch Releases keine Versionssprünge)\\
+  \hline
+    3. & Funktioniert die Seite in den neusten Versionen von Safari, Firefox, Chrome und IE?\\
+  \hline
+    4. & Sind auf der Startseite und den Landingpages offensichtliche Rechtschreibefehler?\\
+  \hline
+    5. & Sind die verwendeten Bilder richtig aufbereitet?\\
+  \hline
+    6. & Wurde das Design offensichtlich verletzt?\\
+  \bottomrule
+  \end{tabular}
+  \caption{Checkliste für wiederkehrende Überprüfungen}
+  \label{tab:recuring_checklist}
+\end{table}
+
+\section{Continuous Integration}
+\label{sec:continuous_integration_proof_of_concept}
+Da Travis für Unternehmen zur Zeit noch nicht frei verfügbar ist, wurde Travis angeschrieben und unsere Situation geschildert. Darauf erhielt allink die benötigte Einladung um Travis zu benutzen.
+Um Travis in den bestehenden Projekt Workflow zu integrieren, wurde im der Basiscodebase welche für jedes Django Softwareprojekt verwendet wurde ein .travis.yml erstellt, welches die genaue Testkonfiguration und den Ablauf beinhaltet.
+
+\section{Monitoring}
+\label{sec:monitoring_proof_of_concept}
+
+\section{Auswirkungen}
+\label{sec:auswirkungen}
+Mit all den neuen Tools wurde auch die Menge an E-Mails welche jeder Entwickler täglich erhält stetig grösser. So versendet zum Beispiel Status Cake jedes mal ein E-Mail, wenn eine zu überwachende Seite nicht mehr erreichbar ist. Dies führte dazu, dass die meisten Entwickler diese E-Mails mittels Regeln direkt in eigene Ordner verschieben lassen. So fällt es nicht mehr direkt auf, wenn eine Webseite nicht mehr erreichbar ist, da das E-Mail welches darauf hinweisen soll, automatisch aus dem Posteingang entfernt wird und in einen eigenen Ordner bewegt wird welche für solche Benachrichtigungen vorgesehen ist. Dadurch bleibt übrigen E-Mails im Posteingang mehr Aufmerksamkeit, jedoch kann es vorkommen, dass ein schwerwiegender Fehler über einen Tag nicht bemerkt wird.
+
+E-Mails welche von Sentry versendet werden, teilweise ignoriert, da es sicher ein Entwickler gibt welcher gerade an diesem Projekt arbeitet.

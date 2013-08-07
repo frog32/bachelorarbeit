@@ -1,0 +1,103 @@
+%
+%  Kick-Off Protokoll
+%
+%  Created by Marc Egli on 2013-03-27.
+%  Template by Silvan Spross
+%
+\documentclass[]{scrreprt}
+\usepackage[ngerman]{babel}
+
+% Use utf-8 encoding for foreign characters
+\usepackage[utf8]{inputenc}
+
+% Setup for fullpage use
+\usepackage{fullpage}
+
+% Running Headers and footers
+%\usepackage{fancyhdr}
+
+% Multipart figures
+%\usepackage{subfigure}
+
+% More symbols
+%\usepackage{amsmath}
+%\usepackage{amssymb}
+%\usepackage{latexsym}
+
+% Surround parts of graphics with box
+\usepackage{boxedminipage}
+
+% Package for including code in the document
+\usepackage{listings}
+
+% If you want to generate a toc for each chapter (use with book)
+\usepackage{minitoc}
+
+% This is now the recommended way for checking for PDFLaTeX:
+\usepackage{ifpdf}
+\usepackage{url}
+
+\ifpdf
+    \usepackage[pdftex]{graphicx}
+\else
+    \usepackage{graphicx}
+\fi
+
+\title{Design-Review Protokoll}
+    
+\author{Studierender - Marc Egli\\
+    Projektbetreuer - Beat Seeliger\\
+    Auftraggeber - Silvan Spross, allink\\
+    \\
+    ZHAW - Zürcher Hochschule für Angewandte Wissenschaften}
+    
+\date{22. Mai 2013}
+
+\begin{document}
+
+    \ifpdf
+        \DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+    \else
+        \DeclareGraphicsExtensions{.eps, .jpg}
+    \fi
+
+    \maketitle
+
+    \pagenumbering{arabic}
+
+    % \tableofcontents
+
+    \chapter{Design-Review Protokoll}
+
+    \section{Bachelorthesis}
+    IT Qualitätsmanagement für Webprojekte
+
+    \section{Fragen Design-Review Meeting}
+    Alle Fragen aus dem Design-Review Meeting konnten geklärt werden:
+    \begin{enumerate}
+        \item Ist der Auftrag für die Bachelorarbeit von der Studentin oder dem Studenten korrekt erfasst? \\
+            {\bf Ja}
+        \item Sind die Ausgangslage und das Umfeld ausreichend analysiert, berücksichtigt und bearbeitet? \\
+            {\bf Ja}
+        \item Wurde eine systematische Recherche durchgeführt? \\
+            {\bf Ja}
+        \item Wurde ein klares Konzept erarbeitet und klar dargestellt? \\
+            {\bf Ja}
+        \item Wurden alternative Lösungen betrachtet? \\
+            {\bf Ja}, es wird eine alternative Lösung eingesetzt.
+        \item Entsprechen das Arbeits- und das Lösungskonzept den Anforderungen an eine Bachelorarbeit? \\
+            {\bf Ja}
+        \item Ist die Lösung grundsätzlich für die Auftraggeberin bzw. den Auftraggeber akzeptabel? \\
+            {\bf Ja}
+        \item Ist das Konzept bzw. die Lösung technisch und terminlich im Rahmen der verbleibenden Zeit umsetzbar? \\
+            {\bf Ja}
+        \item Sind die nächsten Arbeitsschritte klar formuliert? \\
+            {\bf Ja}
+    \end{enumerate}
+        
+    \section{Nächster Termin}
+    \begin{tabular}{l r}
+        Zwischenbesprechung Proof of Concept & 11.6.2013 \\
+    \end{tabular}
+    
+\end{document}

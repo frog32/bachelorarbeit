@@ -10,21 +10,54 @@ Der grösste Teil aller Webprojekte in der allink werden mit Hilfe des Django Fr
 \label{sec:produktiv_systeme}
 Die allink setzt für alle produktiven Web Systeme auf Managed Hosting von Nine Internet Solutions AG \footnote{http://nine.ch}. Von Nine wird die Verfügbarkeit der Serversysteme sichergestellt und Unterhaltsarbeit geleistet. Auch Backups der produktiven Systeme werden von Nine erstellt und archiviert.
 
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+    Softwarepaket & Version\\
+  \midrule
+    Apache & 2.2\\
+  \hline
+    Python & 2.7\\
+  \hline
+    libapache2-mod-wsgi & 3.3\\
+  \hline
+    MySQL Server & 5.5\\
+  \hline
+    Redis & 2.2\\
+  \hline
+    RabbitMQ & 2.7\\
+  \bottomrule
+  \end{tabular}
+  \caption{Eingesetzte Softwareversionen}
+  \label{tab:eingesetzte_softwareversionen}
+\end{table}
+
 \section{Eingesetzte Mittel für die Qualitätssicherung}
 \label{sec:eingesetzte_mittel_für_die_qualitätssicherung}
+Qualitätssicherung ist in der allink schon immer ein Thema. In der Zeit seit dem die allink Django einsetzt wurden einige Bemühungen getätigt um die Qualität zu gewährleisten. Die Tabelle~\ref{tab:qm_eingesetzte_mittel} zeigt eine Übersicht der Mittel welche standardmässig bei jedem Webprojekt zum Einsatz kommen. Diese sind meist in das allink-project, ein Django Projekt welches die Grundlage für alle in der allink entwickelten Webapplikationen ist, integriert.
 
+\makeatletter
 \newcounter{bcounter}
+\newcounter{bnumber} \setcounter{bnumber}{0}
+\renewcommand\thebnumber{B\arabic{bnumber}}
+\newcommand{\newbnumber}[3]%
+{%
+\midrule%
+\refstepcounter{bnumber}\label{b:#2}%
+\expandafter\xdef\csname b#2\endcsname {#1}%
+\thebnumber & #1 & #3 \\
+}
+\makeatother
+
 
 \begin{longtable}{l>{\raggedright}p{3cm}p{10cm}}
     \toprule \textbf{Nr.} & \textbf{System} & \textbf{Beschreibung} \\
-    \midrule \addtocounter{bcounter}{1}B\arabic{bcounter} & Unittests &
-        Business Logik wird wo vorhanden mittels Unittests getestet\\
-    \midrule \addtocounter{bcounter}{1}B\arabic{bcounter} & Precommit Hook &
-        Quellcode wird vor dem einchecken statisch ausgewertet und auf Konformität mit dem Syleguide geprüft.\\
-    \midrule \addtocounter{bcounter}{1}B\arabic{bcounter} & Sentry &
-        Fehlermeldungen sämtlicher Webprojekte werden zentral mit Sentry aggregiert.\\
-    \midrule \addtocounter{bcounter}{1}B\arabic{bcounter} & GoLive-Checkliste &
-        Für den GoLive einer Webseite besteht ein ausführliches Testprotokoll.\\
+    \newbnumber{unittests}{Unittests}{Business Logik wird wo vorhanden mittels Unittests getestet}
+    \newbnumber{Precommit Hook}{precommithook}{Quellcode wird vor dem einchecken statisch ausgewertet und auf Konformität mit dem Syleguide geprüft.}
+    \newbnumber{Sentry}{sentry}{Fehlermeldungen sämtlicher Webprojekte werden zentral mit Sentry aggregiert.}
+    \newbnumber{GoLive-Checkliste}{golivecheckliste}{Für den Go-Live einer Webseite besteht ein ausführliches Testprotokoll.}
+    \newbnumber{Deployment Prozess}{deploymentprozess}{Der Deployment-Prozess wurde so implementiert, dass er einige Probleme selber erkennen kann.}
     \bottomrule
     \caption[Eingesetze Mittel]{Eingesetzte Mittel}
     \label{tab:qm_eingesetzte_mittel}
