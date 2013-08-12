@@ -6,7 +6,7 @@ Der Markt für Tools welche die Qualitätssicherung von Softwareprojekten unters
 \label{sec:monitoring_evaluation}
 Eine grosse Zahl an Produkten existiert mit welchen man eine Webapplikation in regelmässigen Abständen überprüfen kann. Viele Produkte greifen nur von ausserhalb auf die Webapplikaiton und benachrichtigen falls diese nicht wie zuvor definiert verfügbar sein sollte. Einige Tools setzen jedoch bereits in der Applikation an und können da auch die Zeit welche eine Applikation für eine Anfrage braucht, oder die Menge und der Zeitbedarf von Datenbankabfragen messen. Ein Real User Monitoring welches direkt im Browser des Benutzers läuft, berücksichtigt zusätzlich die Geschwindigkeit der Internet-Verbindung und den verwendeten Browser.
 
-\ref{f:zertifikatausgelaufen}, \ref{f:zertifikatungultig}, \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:domainausgelaufen}, \ref{f:dnsservernichtverfuegbar}, \ref{f:dnseintragfehlerhaft}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibrarys}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:seitelaedtzulangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}, \ref{f:seiteenthaelttotelinks}
+\ref{f:zertifikatausgelaufen}, \ref{f:zertifikatungultig}, \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:domainausgelaufen}, \ref{f:dnsservernichtverfuegbar}, \ref{f:dnseintragfehlerhaft}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:seitelaedtzulangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}, \ref{f:seiteenthaelttotelinks}
 
 \subsection{Marktanalyse}
 \label{sub:marktanalyse}
@@ -14,7 +14,7 @@ Eine grosse Zahl an Produkten existiert mit welchen man eine Webapplikation in r
 \subsubsection{Sillalive}
 \label{ssub:sillalive}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -40,7 +40,7 @@ Scheidet schon durch die hohen Kosten aus. Ist eher für Firmen welche eine einz
 \subsubsection{Newrelic}
 \label{ssub:newrelic}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -61,7 +61,7 @@ Scheidet schon durch die hohen Kosten aus. Ist eher für Firmen welche eine einz
   \label{tab:new_relic_standard}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -87,7 +87,7 @@ New Relic kann eine Webapplikation mit einem Statistischen Profiler durchleuchte
 \subsubsection{Pingdom}
 \label{ssub:pingdom}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -113,7 +113,7 @@ Für Firmen welche eine einzige Webseite oder Webapplikation entwickeln bietet s
 \subsubsection{Status Cake}
 \label{ssub:status_cake}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -139,7 +139,7 @@ Status Cake bietet ziemlich viel wenn man den niedrigen Preis bedenkt. Im Preisp
 \subsubsection{Web on Duty}
 \label{ssub:web_on_duty}
 
-\begin{table}[h!]
+\begin{table}[H]
   \centering
   \begin{tabular}{p{5cm} p{7cm}}
   \toprule
@@ -169,11 +169,11 @@ Es lassen sich grundsätzlich alle automatisiert Testbaren Fehlerszenarios mit E
 
 Mit NewRelic standard und Status Cake bleiben folgende Punkte noch offen:
 
-\ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibrarys}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}
+\ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}
 
 Mit NewRelic enterprise und Status Cake und bleiben folgende Punkte noch offen:
 
-\ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibrarys}, \ref{f:debugmodus}
+\ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}
 
 \section{Continuous Integration}
 \label{sec:continuous_integration_evaluation}
@@ -197,8 +197,9 @@ Zu den zwei verbleibenden Systemen wurde jeweils ein günstiger Anbieter welcher
  
 Da in der allink zum Teil schon Erfahrungen mit dem Umgang mit Travis bestehen und dieser Service Anforderungen erfüllt, wurde in Absprache mit der Informatik Leitung in die Entscheidung gefällt, Travis zu verwenden.
 
-\section{Neue Systeme}
-\label{sec:neue_systeme}
+\section{Ergebnis}
+\label{sec:ergebnis}
+Um alle Fehlerszenarios abzudecken müssen drei neue Systeme welche alle als Service angeboten werden bei allink eingeführt werden. Tabelle~\ref{tab:neue_systeme} zeigt eine Übersicht dieser neuen Systeme. Der allink.planer wird erweitert, so dass er die nicht durch diese neuen Systeme abgedeckten Fehlerszenarios welche aber automatisiert testbar sind abdecken kann.
 
 \makeatletter
 \newcounter{lnumber} \setcounter{lnumber}{0}
@@ -212,12 +213,15 @@ Da in der allink zum Teil schon Erfahrungen mit dem Umgang mit Travis bestehen u
 }
 \makeatother
 
-\begin{longtable}{l>{\raggedright}p{5cm} p{5cm}}
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l>{\raggedright} p{5cm} p{5cm}}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Preismodell} \\
     \newlnumber{New Relic}{newrelic}{Enterprise}
     \newlnumber{StatusCake}{statuscake}{Superior}
     \newlnumber{Travis}{travis}{Enterprise}
     \bottomrule
-    \caption[Neue Systeme]{Neue Systeme}
-    \label{tab:neue_systeme}
-\end{longtable}
+  \end{tabular}
+  \caption{Neue Systeme}
+  \label{tab:neue_systeme}
+\end{table}

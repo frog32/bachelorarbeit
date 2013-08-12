@@ -139,7 +139,17 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \let\label\orglabel 
   \orgdescriptionlabel{#1}% 
 } 
-\makeatother 
+\makeatother
+
+% checklists
+\usepackage{latexsym}
+\newenvironment{checklist}{%
+  \begin{list}{}{}
+  \let\olditem\item
+  \renewcommand\item{\olditem[$\Box$] }
+}{%
+  \end{list}
+}
 
 \makeglossaries
 \include{glossary}
@@ -218,11 +228,16 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
     
   \chapter{Fazit}
   \label{cha:fazit}
+  \input{chapters/fazit.tex}
   
-  \appendix  
+  \appendix
+  \chapter{Dokumente}
+  \label{cha:dokumente}
+  \input{chapters/dokumente.tex}
+   
   \listoffigures
   \listoftables
-  \lstlistoflistings
+  % \lstlistoflistings
   
   \glsaddall
   \printglossaries

@@ -1,7 +1,10 @@
 %!TEX root = ../index.tex
 
+Um möglichst alle relevanten Fehlerszenarios zu erfassen, wurden diese Systematisch mit nach Kategorien sortiert erfasst und anschliessend bewertet.
+
 \section{Kontext}
 \label{sec:kontext}
+Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink mit ähnlichen Problemen gemacht wurden.
 
 \makeatletter
 \newcounter{fnumber} \setcounter{fnumber}{0}
@@ -39,7 +42,7 @@ Der Schaden welcher durch einen Fehler entstehen kann wurde unabhängig der gena
 
 \subsection{Frequenz}
 \label{sub:frequenz}
-Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich.
+Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich. Bei häufig auftauchenden Fehlern wurde in den vorhandenen Logs nachgesehen um zu entscheiden ob diese Täglich oder Wöchentlich auftreten. Bei weniger häufig auftretenden Fehlern wurde nach den letzten vorkommen der Fehler und deren Anzahl entschieden. Fehler welche in einem Webprojekt höchstens einmal vorkommen wurden als jährlich klassifiziert.
 
 \begin{table}[h!]
   \centering
@@ -62,7 +65,7 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabell
 
 \subsection{Zeitbedarf bei Eigenimplementierung}
 \label{sub:zeitbedarf_bei_eigenimplementierung}
-Da sämtliche Fehlerszenarios welche automatisiert testbar sind, durch ein Tool abgedeckt werden sollen, der Zeitbedarf einer Eigenentwicklung geschätzt.
+Da sämtliche Fehlerszenarios welche automatisiert testbar sind, durch ein Tool abgedeckt werden sollen, der Zeitbedarf einer Eigenentwicklung geschätzt. Wobei die Kategorien Tage und Wochen als realistische Eigenimplementierungen angesehen werden und die Kategorien Monate und Jahre als nicht umsetzbar gelten.
 
 \begin{table}[h!]
   \centering
@@ -146,6 +149,7 @@ Da die DNS Einträge jeweils von Hand geändert werden, kann es vorkommen, dass 
 
 \subsubsection{SPF Eintrag fehlerhaft}
 \label{ssub:spfeintragfehlerhaft}
+Der SPF Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain versendet werden dürfen. Ist dieser Eintrag fehlerhaft blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu SPF finden auf der SPF Webseite \url{http://www.openspf.org/}.
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
@@ -172,7 +176,7 @@ Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webappli
 
 \begin{longtable}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
-    \newfnumber{Deprecated Librarys}{deprecatedlibrarys}{1}{2}{3}
+    \newfnumber{Deprecated Libraries}{deprecatedlibraries}{1}{2}{3}
     \newfnumber{Unittest Fehler}{unittestfehler}{3}{3}{2}
     \newfnumber{Fehler im Produktivsystem}{fehlerimproduktivsystem}{2}{2}{2}
     \newfnumber{Missverhalten}{missverhalten}{2}{2}{}
@@ -186,9 +190,9 @@ Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webappli
     \label{tab:fehler_applikation}
 \end{longtable}
 
-\subsubsection{Deprecated Librarys}
-\label{ssub:deprecatedlibrarys}
-In Webprojekten werden häufig Librarys von Drittherstellern verwendet. Falls in einer Library eine Funktion entfernt wird, wird dies meist einige Versionen vor dem eigentlichen Entfernen durch eine ``Deprecation Warning'' angekündigt. Diese Warnungen sollten durch den Programmierer bemerkt werden und er sollte wo möglich auf das Verwenden dieser Funktionen verzichten.
+\subsubsection{Deprecated Libraries}
+\label{ssub:deprecatedlibraries}
+In Webprojekten werden häufig Libraries von Drittherstellern verwendet. Falls in einer Library eine Funktion entfernt wird, wird dies meist einige Versionen vor dem eigentlichen Entfernen durch eine ``Deprecation Warning'' angekündigt. Diese Warnungen sollten durch den Programmierer bemerkt werden und er sollte wo möglich auf das Verwenden dieser Funktionen verzichten.
 
 \subsubsection{Unittest Fehler}
 \label{ssub:unittestfehler}
@@ -221,7 +225,7 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
     \newfnumber{Seite lädt zu langsam}{seitelaedtzulangsam}{2}{4}{2}
     \newfnumber{Browser spezifische Probleme}{browserspezifischeprobleme}{2}{2}{}
     \newfnumber{Assets fehlen}{assetsfehlen}{2}{3}{2}
-    \newfnumber{Externe Abhängigkeiten nicht verfügbar}{externeabhaengigkeiten}{3}{3}{2}
+    \newfnumber{Externe Abhängigkeiten nicht verfügbar}{externeabhaengigkeiten}{3}{2}{2}
     \newfnumber{Seite funktioniert nicht auf mobilen Geräten}{seitefunktioniertnichtaufmobilengeraeten}{3}{1}{4}
     \bottomrule
     \caption[Mögliche Fehler Frontend]{Mögliche Fehler Frontend}
@@ -242,6 +246,7 @@ Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer welc
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:browserspezifischeprobleme}
+Nicht alle Browser die gleiche Rendering-Engine verwenden und auch Javascript nicht auf allen Browsern exakt identisch ist sind Webseiten meist nicht ohne Aufwand auf allen Browsern lauffähig.
 
 \subsubsection{Assets fehlen}
 \label{ssub:assetsfehlen}
@@ -249,6 +254,7 @@ Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen
 
 \subsubsection{Externe Abhängigkeiten nicht verfügbar}
 \label{ssub:externeabhaengigkeiten_nicht_verfügbar}
+Insbesondere Schriften aber auch Javascript Bibliotheken werden teilweise über einen externen Service eingebunden. Falls dieser Service nicht verfügbar ist wird die Webseite nicht wie vorgesehen dargestellt.
 
 \subsubsection{Seite funktioniert nicht auf mobilen Geräten}
 \label{ssub:seitefunktioniertnichtaufmobilengeraeten}
@@ -287,7 +293,7 @@ Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Se
 
 \subsubsection{Fehlmanipulation durch den Kunden}
 \label{ssub:fehlmanipulationdurchdenkunden}
-
+Der Administrationsbereich einer Webseite bietet meist mehr Möglichkeiten als dringend benötigt werden. Der Kunde wird instruiert wie er Änderungen an der Webseite tätigen kann und worauf er dabei achten muss. Hält sich der Kunde nicht an diese Instruktionen kann es passieren, dass die Webseite nicht mehr korrekt dargestellt wird, oder dass ein Teil der Webseite nicht aufrufbar ist.
 
 \section{SEO and Sharing}
 \label{sec:seo_and_sharing}

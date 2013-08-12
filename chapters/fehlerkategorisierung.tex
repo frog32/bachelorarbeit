@@ -1,4 +1,5 @@
 %!TEX root = ../index.tex
+Im Kapitel~\ref{cha:fehlerkatalog} wurden insgesamt 36 Fehlerszenarios Katalogisiert. Um Lösungen für diese Szenarios zu finden, wurden diese zuerst in verschiedene Gruppen eingeteilt.
 
 \section{Nicht automatisiert Testbare Fehlerszenarios}
 \label{sec:nicht_automatisiert_testbare_fehlerszenarios}
@@ -20,7 +21,7 @@ Zwei Fehlerszenarios können nicht komplett automatisiert werden, sie können je
 
 \section{Fehlerszenarios welche bereits abgedeckt werden}
 \label{sec:fehlerszenarios_welche_bereits_abgedeckt_werden}
-Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab. Diese Fehlerszenarios müssen nicht von den zu evaluierenen Systemen abgedeckt werden. Jedoch kann es sein, dass nach dieser Arbeit einige Fehlerszenarios mehrfach abgedeckt sind, was dazu führen kann, dass in den Mitteln aus Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} diese Szenarios nicht mehr abgedeckt werden müssten. 
+Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab. Diese Fehlerszenarios müssen nicht von den zu evaluierenen Systemen abgedeckt werden. Jedoch kann es sein, dass nach dieser Arbeit einige Fehlerszenarios mehrfach abgedeckt sind, was dazu führen kann, dass in den Mitteln aus Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} diese Szenarios nicht mehr abgedeckt werden müssten. Abbildung~\ref{fig:uebersicht_fehlerszenarios} zeigt welche Fehlerszenarios bereits abgedeckt und welche noch offen sind.
 
 \begin{table}[h!]
   \centering
@@ -41,6 +42,13 @@ Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} besch
   \label{tab:abdeckung_von_fehlerszenarios_durch_bestehende_massnahmen}
 \end{table}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{images/abdeckung.pdf}
+\caption{Übersicht Fehlerszenarios}
+\label{fig:uebersicht_fehlerszenarios}
+\end{figure}
+
 \section{Fehlerszenarios welche abgedeckt werden müssen}
 \label{sec:fehlerszenarios_welche_abgedeckt_werden_müssen}
 Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert Prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
@@ -48,7 +56,7 @@ Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt
 \subsubsection{Automatisiert testbar}
 \label{ssub:automatisiert_testbar}
 
-\ref{f:zertifikatausgelaufen} \fzertifikatausgelaufen, \ref{f:zertifikatungultig} \fzertifikatungultig, \ref{f:sslnichterzwungen} \fsslnichterzwungen, \ref{f:externeassetsohnessl} \fexterneassetsohnessl, \ref{f:domainausgelaufen} \fdomainausgelaufen, \ref{f:dnsservernichtverfuegbar} \fdnsservernichtverfuegbar, \ref{f:dnseintragfehlerhaft} \fdnseintragfehlerhaft, \ref{f:spfeintragfehlerhaft} \fspfeintragfehlerhaft, \ref{f:deprecatedlibrarys} \fdeprecatedlibrarys, \ref{f:unittestfehler} \funittestfehler, \ref{f:debugmodus} \fdebugmodus, \ref{f:datenbankquerieslaufenlangsam} \fdatenbankquerieslaufenlangsam, \ref{f:applikationlaeuftlangsam} \fapplikationlaeuftlangsam, \ref{f:seitelaedtzulangsam} \fseitelaedtzulangsam, \ref{f:assetsfehlen} \fassetsfehlen, \ref{f:externeabhaengigkeiten} \fassetsfehlen, \ref{f:seiteenthaelttotelinks} \fseiteenthaelttotelinks
+\ref{f:zertifikatausgelaufen} \fzertifikatausgelaufen, \ref{f:zertifikatungultig} \fzertifikatungultig, \ref{f:sslnichterzwungen} \fsslnichterzwungen, \ref{f:externeassetsohnessl} \fexterneassetsohnessl, \ref{f:domainausgelaufen} \fdomainausgelaufen, \ref{f:dnsservernichtverfuegbar} \fdnsservernichtverfuegbar, \ref{f:dnseintragfehlerhaft} \fdnseintragfehlerhaft, \ref{f:spfeintragfehlerhaft} \fspfeintragfehlerhaft, \ref{f:deprecatedlibraries} \fdeprecatedlibraries, \ref{f:unittestfehler} \funittestfehler, \ref{f:debugmodus} \fdebugmodus, \ref{f:datenbankquerieslaufenlangsam} \fdatenbankquerieslaufenlangsam, \ref{f:applikationlaeuftlangsam} \fapplikationlaeuftlangsam, \ref{f:seitelaedtzulangsam} \fseitelaedtzulangsam, \ref{f:assetsfehlen} \fassetsfehlen, \ref{f:externeabhaengigkeiten} \fassetsfehlen, \ref{f:seiteenthaelttotelinks} \fseiteenthaelttotelinks
 
 \subsubsection{Manuell testbar}
 \label{ssub:manuel_testbar}

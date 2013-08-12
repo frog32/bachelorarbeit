@@ -1,0 +1,45 @@
+%!TEX root = ../index.tex
+
+\section{GoLive-Checkliste}
+\label{sec:appendix_golive_checkliste}
+\begin{checklist}
+  \item Hauptdomain eingerichtet
+  \item Secondary Domains richtig weitergeleitet
+  \item Alle DNS Einträge eingerichtet/übernommen (Google Apps, MX etc.)
+  \item Social Media Tags eingerichtet (og:title, og:description)
+  \item Wie sehen die Likes aus, falls vorhanden? Bild, Link, Text?
+  \item Title Tags für Crawler und Besucher richtig konfiguriert (Hauptseite: ``Company - Claim'', Unterseiten: ``Description - Company'')
+  \item Meta Description ausgefüllt (vor allem Startseite)
+  \item Google Analytics aktiviert und keine Bounce verfälschung (ajax doppelter page track)
+  \item Sitemap eingerichtet, alles vorhanden
+  \item Seite auf Google Webmaster Tools vorbereitet, sofern sinnvoll
+  \item Gängige Browser gem. Offerte getestet
+  \item Auflösungen (Desktop, Mobil) getestet (Responsive Design funktioniert)
+  \item Auf diversen Plattformen getestet (iOS, Android, Windows Mobile)
+  \item Newsletter Tool: Bounce Processing funktioniert, E-Mailadresse Filter (nie spam) eingerichtet
+  \item Newsletter Tool: spf Eintrag getestet
+  \item 404 und 500 Templates im Layout der Website
+  \item robots.txt richtig konfiguriert (exclude /admin)
+  \item Google Analytics Event Tracking wo sinnvoll eingerichtet
+  \item favicon set (iOS, Desktop) erstellt
+  \item Linkaufbau der Seite logisch
+  \item CSS / Javascript Files werden minimiert
+  \item Bilder werden so weit wie möglich komprimiert (\url{https://developers.google.com/pagespeed/})
+  \item Animationen laufen flüssig / logisch
+  \item Deeplink mit History Back funktionieren
+  \item Funktionstests wurden durchgeführt (Formulare, auto Mails etc.)
+  \item Bei Seitenrelaunches URLs der alten Seite wo möglich korrekt umleiten
+  \item humans.txt und/oder Sourcecode Stempel vorhanden
+  \item Bilder haben wo nötigen alt Texte
+  \item Hosting Eintrag im Planer hinzugefügt / aktualisiert
+  \item Inhalt wurde von PL abgenommen
+  \item Letzter Stand Website wurde von Screendesigner kontrolliert
+  \item Impressum mit Hinweis auf allink, à la ``Brand Design, Programmierung: allink.''
+  \item tinypng.org angewendet?
+  \item Evtl. \url{http://whattouse.com/toolkit/web-site-launch-toolkit}
+  \item Sentry Projekt erstellt und mit Django Projekt bzw. Javascript verknüft
+  \item Sentry Anbindung kontrolliert
+  \item Evtl. Cronjob bzw. Celery Deamon eingerichtet
+  \item Newsletter Template mit Mailchimp testen (mit richtigem Inhalt nicht Lorem Ipsum)
+  \item keine Deprecation Warnings
+\end{checklist}
