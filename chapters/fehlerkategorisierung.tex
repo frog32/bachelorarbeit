@@ -1,23 +1,23 @@
 %!TEX root = ../index.tex
-Im Kapitel~\ref{cha:fehlerkatalog} wurden insgesamt 36 Fehlerszenarios Katalogisiert. Um Lösungen für diese Szenarios zu finden, wurden diese zuerst in verschiedene Gruppen eingeteilt.
+Im Kapitel~\ref{cha:fehlerkatalog} sind insgesamt 36 Fehlerszenarios Katalogisiert. Um Lösungen für diese Szenarios zu finden, wurden diese zuerst in verschiedene Gruppen eingeteilt.
 
-\section{Nicht automatisiert Testbare Fehlerszenarios}
+\section{Nicht automatisiert testbare Fehlerszenarios}
 \label{sec:nicht_automatisiert_testbare_fehlerszenarios}
 Einige Fehlerszenarios sind nicht oder nur mit unverhältnismässigem Aufwand automatisiert testbar.
 
 \ref{f:missverhalten}, \ref{f:fourofourhandling}, \ref{f:seitefunktioniertnichtaufmobilengeraeten}, \ref{f:rechtschreibefehler}, \ref{f:falschaufbereitetebilder}, \ref{f:designverletzt}, \ref{f:fehlmanipulationdurchdenkunden}, \ref{f:deeplinksfunktionierennicht}
 
-\section{Teilautomatisiert Testbare Fehlerszenarios}
+\section{Teilautomatisiert testbare Fehlerszenarios}
 \label{sec:teilautomatisiert_testbare_fehlerszenarios}
 Zwei Fehlerszenarios können nicht komplett automatisiert werden, sie können jedoch zu einem hohen Grad durch ein System unterstützt werden.
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
 \label{ssub:kat_abhaengigkeitenmitsicherheitsluecken}
-\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt ein System verwendet welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
+\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler, welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt, ein System verwendet welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:kat_browser_spezifische_probleme}
-\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``Real User Monitoring'' verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerden und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
+\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet, welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``Real User Monitoring'' verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerden und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
 
 \section{Fehlerszenarios welche bereits abgedeckt werden}
 \label{sec:fehlerszenarios_welche_bereits_abgedeckt_werden}
@@ -51,7 +51,7 @@ Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} besch
 
 \section{Fehlerszenarios welche abgedeckt werden müssen}
 \label{sec:fehlerszenarios_welche_abgedeckt_werden_müssen}
-Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert Prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
+Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
 
 \subsubsection{Automatisiert testbar}
 \label{ssub:automatisiert_testbar}

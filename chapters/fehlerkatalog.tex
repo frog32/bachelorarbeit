@@ -1,10 +1,10 @@
 %!TEX root = ../index.tex
 
-Um möglichst alle relevanten Fehlerszenarios zu erfassen, wurden diese Systematisch mit nach Kategorien sortiert erfasst und anschliessend bewertet.
+Um möglichst alle relevanten Fehlerszenarios zu erfassen, wurden diese systematisch nach Kategorien sortiert, erfasst und anschliessend bewertet.
 
 \section{Kontext}
 \label{sec:kontext}
-Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink mit ähnlichen Problemen gemacht wurden.
+Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink mit den entsprechenden Problemen gemacht wurden.
 
 \makeatletter
 \newcounter{fnumber} \setcounter{fnumber}{0}
@@ -20,8 +20,7 @@ Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink m
 
 \subsection{Impact}
 \label{sub:impact}
-Der Schaden welcher durch einen Fehler entstehen kann wurde unabhängig der genauen Funktion einer Webseite in drei Kategorien eingeteilt. Dies lässt ausser acht, dass eine nicht verfügbare Seite bei einem Onlineshop einen Ausfall an Umsatz bedeutet und während der genaue Schaden schwierig zu eruieren ist bei einer Webseite welche die Funktion einer Online-Visitenkarte hat.
-
+Der Schaden, welcher durch einen Fehler entstehen kann, wurde unabhängig der genauen Funktion einer Webseite in drei Kategorien eingeteilt. Dies lässt ausser acht, dass eine nicht verfügbare Seite bei für einen Onlineshop einen Ausfall an Umsatz bedeutet, während der genaue Schaden beim Ausfall einer einfachen Firmenwebseite, welche als Online-Visitenkarte dient, nicht beziffert werden kann. Weiterhin wurde für diese Beurteilung davon ausgegangen, dass die Einstellungen des Browsers und alle weiteren Einstellungen welche dies betreffen, den Standardeinstellungen entsprechen.
 
 \begin{table}[h!]
   \centering
@@ -42,7 +41,7 @@ Der Schaden welcher durch einen Fehler entstehen kann wurde unabhängig der gena
 
 \subsection{Frequenz}
 \label{sub:frequenz}
-Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich. Bei häufig auftauchenden Fehlern wurde in den vorhandenen Logs nachgesehen um zu entscheiden ob diese Täglich oder Wöchentlich auftreten. Bei weniger häufig auftretenden Fehlern wurde nach den letzten vorkommen der Fehler und deren Anzahl entschieden. Fehler welche in einem Webprojekt höchstens einmal vorkommen wurden als jährlich klassifiziert.
+Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich. Bei häufig auftauchenden Fehlern wurde in den vorhandenen Logs nachgesehen um zu entscheiden ob diese täglich oder wöchentlich auftreten. Bei weniger häufig auftretenden Fehlern wurde anhand den letzten Vorkommen des Fehlers entschieden. Fehler welche in einem Webprojekt im Normalfall nur einmal vorkommen, wurden als jährlich klassifiziert.
 
 \begin{table}[h!]
   \centering
@@ -65,7 +64,7 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabell
 
 \subsection{Zeitbedarf bei Eigenimplementierung}
 \label{sub:zeitbedarf_bei_eigenimplementierung}
-Da sämtliche Fehlerszenarios welche automatisiert testbar sind, durch ein Tool abgedeckt werden sollen, der Zeitbedarf einer Eigenentwicklung geschätzt. Wobei die Kategorien Tage und Wochen als realistische Eigenimplementierungen angesehen werden und die Kategorien Monate und Jahre als nicht umsetzbar gelten.
+Um die Entscheidung, welche Fehlerszenarios mit eigenen Mitteln abgedeckt werden sollen zu unterstützen, wurde für jedes Szenario der Zeitbedarf einer Eigenentwicklung geschätzt. Dabei werden die Kategorien ``Tage'' und ``Wochen'' als in der allink umsetzbar angesehen, während die Kategorien ``Monate'' und ``Jahre'' nicht umsetzbar sind.
 
 \begin{table}[h!]
   \centering
@@ -110,15 +109,15 @@ Ein ausgelaufenes Zertifikat führt auf dem Browser zu einer Fehlermeldung und i
 
 \subsubsection{Zertifikat ungültig}
 \label{ssub:zertifikat_ungültig}
-Ein Ungültiges Zertifikat kann durch den Wechsel einer Domain entstehen. Weniger oft kann ein ungültiges Zertifikat auch dadurch entstehen, dass das Zertifikat widerrufen wurde. Der Browser zeigt dann normalerweise eine Warnmeldung an.
+Ein ungültiges Zertifikat kann durch den Wechsel einer Domain entstehen. Weniger häufig entsteht dieser Fehler auch dadurch, dass das betroffene Zertifikat widerrufen wurde. Der Browser zeigt dann eine Warnmeldung an.
 
 \subsubsection{SSL nicht erzwungen}
 \label{ssub:sslnichterzwungen}
-Wenn für eine Webseite eine sichere Verbindung benötigt wird, muss sichergestellt werden, dass Benutzer welche die Webseite nicht über SLL aufrufen, umgeleitet werden damit auch sie SSL verwenden.
+Wenn für eine Webseite eine sichere Verbindung benötigt wird, sollte sichergestellt werden, dass Benutzer, welche die Webseite nicht über SLL aufrufen, umgeleitet werden, damit auch sie SSL verwenden. Ist dies nicht der Fall, ist die Verbindung nicht verschlüsselt.
 
 \subsubsection{Externe Assets ohne SSL}
 \label{ssub:externeassetsohnessl}
-Bei einer Webseite welche über mit SSL geschützt ist, ist es wichtig, dass jede Ressource welche nachgeladen wird HTTPS unterstützt. Ansonsten zeigen die meisten Browser eine Warnung an, da Teile der Webseite nicht geschützt sind.
+Bei einer Webseite welche mit SSL geschützt ist, ist es wichtig, dass jede Ressource, welche nachgeladen wird auch über SSL eingebunden wird. Ansonsten zeigen Browser eine Warnung an, da Teile der Webseite nicht geschützt sind und potenzielle Sicherheitslücken darstellen.
 
 \subsection{DNS}
 \label{sub:fehler_dns}
@@ -136,20 +135,19 @@ Bei einer Webseite welche über mit SSL geschützt ist, ist es wichtig, dass jed
 
 \subsubsection{Domain ausgelaufen}
 \label{ssub:domainausgelaufen}
-Domainnamen werden gewöhnlich im Jahresrythmus bezahlt. Bei nicht bezahlen der Kosten wird einem die Domain wieder entzogen was dazu führt, dass der DNS Eintrag entfernt wird.
+Domainnamen werden gewöhnlich im Jahres-Rhythmus in Rechnung gestellt. Sollte eine solche Rechnung nicht bezahlt werden, wird einem die Domain wieder entzogen, was dazu führt, dass der DNS Eintrag entfernt wird.
 
 \subsubsection{DNS Server nicht verfügbar}
 \label{ssub:dns_server_nicht_verfügbar}
-Für den Fall, dass der DNS Server nicht verfügbar ist, ist dieser normalerweise mehrfach vorhanden. Es kann jedoch trotz Redundanz dazu kommen, dass keine Domains aufgelöst werden können.
+Für den Fall, dass ein DNS Server nicht verfügbar ist, sind gewöhnlich mehrere DNS Server vorhanden. Es kann jedoch trotz Redundanz dazu kommen, dass alle DNS Server ausfallen. Dies kann auch durch menschliches Versagen beim Ändern von DNS Einträgen entstehen.
 
 \subsubsection{DNS Eintrag fehlerhaft}
 \label{ssub:dnseintragfehlerhaft}
-Da die DNS Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern der DNS Einträge Fehler gemacht werden.
-
+Da DNS Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern eines DNS Eintrages Fehler gemacht werden. Dies kann dazu führen, dass die gesamte Zone nicht mehr einwandfrei funktioniert.
 
 \subsubsection{SPF Eintrag fehlerhaft}
 \label{ssub:spfeintragfehlerhaft}
-Der SPF Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain versendet werden dürfen. Ist dieser Eintrag fehlerhaft blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu SPF finden auf der SPF Webseite \url{http://www.openspf.org/}.
+Der SPF Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu SPF finden auf der SPF Webseite \url{http://www.openspf.org/}.
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
@@ -165,11 +163,11 @@ Der SPF Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mi
 
 \subsubsection{Cronjob Fehler}
 \label{ssub:cronjobfehler}
-Ältere Webprojekte benötigen für Aufräumarbeiten einen oder mehrere Cronjobs. Fehler in diesen Cronjobs haben nicht in allen Fällen einen direkten Einfluss auf das Funktionieren der Webseite. Jedoch kann es zu Problemen kommen falls ein solcher Job längere Zeit ausfällt.
+Ältere Webprojekte benötigen für Aufräumarbeiten und wiederkehrende Aufgaben einen oder mehrere Cronjobs. Fehler in diesen Cronjobs haben nicht in allen Fällen einen direkten Einfluss auf das Funktionieren der Webseite. Jedoch kann es zu Problemen kommen, falls ein solcher Job längere Zeit ausfällt.
 
 \subsubsection{Worker Fehler}
 \label{ssub:workerfehler}
-Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webapplikation auszulagern. Falls dieser Worker nicht mehr läuft, oder ein Task nicht endet kann dies dazu führen, dass sich die Taskqueue füllt und neue Tasks nicht mehr abgearbeitet werden können.
+Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webapplikation auszulagern und wiederkehrende Arbeiten zu tätigen. Falls diese Worker nicht mehr laufen, oder ein Task nicht endet, kann dies dazu führen, dass sich die Taskqueue füllt und neue Tasks nicht mehr abgearbeitet werden können.
 
 \subsection{Applikation}
 \label{sub:fehler_applikation}
@@ -192,28 +190,27 @@ Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webappli
 
 \subsubsection{Deprecated Libraries}
 \label{ssub:deprecatedlibraries}
-In Webprojekten werden häufig Libraries von Drittherstellern verwendet. Falls in einer Library eine Funktion entfernt wird, wird dies meist einige Versionen vor dem eigentlichen Entfernen durch eine ``Deprecation Warning'' angekündigt. Diese Warnungen sollten durch den Programmierer bemerkt werden und er sollte wo möglich auf das Verwenden dieser Funktionen verzichten.
+In Webprojekten werden häufig Libraries von Drittherstellern verwendet. Falls in einer Library eine Funktion entfernt wird, wird dies in der Regel einige Versionen vor dem eigentlichen Entfernen durch eine ``Deprecation Warning'' angekündigt. Diese Warnungen sollten durch den Programmierer bemerkt werden und der Programmcode sollte so umgeschrieben werden, dass diese Funktion nicht verwendet wird.
 
 \subsubsection{Unittest Fehler}
 \label{ssub:unittestfehler}
-Um sicherzustellen, dass Programmteile welche funktionieren, auch nach Änderungen am Programmcode noch korrekt arbeiten, werden Unittests geschrieben. Diese sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder ausgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, werden nicht nach jeder Änderung alle Tests erneut ausgeführt. Es kann darum vorkommen, dass Programmcode die Unittests nicht besteht und dennoch auf produktiv Systemen läuft.
+Um sicherzustellen, dass Programmteile, welche einmal funktioniert haben, auch nach Änderungen am Programmcode noch funktionieren, werden Unittests geschrieben welche den entsprechenden Code testen. Unittests sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder durchgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, testet man nicht nach jeder Änderung alle Tests erneut. Es kann darum passieren, dass Programmcode welcher die Unittests nicht besteht in ein produktives Systemen eingespielt wird.
 
 \subsubsection{Fehler im Produktivsystem}
 \label{ssub:fehlerimproduktivsystem}
-Ein Fehler beim bearbeiten eines Requests wird dem Benutzer mit einer Meldung und dem Statuscode 500 mitgeteilt. Da nicht alle Benutzer solche Fehler melden wird zusätzlich ein Fehlerprotokoll angelegt.
+Ein Fehler beim Bearbeiten eines Requests wird dem Benutzer mit einer Meldung angezeigt und gemäss dem HTTP1.1\cite{rfc2616} Standard mit einem Statuscode 500 versehen. Da nicht alle Benutzer solche Fehler melden, wird zusätzlich ein Fehlerprotokoll angelegt.
 
 \subsubsection{Missverhalten}
 \label{ssub:missverhalten}
-Als Missverhalten wird jegliches Verhalten einer Webseite angesehen welches nicht dem vom Entwickler vorgesehenen Verhalten entspricht. Dabei muss es sich nicht zwingend um einen Fehler im Programmcode handeln.
+Als Missverhalten wird jegliches Verhalten einer Webseite angesehen, welches nicht dem vorgesehenen Verhalten entspricht. Dabei muss es sich nicht zwingend um einen Fehler im Programmcode handeln. Missverhalten liegt beispielsweise vor, wenn ein Klick auf einen Menupunkt in der Navigation auf eine offensichtlich falsche Seite führt oder falls nach dem Ausfüllen eines Formulars, nicht wie versprochen eine Bestätigungs-E-Mail an den Benutzer versendet, sondern ein Eintrag in der Datenbank erstellt wird.
 
 \subsubsection{Debug Modus}
 \label{ssub:debugmodus}
-Die meisten Webframeworks besitzen einen Debug Modus. Dieser Debug Modus ist für Testsysteme und Entwicklungssysteme vorgesehen. Da Applikationen im Debug Modus nicht optimal laufen und auch Memory Leaks auftreten können sollte dieser nicht in Produktiv eingesetzten Systemen verwendet werden.
+Die meisten Webframeworks besitzen einen Debug Modus welcher für Testsysteme und Entwicklungssysteme vorgesehen ist. Da Applikationen im Debug Modus meistens lansamer laufen, mehr Speicher benötigen und auch mehr Ausgaben gemacht werden, sollte dieser nicht in produktiv eingesetzten Systemen verwendet werden.
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
 \label{ssub:abhaengigkeitenmitsicherheitsluecken}
-Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliotheken haben, sind sie von Sicherheitslücken der verwendeten Bibliotheken betroffen. Um zu verhindern, dass eine Webapplikation von einer Sicherheitslücke betroffen ist, muss die verursachende Abhängigkeit durch eine neuere Version welche diese Lücke schliesst ersetzt werden.
-
+Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliotheken haben, können sie von Sicherheitslücken der verwendeten Bibliotheken betroffen sein. Um zu verhindern, dass eine Webapplikation von einer Sicherheitslücke betroffen ist, muss die verursachende Abhängigkeit durch eine neuere Version, welche diese Lücke schliesst, ersetzt werden.
 
 \section{Frontend}
 \label{sec:frontend}
@@ -234,23 +231,23 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
 
 \subsubsection{Javascript Fehler}
 \label{ssub:javascriptfehler}
-Da Javascript nicht in allen Browsern identisch implementiert ist gibt es immer wieder Probleme mit browserseitigen Applikationen welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werde. Jedoch sollte man über geeignete Fehlerreporting Tools bemerken, falls Benutzer einer Webseite Probleme beim ausführen von Javascript haben.
+Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit browserseitigen Applikationen welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
 
 \subsubsection{CSS Fehler}
 \label{ssub:cssfehler}
-Fehler im CSS Code haben nicht zwingend in allen Browsern die selben Auswirkungen, da nicht alle Browser CSS genau gleich interpretieren. Die Auswirkungen können von einer fehlerhaften Angabe (Grösse eines Objektes) bis zum nicht interpretieren der ganzen Datei führen. Letzteres kann dazu führen, dass die Seite ohne CSS geladen wird was für gewöhnlich einer schwarz-weiss Seite entspricht.
+Fehler im CSS Code haben nicht in allen Browsern dieselben Auswirkungen, da nicht alle Browser CSS exakt identisch interpretieren. Die Auswirkungen können von einer fehlerhaften Angabe (Grösse eines Objektes) bis zum nicht Interpretieren der ganzen Datei führen. Letzteres kann dazu führen, dass die Darstellung der Seite stark von der vorgesehenen Darstellung abweicht.
 
 \subsubsection{Seite lädt zu langsam}
 \label{ssub:seite_lädt_zu_langsam}
-Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer welche eine Seite frühzeitig verlassen\footnote{\url{http://rigor.com/2012/11/how-page-load-time-affects-bounce-rates/}}. Darum ist es wichtig, dass eine Webseite möglichst schnell geladen werden kann. Diese Zeit ist von diversen Faktoren abhängig und muss darum immer wieder überprüft werden.
+Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer welche eine Seite frühzeitig verlassen\footnote{\url{http://rigor.com/2012/11/how-page-load-time-affects-bounce-rates/}}. Deswegen ist es wichtig, dass eine Webseite möglichst schnell geladen werden kann. Diese Ladezeit ist von diversen Faktoren abhängig und muss darum stetig überprüft werden.
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:browserspezifischeprobleme}
-Nicht alle Browser die gleiche Rendering-Engine verwenden und auch Javascript nicht auf allen Browsern exakt identisch ist sind Webseiten meist nicht ohne Aufwand auf allen Browsern lauffähig.
+Nicht alle Browser verwenden dieselbe Rendering-Engine und auch Javascript ist nicht auf allen Browsern exakt identisch implementiert. Daher gibt es Fehler welche durch eine Eigenheit eines spezifischen Browsers verursacht werden, während dieselbe Webseite auf anderen Browsern einwandfrei funktioniert.
 
 \subsubsection{Assets fehlen}
 \label{ssub:assetsfehlen}
-Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen HTML-Datei noch Bilder, Stylesheets und Javascripts verwendet. Diese zusätzlichen Dateien, auch Assets genannt, werden vom Browser geladen. Sind im Quelltext einer Webseite Assets vermerkt welche nicht verfügbar sind, zögert dies die Darstellung der Webseite unnötig hinaus.
+Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen HTML-Datei noch Bilder, Stylesheets und Javascripts verwendet. Diese Dateien, auch Assets genannt, werden vom Browser geladen. Können ein oder mehrere Assets nicht geladen werden, wird die Webseite nicht korrekt dargestellt.
 
 \subsubsection{Externe Abhängigkeiten nicht verfügbar}
 \label{ssub:externeabhaengigkeiten_nicht_verfügbar}
@@ -258,7 +255,7 @@ Insbesondere Schriften aber auch Javascript Bibliotheken werden teilweise über 
 
 \subsubsection{Seite funktioniert nicht auf mobilen Geräten}
 \label{ssub:seitefunktioniertnichtaufmobilengeraeten}
-Da der der Anteil mobiler Geräte welche eine Webseite besuchen immer grösser wird, ist es wichtig, dass jede Webseite auch auf mobilen Entgeräten funktioniert. Da diese Geräte sehr divers sind, muss für jedes Projekt festgelegt werden, auf welchen Geräten die Webseite funktionieren muss.
+Da der der Anteil mobiler Geräte, welche eine Webseite besuchen immer grösser wird, ist es wichtig, dass jede Webseite auch auf mobilen Endgeräten funktioniert. Da es bei solchen Geräten grosse Unterschiede gibt, muss für jedes Projekt festgelegt werden, auf welchen Geräten die Webseite funktionieren muss.
 
 
 \section{Inhalt}
@@ -278,22 +275,23 @@ Da der der Anteil mobiler Geräte welche eine Webseite besuchen immer grösser w
 
 \subsubsection{Seite enthält tote Links}
 \label{ssub:seite_enthält_tote_links}
-Da URL's im Internet einem ständigen Wandel unterstellt sind, kann es vor kommen, dass ein Link plötzlich ins Leere zeigt. Solche Links werden tote Links genannt und sind normalerweise nicht erwünscht, da sie die Benutzer einer Webseite auf eine Fehlermeldung weiterleiten.
+Da URL's im Internet einem ständigen Wandel unterstellt sind, kann es vorkommen, dass ein Link plötzlich ins Leere zeigt. Solche Links werden tote Links genannt und sind normalerweise nicht erwünscht, da sie die Benutzer einer Webseite auf eine Fehlermeldung weiterleiten.
 
 \subsubsection{Rechtschreibefehler}
 \label{ssub:rechtschreibefehler}
+Rechtschreibefehler sind nicht erwünscht auf einer Webseite. In den meisten Fällen ist der durch Schreibfehler entstehende Schaden jedoch gering.
 
 \subsubsection{Falsch aufbereitete Bilder}
 \label{ssub:falsch_aufbereitete_bilder}
-Bandbreite ist für die meisten Benutzer kein Thema, wenn sie von einem Computer über einen gewöhnlichen Internetanschluss im Internet surfen. Ist ein Benutzer über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Darum ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
+Viele Benutzer verfügen zuhause oder bei der Arbeit über eine Breitband Internetverbindung, dadurch ist heute der Einfluss von Dateigrössen auf die Ladezeit nicht gleich entscheidend wie vor einigen Jahren. Ist ein Benutzer jedoch über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Desswegen ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
 
 \subsubsection{Design verletzt}
 \label{ssub:design_verletzt}
-Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Seite entworfen hat, meist aktiv am Kontrollieren, ob das Design überall richtig umgesetzt wurde. Danach merkt der Screendesigner meist nur durch Zufall falls das Design, einer Seite durch zufügen von unpassendem Inhalt oder durch falsch Verwenden von Elementen verletzt wurde.
+Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Seite entworfen hat, meist aktiv am Kontrollieren, ob das Design überall richtig umgesetzt wurde. Danach bemerkt der Screendesigner meistens nicht, oder nur durch Zufall, dass das Design, einer Seite durch zufügen von unpassendem Inhalt oder durch falsch Verwenden von Elementen verletzt wurde.
 
 \subsubsection{Fehlmanipulation durch den Kunden}
 \label{ssub:fehlmanipulationdurchdenkunden}
-Der Administrationsbereich einer Webseite bietet meist mehr Möglichkeiten als dringend benötigt werden. Der Kunde wird instruiert wie er Änderungen an der Webseite tätigen kann und worauf er dabei achten muss. Hält sich der Kunde nicht an diese Instruktionen kann es passieren, dass die Webseite nicht mehr korrekt dargestellt wird, oder dass ein Teil der Webseite nicht aufrufbar ist.
+Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als dringend benötigt werden. Der Kunde wird instruiert wie er Änderungen an der Webseite tätigen kann und worauf er dabei achten muss. Hält sich der Kunde nicht an diese Instruktionen kann es passieren, dass die Webseite nicht mehr korrekt dargestellt wird, oder dass ein Teil der Webseite nicht aufrufbar ist.
 
 \section{SEO and Sharing}
 \label{sec:seo_and_sharing}
@@ -314,10 +312,11 @@ Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite 
 
 \subsubsection{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}
 \label{ssub:_metadescriptionundseitentitel_fehlerhaft_oder_nicht_vorhanden}
-Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die ``Meta Description'' zurück. Fehlen diese Angaben versuchen Suchmaschinen den Titel und die Beschreibung aus einer Webseite zu extrahieren. Diese Resultate sind jedoch meist weniger gut als von Hand erfasste Titel und Beschreibungen. Dies führt dazu, dass Benutzer weniger auf diese Suchergebnisse klicken.
+Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die ``Meta Description'' zurück. Fehlen diese Angaben, versuchen Suchmaschinen den Titel und die Beschreibung aus einer Webseite zu extrahieren. Diese Resultate sind jedoch meist weniger gut als von Hand erfasste Titel und Beschreibungen. Dies führt dazu, dass Benutzer weniger auf diese Suchergebnisse klicken.
 
 \subsubsection{Deeplinks funktionieren nicht}
 \label{ssub:deeplinksfunktionierennicht}
+Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigene URL besitzen. Auf Webseiten welche AJAX Technologien verwenden ist dies nicht immer einfach umsetzbar und muss darum kontrolliert werden.
 
 \section{Programmcode}
 \label{sec:programmcode}
@@ -333,8 +332,8 @@ Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die
 
 \subsubsection{Code Conventions nicht eingehalten}
 \label{ssub:codeconventions_nicht_eingehalten}
-Um häufiges Umformatieren von Programmcode zu vermeiden sollten sich alle Programmierer innerhalb eines Projektes an die jeweils gültigen Code Konventionen halten. Diese bestehen meist aus einem Style-Guide und Namenskonventionen.
+Um häufiges Umformatieren von Programmcode zu vermeiden sollten sich alle Programmierer innerhalb eines Projektes an die zuvor festgelegen Code Konventionen halten. Diese bestehen meist aus einem Style-Guide und Namenskonventionen.
 
 \subsubsection{Programmcode enthält Syntaxfehler}
 \label{ssub:programmcode_enthält_syntaxfehler}
-In Programmiersprachen welche durch einen Interpreter ausgeführt werden, werden nicht zwingend alle Syntaxfehler und Tippfehler während der Entwicklung gefunden. Solche Fehler sollten jedoch gefunden werden bevor ein Programm in einer Produktivumgebung eingesetzt wird.
+In interpretierten Programmiersprachen, werden nicht zwingend alle Syntaxfehler und Tippfehler während der Entwicklung gefunden. Diese können unter Umständen erst beim Verwenden von gewissen Funktionen zutage kommen. Da in den meisten Programmiersprachen Syntaxfehler durch statische Analyse gefunden werden können, sollten diese nie in einem Produktivsystem landen.

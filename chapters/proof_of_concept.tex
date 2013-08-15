@@ -8,22 +8,29 @@ Der Punkt \ref{f:deprecatedlibraries} ist theoretisch automatisch testbar. Man k
 \label{sec:wiederkehrende_manuelle_tests}
 Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt, welche bei Webprojekten nach dem Go-Live regelmässig durchgegangen wird. Diese Checkliste ist in Tabelle~\ref{tab:recuring_checklist} ersichtlich.
 
+\makeatletter
+\newcounter{tnumber} \setcounter{tnumber}{0}
+\renewcommand\thetnumber{T\arabic{tnumber}}
+\newcommand{\newtnumber}[3]%
+{%
+\midrule%
+\refstepcounter{tnumber}%
+\expandafter\xdef\csname t#2\endcsname {#1}%
+\thetnumber\label{t:#2} & #1 & #3 \\
+}
+\makeatother
+
 \begin{table}[ht]
   \centering
-  \begin{tabular}{l p{10cm}}
-  \toprule
-    1. & Funktioniert die Webseite und alle Applikationen?\\
-  \hline
-    2. & Sind die verwendeten Versionen von Django, feincms etc noch aktuell? (nur neuere Patch Releases keine Versionssprünge)\\
-  \hline
-    3. & Funktioniert die Seite in den neusten Versionen von Safari, Firefox, Chrome und IE?\\
-  \hline
-    4. & Sind auf der Startseite und den Landingpages offensichtliche Rechtschreibefehler?\\
-  \hline
-    5. & Sind die verwendeten Bilder richtig aufbereitet?\\
-  \hline
-    6. & Wurde das Design offensichtlich verletzt?\\
-  \bottomrule
+  \begin{tabular}{l>{\raggedright} p{10cm} p{2cm}}
+    \toprule \textbf{Nr.} & \textbf{Test} & \textbf{Abgedeckte Fehlerszenarios} \\
+    \newtnumber{Funktioniert die Webseite erwartungsgemäss? Ist offensichtliches Fehlverhalten vorhanden?}{missverhalten}{\ref{f:missverhalten}}
+    \newtnumber{Sind die verwendeten Versionen von Django, feincms etc. noch aktuell?}{abhaengigkeitenmitsicherheitsluecken}{\ref{f:abhaengigkeitenmitsicherheitsluecken}}
+    \newtnumber{Funktioniert die Seite in den aktuellen Versionen von Safari, Firefox, Chrome und IE?}{browserspezifischeprobleme}{\ref{f:browserspezifischeprobleme}}
+    \newtnumber{Sind auf der Startseite und den Landingpages offensichtliche Rechtschreibefehler?}{rechtschreibefehler}{\ref{f:rechtschreibefehler}}
+    \newtnumber{Sind die verwendeten Bilder richtig aufbereitet?}{falschaufbereitetebilder}{\ref{f:falschaufbereitetebilder}}
+    \newtnumber{Wurde das Design offensichtlich verletzt?}{designverletzt}{\ref{f:designverletzt}}
+    \bottomrule
   \end{tabular}
   \caption{Checkliste für wiederkehrende Überprüfungen}
   \label{tab:recuring_checklist}
