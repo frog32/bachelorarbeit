@@ -1,10 +1,10 @@
 %!TEX root = ../index.tex
 
-Der Markt für Tools welche die Qualitätssicherung von Softwareprojekten unterstützt ist ziemlich gross. Anhand der Fehlerszenarios welche nicht durch ein bestehendes System abgedeckt werden können die zu evaluierenden Tools stark eingegrenzt werden. So ist zum Beispiel kein Tool welches den Programmcode mittels statischer Analyse bewertet notwendig, da eine solche Analyse bereits in \ref{b:precommithook} durchgeführt wird. Um die offenen Fehlerszenarios abzudecken wurde in den Bereichen Monitoring und Continuous Integration nach geeigneten Lösungen gesucht.
+Der Markt für Tools welche die Qualitätssicherung von Softwareprojekten unterstützt, ist ziemlich gross. Anhand der Fehlerszenarios, welche nicht durch ein bestehendes System abgedeckt werden, können die zu evaluierenden Tools stark eingegrenzt werden. So ist zum Beispiel kein Tool welches den Programmcode mittels statischer Analyse bewertet notwendig, da eine solche Analyse bereits in \ref{b:precommithook} durchgeführt wird. Um die offenen Fehlerszenarios abzudecken wurde in den Bereichen Monitoring und Continuous Integration nach geeigneten Lösungen gesucht.
 
 \section{Monitoring}
 \label{sec:monitoring_evaluation}
-Eine grosse Zahl an Produkten existiert mit welchen man eine Webapplikation in regelmässigen Abständen überprüfen kann. Viele Produkte greifen nur von ausserhalb auf die Webapplikaiton und benachrichtigen falls diese nicht wie zuvor definiert verfügbar sein sollte. Einige Tools setzen jedoch bereits in der Applikation an und können da auch die Zeit welche eine Applikation für eine Anfrage braucht, oder die Menge und der Zeitbedarf von Datenbankabfragen messen. Ein Real User Monitoring welches direkt im Browser des Benutzers läuft, berücksichtigt zusätzlich die Geschwindigkeit der Internet-Verbindung und den verwendeten Browser.
+Es existiert eine grosse Zahl an Produkten, mit welchen man eine Webapplikation in regelmässigen Abständen überprüfen kann. Viele Produkte greifen nur von ausserhalb auf die Webapplikaiton zu und lösen eine Benachrichtigung aus, falls die Webapplikaiton nicht wie zuvor definiert verfügbar ist. Einige Tools setzen jedoch bereits in der Applikation an und können da auch die Zeit welche eine Applikation für eine Anfrage braucht, oder die Menge und der Zeitbedarf von Datenbankabfragen messen. Ein Real User Monitoring welches direkt im Browser des Benutzers läuft, berücksichtigt zusätzlich die Geschwindigkeit der Internet-Verbindung und den verwendeten Browser.
 
 \ref{f:zertifikatausgelaufen}, \ref{f:zertifikatungultig}, \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:domainausgelaufen}, \ref{f:dnsservernichtverfuegbar}, \ref{f:dnseintragfehlerhaft}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:seitelaedtzulangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}, \ref{f:seiteenthaelttotelinks}
 
@@ -35,10 +35,10 @@ Eine grosse Zahl an Produkten existiert mit welchen man eine Webapplikation in r
   \label{tab:stillalive}
 \end{table}
 
-Scheidet schon durch die hohen Kosten aus. Ist eher für Firmen welche eine einzige Webapplikation überwachen wollen geeignet.
+Stillalive scheidet schon durch die hohen Kosten aus und ist eher für Firmen welche eine einzige Webapplikation überwachen wollen geeignet.
 
-\subsubsection{Newrelic}
-\label{ssub:newrelic}
+\subsubsection{New Relic}
+\label{ssub:new_relic}
 
 \begin{table}[H]
   \centering
@@ -82,7 +82,7 @@ Scheidet schon durch die hohen Kosten aus. Ist eher für Firmen welche eine einz
   \label{tab:new_relic_enterprise}
 \end{table}
 
-New Relic kann eine Webapplikation mit einem Statistischen Profiler durchleuchten und somit einen Einblick in die laufende Applikation gewähren. Zusätzlich bietet es zentrales Errorreporting, Real User Monitoring und viele kleinere Tools.
+New Relic kann eine Webapplikation mit einem statistischen Profiler durchleuchten und somit einen Einblick in die laufende Applikation gewähren. Zusätzlich bietet es zentrales Errorreporting, \acrlong{rum} \glsadd{real_user_monitoring} und viele kleinere Tools.
 
 \subsubsection{Pingdom}
 \label{ssub:pingdom}
@@ -108,7 +108,7 @@ New Relic kann eine Webapplikation mit einem Statistischen Profiler durchleuchte
   \label{tab:pingdom}
 \end{table}
 
-Für Firmen welche eine einzige Webseite oder Webapplikation entwickeln bietet sich Pingdom an. Es bietet neben einer Push Notification fähigen iOS Applikation auch Real User Monitoring.
+Für Firmen, welche eine einzige Webseite oder Webapplikation entwickeln, bietet sich Pingdom an. Es bietet neben einer Push Notification fähigen iOS Applikation auch \acrlong{rum} \glsadd{real_user_monitoring}.
 
 \subsubsection{Status Cake}
 \label{ssub:status_cake}
@@ -134,7 +134,7 @@ Für Firmen welche eine einzige Webseite oder Webapplikation entwickeln bietet s
   \label{tab:status_cake}
 \end{table}
 
-Status Cake bietet ziemlich viel wenn man den niedrigen Preis bedenkt. Im Preisplan Superior ist ein automatisiertes einfügen von neuen Webseiten welche zu testen sind möglich.
+Status Cake bietet viel für den Preis den man bezahlt. Im Preisplan Superior ist ein automatisiertes Einfügen von neuen Webseiten, welche zu testen sind möglich. Seit kurzem bietet Status Cake aus \acrlong{rum} \glsadd{real_user_monitoring}.
 
 \subsubsection{Web on Duty}
 \label{ssub:web_on_duty}
@@ -160,24 +160,24 @@ Status Cake bietet ziemlich viel wenn man den niedrigen Preis bedenkt. Im Preisp
   \label{tab:web_on_duty}
 \end{table}
 
-Web on Duty kann keine ungültige oder abgelaufene SSL-Zertifikate detektieren. Lässt man es eine Webseite mit einem ungültigen Zertifikat überprüfen meldet es keinen Fehler.
+Web on Duty kann keine ungültige oder abgelaufene \acrshort{ssl}-Zertifikate detektieren. Lässt man es eine Webseite mit einem ungültigen Zertifikat überprüfen, meldet es keinen Fehler.
 
 \subsection{Entscheid}
 \label{sub:entscheid_monitoring}
-Es lassen sich grundsätzlich alle automatisiert Testbaren Fehlerszenarios mit Eigenentwicklungen abdecken, der Aufwand um dies zu erreichen ist aber nicht verhältnismässig. Da nicht ein Produkt evaluiert wird, sondern eine Kombination aus mehreren, gibt es zu viele einzelne Kombinationen um auf jede mögliche einzugehen. Die möglichen Kombinationen wurden als mehrkriterieles Optimierungproblem angegangen. So wurden Lösungen welche von besseren Lösungen dominiert wurden ausgeschlossen und in der daraus entstehenden Lösungsmenge zwei mögliche Lösungen betrachtet.
+Es lassen sich grundsätzlich alle automatisiert testbaren Fehlerszenarios mit Eigenentwicklungen abdecken, der Aufwand um dies zu erreichen ist aber nicht verhältnismässig. Da nicht ein Produkt evaluiert wird, sondern eine Kombination aus mehreren, gibt es zu viele einzelne Kombinationen um auf jede mögliche einzugehen. Die möglichen Kombinationen wurden als mehrkriterieles Optimierungproblem angegangen. So wurden Lösungen welche von besseren Lösungen dominiert wurden ausgeschlossen und in der daraus entstehenden Lösungsmenge zwei mögliche Lösungen betrachtet.
 
 
-Mit NewRelic standard und Status Cake bleiben folgende Punkte noch offen:
+Mit New Relic Standard und Status Cake bleiben folgende Punkte noch offen:
 
 \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}
 
-Mit NewRelic enterprise und Status Cake und bleiben folgende Punkte noch offen:
+Mit New Relic Enterprise und Status Cake und bleiben folgende Punkte noch offen:
 
 \ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}
 
 \section{Continuous Integration}
 \label{sec:continuous_integration_evaluation}
-Um das Fehlerszenario \ref{f:unittestfehler} automatisiert abzudecken wird ein System benötigt welches jeweils den aktuellen Programmcode automatisch überprüft. Es gibt diverse Continous Integration Lösungen welche sich für diese Aufgabe eignen. Bei Django Projekten sind die beiden CI Systeme Travis und Jenkins am weitesten verbreitet. Weiterhin wurde auch das in Python geschriebe Buildbot evaluiert.
+Um das Fehlerszenario \ref{f:unittestfehler} automatisiert abzudecken wird ein System benötigt, welches jeweils den aktuellen Programmcode automatisch überprüft. Es gibt diverse Continous Integration Lösungen welche sich für diese Aufgabe eignen. Bei Django Projekten sind die beiden \acrshort{ci} Systeme Travis und Jenkins am weitesten verbreitet. Weiterhin wurde auch das in Python geschriebe Buildbot evaluiert.
 
 \begin{enumerate}
   \item https://travis-ci.org
@@ -187,19 +187,19 @@ Um das Fehlerszenario \ref{f:unittestfehler} automatisiert abzudecken wird ein S
 
 \subsection{Anforderungen}
 \label{sub:anforderungen}
-Da die allink nicht wie viele andere Benutzer eines CI Systems ein einziges Produkt entwickelt, sondern viele einzelne Projekte betreibt, ist nicht jedes System geeignet. Weiterhin soll auch hier gemäss Anforderung \ref{a:einfach_implementierbar} möglichst kein zusätzlicher Aufwand für jedes einzelne Projekt entstehen.
+Da die allink nicht wie viele andere Benutzer eines \acrshort{ci} Systems ein einziges Produkt entwickelt, sondern viele einzelne Projekte betreibt, ist nicht jedes System geeignet. Weiterhin soll auch hier gemäss Anforderung \ref{a:einfach_implementierbar} möglichst kein zusätzlicher Aufwand für jedes einzelne Projekt entstehen.
 
 \subsection{Entscheid}
 \label{sub:entscheid_ci}
-Da die allink keinen eigenen CI Server betreiben will, kommen nur Systeme in Frage, welche auch als Service angeboten werden. Daher is Buildbot basiertes System für allink nicht geeignet.
+Da die allink keinen eigenen \acrshort{ci} Server betreiben will, kommen nur Systeme in Frage, welche auch als Service angeboten werden. Daher ist ein Buildbot basiertes System für allink nicht geeignet.
 
-Zu den zwei verbleibenden Systemen wurde jeweils ein günstiger Anbieter welcher dieses Produkt als Service anbietet gesucht um sicherzustellen, dass ein solcher vorhanden ist. So wurde für Travis welches Open Source ist, vom Hersteller auch für Business-Kunden angeboten. Dieser Service findet sich unter \url{https://travis-ci.com} und ist zur Zeit nur mit einer Einladung verfügbar. Jenkins ist bei \url{http://www.cloudbees.com/} als Service erhältlich.
+Zu den zwei verbleibenden Systemen wurde jeweils ein günstiger Anbieter, welcher dieses Produkt als Service anbietet, gesucht um sicherzustellen, dass ein solcher vorhanden ist. So wird für Travis, welches Open Source ist, vom Hersteller auch für Business-Kunden angeboten. Dieser Service findet sich unter \url{https://travis-ci.com} und ist zur Zeit nur mit einer Einladung verfügbar. Jenkins ist bei \url{http://www.cloudbees.com/} als Service erhältlich.
  
-Da in der allink zum Teil schon Erfahrungen mit dem Umgang mit Travis bestehen und dieser Service Anforderungen erfüllt, wurde in Absprache mit der Informatik Leitung in die Entscheidung gefällt, Travis zu verwenden.
+Da in der allink zum Teil schon Erfahrungen im Umgang mit Travis bestehen und dieser Service alle Anforderungen erfüllt, entschloss man sich in Absprache mit der Informatik Leitung dazu, Travis zu verwenden.
 
 \section{Ergebnis}
 \label{sec:ergebnis}
-Um alle Fehlerszenarios abzudecken müssen drei neue Systeme welche alle als Service angeboten werden bei allink eingeführt werden. Tabelle~\ref{tab:neue_systeme} zeigt eine Übersicht dieser neuen Systeme. Der allink.planer wird erweitert, so dass er die nicht durch diese neuen Systeme abgedeckten Fehlerszenarios welche aber automatisiert testbar sind abdecken kann.
+Um alle Fehlerszenarios abzudecken, müssen drei neue Systeme, welche alle als Service angeboten werden, bei allink eingeführt werden. Tabelle~\ref{tab:neue_systeme} zeigt eine Übersicht dieser neuen Systeme. Der allink.planer wird erweitert, sodass er die nicht durch diese neuen Systeme abgedeckten Fehlerszenarios, welche aber automatisiert testbar sind, abdecken kann.
 
 \makeatletter
 \newcounter{lnumber} \setcounter{lnumber}{0}

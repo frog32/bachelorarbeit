@@ -94,10 +94,15 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
 
 \usepackage{array,ragged2e}
 
+
 % glossary
-\usepackage[toc, numberedsection, acronym, numberline, nonumberlist]{glossaries}
+\usepackage[toc, numberedsection, acronym, numberline, xindy]{glossaries}
+
+\makeglossaries
+\include{glossary}
 
 \usepackage[]{hyperref}
+
 \hypersetup{
   bookmarks=true,         % show bookmarks bar?
   unicode=true,           % non-Latin characters in Acrobat’s bookmarks
@@ -151,10 +156,6 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \end{list}
 }
 
-\makeglossaries
-\include{glossary}
-
-
 %  --------------------------------------------------------------------------
 %  Start Document
 %  --------------------------------------------------------------------------
@@ -165,6 +166,7 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
     Studierender - Marc Egli\\
 	Auftraggeber - Silvan Spross\\
     Projektbetreuer - Beat Seeliger\\
+    Experte - Michele De Lorenzi\\
 	\\
 	ZHAW}
 
@@ -222,15 +224,24 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \label{cha:proof_of_concept}
   \input{chapters/proof_of_concept.tex}
   
-  \chapter{Überprüfung der Anforderungen}
-  \label{cha:überprüfung_der_anforderungen}
-  \input{chapters/ueberpruefung_der_anforderungen.tex}
+  \chapter{Abdeckung der Fehlerszenarios}
+  \label{cha:abdeckung_der_fehlerszenarios}
+  \input{chapters/abdeckung_der_fehlerszenarios.tex}
     
   \chapter{Reflexion}
   \label{cha:reflexion}
   \input{chapters/reflexion.tex}
   
   \appendix
+  
+  \chapter{Aufgabenstellung}
+  \label{cha:aufgabenstellung}
+  \input{chapters/aufgabenstellung.tex}
+  
+  \chapter{Projektplanung}
+  \label{cha:projektplanung}
+  \input{chapters/projektplanung.tex}
+  
   \chapter{Dokumente}
   \label{cha:dokumente}
   \input{chapters/dokumente.tex}
@@ -239,7 +250,6 @@ bibliography=totocnumbered % Lit.zeichnis in Inhaltsverzeichnis aufnehmen
   \listoftables
   % \lstlistoflistings
   
-  \glsaddall
   \printglossaries
   
   \nocite{*}

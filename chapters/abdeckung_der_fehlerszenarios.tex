@@ -1,4 +1,6 @@
 %!TEX root = ../index.tex
+Da allen Fehlerszenarios aus Kapitel~\ref{cha:fehlerkatalog} mit geeigneten Massnahmen vorgebeugt werden soll, wurde kontrolliert, ob jedes Senario mit mindestens einer Massnahme Rechnung getragen wird. Diese Massnahmen verhindern im optimalen Fall, dass ein Fehler auftreten kann, mindestens aber, werden die Fehler bemerkt, damit sie von einem Mitarbeiter von allink behoben werden können. Tabelle~\ref{tab:abdeckung_der_fehlerszenarios} zeigt auf, welche Fehlerszenarios von welchen Massnahmen abgedeckt werden.
+
 \begin{longtable}{l>{\raggedright}p{7cm} p{6cm}}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Abgedeckt durch} \\
     \midrule\ref{f:zertifikatausgelaufen} & \fzertifikatausgelaufen & \ref{l:statuscake} \lstatuscake \\
@@ -38,6 +40,6 @@
     \midrule\ref{f:codeconventions} & \fcodeconventions & \ref{b:precommithook} \bprecommithook, \ref{l:travis} \ltravis \\
     \midrule\ref{f:syntaxfehler} & \fsyntaxfehler & \ref{b:precommithook} \bprecommithook, \ref{l:travis} \ltravis \\
     \bottomrule
-    \caption[Abdeckung der Fehlerszenarios]{Abdeckung der Fehlerszenarios}
-    \label{tab:ueberpruefung_der_anforderungen}
+    \caption{Abdeckung der Fehlerszenarios}
+    \label{tab:abdeckung_der_fehlerszenarios}
 \end{longtable}

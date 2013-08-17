@@ -88,66 +88,66 @@ Um die Entscheidung, welche Fehlerszenarios mit eigenen Mitteln abgedeckt werden
 \section{Backend}
 \label{sec:backend}
 
-\subsection{SSL}
+\subsection{\acrshort{ssl}}
 \label{sub:fehler_ssl}
 
 \begin{longtable}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Zertifikat ausgelaufen}{zertifikatausgelaufen}{3}{1}{1}
     \newfnumber{Zertifikat ungültig}{zertifikatungultig}{3}{1}{1}
-    \newfnumber{SSL nicht erzwungen}{sslnichterzwungen}{2}{1}{1}
-    \newfnumber{Externe Assets ohne SSL}{externeassetsohnessl}{2}{1}{2}
+    \newfnumber{\acrshort{ssl} nicht erzwungen}{sslnichterzwungen}{2}{1}{1}
+    \newfnumber{Externe Assets ohne \acrshort{ssl}}{externeassetsohnessl}{2}{1}{2}
     \bottomrule
-    \caption[Mögliche Fehler SSL]{Mögliche Fehler SSL}
+    \caption[Mögliche Fehler \acrshort{ssl}]{Mögliche Fehler \acrshort{ssl}}
     \label{tab:fehler_ssl}
 \end{longtable}
 
 
 \subsubsection{Zertifikat ausgelaufen}
 \label{ssub:zertifikatausgelaufen}
-Ein ausgelaufenes Zertifikat führt auf dem Browser zu einer Fehlermeldung und ist grundsätzlich ein Sicherheitsrisiko. Da ein SSL Zertifikat normalerweise eine Gültigkeit von einem oder mehreren Jahren hat, sind diese Fehler eher selten.
+Ein ausgelaufenes Zertifikat führt auf dem Browser zu einer Fehlermeldung und ist grundsätzlich ein Sicherheitsrisiko. Da ein \acrshort{ssl} Zertifikat normalerweise eine Gültigkeit von einem oder mehreren Jahren hat, sind diese Fehler eher selten.
 
 \subsubsection{Zertifikat ungültig}
 \label{ssub:zertifikat_ungültig}
 Ein ungültiges Zertifikat kann durch den Wechsel einer Domain entstehen. Weniger häufig entsteht dieser Fehler auch dadurch, dass das betroffene Zertifikat widerrufen wurde. Der Browser zeigt dann eine Warnmeldung an.
 
-\subsubsection{SSL nicht erzwungen}
+\subsubsection{\acrshort{ssl} nicht erzwungen}
 \label{ssub:sslnichterzwungen}
-Wenn für eine Webseite eine sichere Verbindung benötigt wird, sollte sichergestellt werden, dass Benutzer, welche die Webseite nicht über SLL aufrufen, umgeleitet werden, damit auch sie SSL verwenden. Ist dies nicht der Fall, ist die Verbindung nicht verschlüsselt.
+Wenn für eine Webseite eine sichere Verbindung benötigt wird, sollte sichergestellt werden, dass Benutzer, welche die Webseite nicht über SLL aufrufen, umgeleitet werden, damit auch sie \acrshort{ssl} verwenden. Ist dies nicht der Fall, ist die Verbindung nicht verschlüsselt.
 
-\subsubsection{Externe Assets ohne SSL}
+\subsubsection{Externe Assets ohne \acrshort{ssl}}
 \label{ssub:externeassetsohnessl}
-Bei einer Webseite welche mit SSL geschützt ist, ist es wichtig, dass jede Ressource, welche nachgeladen wird auch über SSL eingebunden wird. Ansonsten zeigen Browser eine Warnung an, da Teile der Webseite nicht geschützt sind und potenzielle Sicherheitslücken darstellen.
+Bei einer Webseite welche mit \acrshort{ssl} geschützt ist, ist es wichtig, dass jede Ressource, welche nachgeladen wird auch über SSL eingebunden wird. Ansonsten zeigen Browser eine Warnung an, da Teile der Webseite nicht geschützt sind und potenzielle Sicherheitslücken darstellen.
 
-\subsection{DNS}
+\subsection{\acrshort{dns}}
 \label{sub:fehler_dns}
 
 \begin{longtable}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Domain ausgelaufen}{domainausgelaufen}{3}{1}{1}
-    \newfnumber{DNS Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
-    \newfnumber{DNS Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
-    \newfnumber{SPF Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
+    \newfnumber{\acrshort{dns} Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
+    \newfnumber{\acrshort{dns} Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
+    \newfnumber{\acrshort{spf} Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
     \bottomrule
-    \caption[Mögliche Fehler DNS]{Mögliche Fehler DNS}
+    \caption[Mögliche Fehler \acrshort{dns}]{Mögliche Fehler \acrshort{dns}}
     \label{tab:fehler_dns}
 \end{longtable}
 
 \subsubsection{Domain ausgelaufen}
 \label{ssub:domainausgelaufen}
-Domainnamen werden gewöhnlich im Jahres-Rhythmus in Rechnung gestellt. Sollte eine solche Rechnung nicht bezahlt werden, wird einem die Domain wieder entzogen, was dazu führt, dass der DNS Eintrag entfernt wird.
+Domainnamen werden gewöhnlich im Jahres-Rhythmus in Rechnung gestellt. Sollte eine solche Rechnung nicht bezahlt werden, wird einem die Domain wieder entzogen, was dazu führt, dass der \acrshort{dns} Eintrag entfernt wird.
 
-\subsubsection{DNS Server nicht verfügbar}
+\subsubsection{\acrshort{dns} Server nicht verfügbar}
 \label{ssub:dns_server_nicht_verfügbar}
-Für den Fall, dass ein DNS Server nicht verfügbar ist, sind gewöhnlich mehrere DNS Server vorhanden. Es kann jedoch trotz Redundanz dazu kommen, dass alle DNS Server ausfallen. Dies kann auch durch menschliches Versagen beim Ändern von DNS Einträgen entstehen.
+Für den Fall, dass ein \acrshort{dns} Server nicht verfügbar ist, sind gewöhnlich mehrere \acrshort{dns} Server vorhanden. Es kann jedoch trotz Redundanz dazu kommen, dass alle \acrshort{dns} Server ausfallen. Dies kann auch durch menschliches Versagen beim Ändern von \acrshort{dns} Einträgen entstehen.
 
-\subsubsection{DNS Eintrag fehlerhaft}
+\subsubsection{\acrshort{dns} Eintrag fehlerhaft}
 \label{ssub:dnseintragfehlerhaft}
-Da DNS Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern eines DNS Eintrages Fehler gemacht werden. Dies kann dazu führen, dass die gesamte Zone nicht mehr einwandfrei funktioniert.
+Da \acrshort{dns} Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern eines \acrshort{dns} Eintrages Fehler gemacht werden. Dies kann dazu führen, dass die gesamte Zone nicht mehr einwandfrei funktioniert.
 
-\subsubsection{SPF Eintrag fehlerhaft}
+\subsubsection{\acrshort{spf} Eintrag fehlerhaft}
 \label{ssub:spfeintragfehlerhaft}
-Der SPF Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu SPF finden auf der SPF Webseite \url{http://www.openspf.org/}.
+Der \acrshort{spf} Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu \acrshort{spf} finden auf der \acrshort{spf} Webseite \url{http://www.openspf.org/}.
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
@@ -233,9 +233,9 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
 \label{ssub:javascriptfehler}
 Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit browserseitigen Applikationen welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
 
-\subsubsection{CSS Fehler}
+\subsubsection{\acrshort{css} Fehler}
 \label{ssub:cssfehler}
-Fehler im CSS Code haben nicht in allen Browsern dieselben Auswirkungen, da nicht alle Browser CSS exakt identisch interpretieren. Die Auswirkungen können von einer fehlerhaften Angabe (Grösse eines Objektes) bis zum nicht Interpretieren der ganzen Datei führen. Letzteres kann dazu führen, dass die Darstellung der Seite stark von der vorgesehenen Darstellung abweicht.
+Fehler im \acrshort{css} Code haben nicht in allen Browsern dieselben Auswirkungen, da nicht alle Browser \acrshort{css} exakt identisch interpretieren. Die Auswirkungen können von einer fehlerhaften Angabe (Grösse eines Objektes) bis zum nicht Interpretieren der ganzen Datei führen. Letzteres kann dazu führen, dass die Darstellung der Seite stark von der vorgesehenen Darstellung abweicht.
 
 \subsubsection{Seite lädt zu langsam}
 \label{ssub:seite_lädt_zu_langsam}
@@ -293,7 +293,7 @@ Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Se
 \label{ssub:fehlmanipulationdurchdenkunden}
 Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als dringend benötigt werden. Der Kunde wird instruiert wie er Änderungen an der Webseite tätigen kann und worauf er dabei achten muss. Hält sich der Kunde nicht an diese Instruktionen kann es passieren, dass die Webseite nicht mehr korrekt dargestellt wird, oder dass ein Teil der Webseite nicht aufrufbar ist.
 
-\section{SEO and Sharing}
+\section{\acrshort{seo} and Sharing}
 \label{sec:seo_and_sharing}
 
 \begin{longtable}{l>{\raggedright}p{7cm} r r r}
@@ -302,7 +302,7 @@ Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als
     \newfnumber{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}{metadescriptionundseitentitel}{2}{2}{3}
     \newfnumber{Deeplinks funktionieren nicht}{deeplinksfunktionierennicht}{2}{1}{3}
     \bottomrule
-    \caption[Mögliche Fehler SEO und Sharing]{Mögliche Fehler SEO und Sharing}
+    \caption[Mögliche Fehler SEO und Sharing]{Mögliche Fehler \acrshort{seo} und Sharing}
     \label{tab:fehler_seo_sharing}
 \end{longtable}
 
@@ -316,7 +316,7 @@ Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die
 
 \subsubsection{Deeplinks funktionieren nicht}
 \label{ssub:deeplinksfunktionierennicht}
-Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigene URL besitzen. Auf Webseiten welche AJAX Technologien verwenden ist dies nicht immer einfach umsetzbar und muss darum kontrolliert werden.
+Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigene URL besitzen. Auf Webseiten welche \acrshort{ajax} Technologien verwenden ist dies nicht immer einfach umsetzbar und muss darum kontrolliert werden.
 
 \section{Programmcode}
 \label{sec:programmcode}
