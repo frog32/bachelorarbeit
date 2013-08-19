@@ -13,15 +13,15 @@ Zwei Fehlerszenarios können nicht komplett automatisiert werden, sie können je
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
 \label{ssub:kat_abhaengigkeitenmitsicherheitsluecken}
-\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler, welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt, ein System verwendet welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
+\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler, welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt, ein System verwendet, welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:kat_browser_spezifische_probleme}
-\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet, welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``\acrlong{rum}'' \glsadd{real_user_monitoring} verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerden und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
+\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet, welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``\acrlong{rum}'' \glsadd{real_user_monitoring} verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerten und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
 
 \section{Fehlerszenarios welche bereits abgedeckt werden}
 \label{sec:fehlerszenarios_welche_bereits_abgedeckt_werden}
-Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab. Diese Fehlerszenarios müssen nicht von den zu evaluierenen Systemen abgedeckt werden. Jedoch kann es sein, dass nach dieser Arbeit einige Fehlerszenarios mehrfach abgedeckt sind, was dazu führen kann, dass in den Mitteln aus Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} diese Szenarios nicht mehr abgedeckt werden müssten. Abbildung~\ref{fig:uebersicht_fehlerszenarios} zeigt welche Fehlerszenarios bereits abgedeckt und welche noch offen sind.
+Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} beschriebenen Mittel decken bereits einige Fehlerszenarios ab. Diese Fehlerszenarios müssen nicht von den zu evaluierenden Systemen abgedeckt werden. Jedoch kann es sein, dass nach dieser Arbeit einige Fehlerszenarios mehrfach abgedeckt sind, was dazu führen kann, dass in den Mitteln aus Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} diese Szenarios nicht mehr abgedeckt werden müssten. Abbildung~\ref{fig:uebersicht_fehlerszenarios} zeigt welche Fehlerszenarios bereits abgedeckt und welche noch offen sind.
 
 \begin{table}[h!]
   \centering
@@ -51,7 +51,7 @@ Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} besch
 
 \section{Fehlerszenarios welche abgedeckt werden müssen}
 \label{sec:fehlerszenarios_welche_abgedeckt_werden_müssen}
-Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
+Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt werden, sollen gemäss Aufgabenstellung in automatisiert und manuell testbar unterteilt werden. Als manuell testbar ist ein Szenario dann, wenn es durch eine Software geprüft werden kann. So sind zum Beispiel Rechtschreibfehler nicht automatisiert prüfbar, da zur Zeit keine Rechtschreibprüfung vollautomatisiert arbeiten kann. Es ist immer zusätzlich ein Mensch nötig, welcher entscheiden muss, ob zum Beispiel ein Wort ein Name ist und daher nicht im Wörterbuch zu finden ist.
 
 \subsubsection{Automatisiert testbar}
 \label{ssub:automatisiert_testbar}

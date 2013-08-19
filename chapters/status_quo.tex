@@ -1,10 +1,10 @@
 %!TEX root = ../index.tex
 
-Die IT Abteilung in der allink wurde 2010 komplett neu gebildet. Zu diesem Zeitpunkt wurden ebenfalls grundlegende Technologie-Entscheide neu gefällt. Seitdem wurde die Produktivität der Webentwicklern stetig gesteigert und die Qualität verbessert. Dies indem Programmteile, welche in jedem Projekt wieder benötigt werden, nicht mehr für jedes Projekt neu erstellt werden und das Aufsetzen von neuen Projekten automatisiert wurde. Zudem existieren Werkzeuge welche wiederkehrende Tasks wie das Bereitstellen einer Webseite auf einem produktiv Server, oder das Einrichten einer lokalen Entwicklungsumgebung automatisieren.
+Die IT Abteilung in der allink wurde 2010 komplett neu gebildet. Zu diesem Zeitpunkt wurden ebenfalls grundlegende Technologie-Entscheide neu gefällt. Seitdem wurde die Produktivität der Webentwickler stetig gesteigert und die Qualität verbessert. Dies indem Programmteile, welche in jedem Projekt wieder benötigt werden, nicht mehr für jedes Projekt neu erstellt werden und das Aufsetzen von neuen Projekten automatisiert wurde. Zudem existieren Werkzeuge, welche wiederkehrende Tasks, wie das Bereitstellen einer Webseite auf einem produktiven Server, oder das Einrichten einer lokalen Entwicklungsumgebung, automatisieren.
 
-\section{Eingesetzte Technologie Backend}
-\label{sec:eingesetzte_technologie_backend}
-Der grösste Teil aller Webprojekte in der allink werden mit Hilfe des Django Frameworks realisiert. Durch diese Wahl ergibt sich Python als präferierte Programmiersprache für alle serverseitigen Applikationen. Zudem wird FEINcms in allen Projekten eingesetzt welche eine cms Lösung benötigen. Hinergrundprozesse werden seit 2011 mit celery umgesetzt was gegenüber durch cronjobs ausgelöste Scripte einige Vorteile mit sich bringt. Weitere Applikationen, welche backendseitig in der allink häufig eingesetzt werden, sind in der Tabelle~\ref{tab:backend_applications} aufgeführt.
+\section{Eingesetzte Technologien Backend}
+\label{sec:eingesetzte_technologien_backend}
+Der grösste Teil aller Webprojekte in der allink werden mit Hilfe des Django\footnote{\url{https://www.djangoproject.com/}} Frameworks realisiert. Durch diese Wahl ergibt sich Python als präferierte Programmiersprache für alle serverseitigen Applikationen. Zudem wird feinCMS\footnote{\url{http://www.feincms.org/}} in allen Projekten eingesetzt, welche eine \acrshort{cms} Lösung benötigen. Hintergrundprozesse werden seit 2011 mit celery\footnote{\url{http://celeryproject.org/}} umgesetzt was gegenüber durch cronjobs ausgelöste Scripte einige Vorteile mit sich bringt. Weitere Applikationen, welche backendseitig in der allink häufig eingesetzt werden, sind in der Tabelle~\ref{tab:backend_applications} aufgeführt.
 
 \begin{table}[ht]
   \centering
@@ -35,11 +35,11 @@ Der grösste Teil aller Webprojekte in der allink werden mit Hilfe des Django Fr
   \label{tab:backend_applications}
 \end{table}
 
-\section{Eingesetzte Technologie Frontend}
-\label{sec:eingesetzte_technologie_frontend}
+\section{Eingesetzte Technologien Frontend}
+\label{sec:eingesetzte_technologien_frontend}
 Im frontend Bereich sind die eingesetzten Mittel mannigfaltiger als im backend Bereich. Hier kommt unter anderem das  Java Script Frameworks backbone.js~\footnote{\url{http://backbonejs.org/}} zum Einsatz. Für viele Projekte wird jedoch auch nur JQuery~\footnote{\url{http://jquery.com/}} verwendet. Weiterhin werden Tools wie Twitter Bootstrap~\footnote{\url{http://getbootstrap.com/}} sowie die Stylesheet Sprache less~\footnote{\url{http://lesscss.org/}} eingesetzt.
 
-\section{Produktiv Systeme}
+\section{Produktiv-Systeme}
 \label{sec:produktiv_systeme}
 Die allink setzt für alle produktiven Web Systeme auf Managed Hosting von Nine Internet Solutions AG \footnote{http://nine.ch}. Von Nine wird die Verfügbarkeit der Serversysteme sichergestellt und Unterhaltsarbeit geleistet. Auch Backups der produktiven Systeme werden von Nine erstellt und archiviert.
 
@@ -68,7 +68,7 @@ Die allink setzt für alle produktiven Web Systeme auf Managed Hosting von Nine 
 
 \section{Eingesetzte Mittel für die Qualitätssicherung}
 \label{sec:eingesetzte_mittel_für_die_qualitätssicherung}
-Qualitätssicherung war in der allink schon immer ein Thema. Ab dem Zeitpunkt seit dem die allink Django einsetzt, wurden einige Bemühungen getätigt, um die Qualität zu gewährleisten. Die Tabelle~\ref{tab:qm_eingesetzte_mittel} zeigt eine Übersicht der Mittel, welche standardmässig bei jedem Webprojekt zum Einsatz kommen. Diese sind meist in das allink-project, ein Django Projekt welches die Grundlage für alle in der allink entwickelten Webapplikationen ist, integriert.
+Qualitätssicherung war in der allink schon immer ein Thema. Ab dem Zeitpunkt seit dem die allink Django einsetzt, wurden einige Bemühungen getätigt, um die Qualität zu gewährleisten. Die Tabelle~\ref{tab:qm_eingesetzte_mittel} zeigt eine Übersicht der Mittel, welche standardmässig bei jedem Webprojekt zum Einsatz kommen. Diese sind meist in das allink-project, ein Django Projekt, welches die Grundlage für alle in der allink entwickelten Webapplikationen ist, integriert.
 
 \makeatletter
 \newcounter{bcounter}
@@ -98,11 +98,11 @@ Qualitätssicherung war in der allink schon immer ein Thema. Ab dem Zeitpunkt se
 
 \subsection{Precommit Hook}
 \label{sub:precommit_hook}
-Der Precommit Hook überprüft den Quellcode eines Projektes vor jedem Commit. Dabei werden die Tools pyflake, pep8 und jshint eingesetzt um Python und Javascript Code zu verifizieren und zu überprüfen ob der Styleguide eingehalten wurde. Zudem wird im Quellcode nach debugging Anweisungen gesucht da diese nicht in einem Produktiv System laufen sollten.
+Der Precommit Hook überprüft den Quellcode eines Projektes vor jedem Commit. Dabei werden die Tools pyflake, pep8 und jshint eingesetzt um Python und Javascript Code zu verifizieren und zu überprüfen, ob der Styleguide eingehalten wurde. Zudem wird im Quellcode nach debugging Anweisungen gesucht, da diese nicht in einem Produktiv System laufen sollten.
 
 \subsection{Sentry}
 \label{sub:sentry}
-Sentry ist ein zentrales Tool welches die Fehlermeldungen von sämtlichen Webprojekten der allink in einer Liste zusammenfasst. Sich wiederholende Fehler werden zusammengefasst, sodass man eine Übersicht erhält welcher Fehler wie häufig aufgetaucht ist. Die zentrale Fehlerliste von Sentry ist auf Abbildung~\ref{fig:sentry_index} zu sehen.
+Sentry ist ein zentrales Tool, welches die Fehlermeldungen von sämtlichen Webprojekten der allink in einer Liste zusammenfasst. Sich wiederholende Fehler werden zusammengefasst, sodass man eine Übersicht erhält, welcher Fehler wie häufig aufgetaucht ist. Die zentrale Fehlerliste von Sentry ist auf Abbildung~\ref{fig:sentry_index} zu sehen.
 
 \begin{figure}[h]
 \centering
@@ -113,7 +113,7 @@ Sentry ist ein zentrales Tool welches die Fehlermeldungen von sämtlichen Webpro
 
 \subsection{Go-Live - Checkliste}
 \label{sub:go_live_checkliste}
-Eine der ersten Massnahmen zur Qualitätssteigerung war das Einführen einer Checkliste, welche vor dem GoLive einer Webseite durchgearbeitet wird. Diese Überprüfung wird falls möglich von einem Entwickler welcher nicht am Projekt beteiligt war durchgeführt. Diese Checkliste wird laufend erweitert und ist zum Zeitpunkt dieser Arbeit 38 Punkte lang und in Anhang~\ref{sec:appendix_go_live_checkliste} zu sehen.
+Eine der ersten Massnahmen zur Qualitätssteigerung war das Einführen einer Checkliste, welche vor dem Go-Live einer Webseite durchgearbeitet wird. Diese Überprüfung wird falls möglich von einem Entwickler, welcher nicht am Projekt beteiligt war, durchgeführt. Diese Checkliste wird laufend erweitert und ist zum Zeitpunkt dieser Arbeit 38 Punkte lang und in Anhang~\ref{sec:appendix_go_live_checkliste} zu sehen.
 
 \subsection{Deployment Prozess}
 \label{sub:deployment_prozess}

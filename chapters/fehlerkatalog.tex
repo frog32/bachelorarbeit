@@ -4,7 +4,7 @@ Um möglichst alle relevanten Fehlerszenarios zu erfassen, wurden diese systemat
 
 \section{Kontext}
 \label{sec:kontext}
-Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink mit den entsprechenden Problemen gemacht wurden.
+Die Bewertung der Fehlerszenarios basiert auf Erfahrungen, welche in der allink mit den entsprechenden Problemen gemacht wurden.
 
 \makeatletter
 \newcounter{fnumber} \setcounter{fnumber}{0}
@@ -20,19 +20,19 @@ Die Bewertung der Fehlerszenarios basiert auf Erfahrungen welche in der allink m
 
 \subsection{Impact}
 \label{sub:impact}
-Der Schaden, welcher durch einen Fehler entstehen kann, wurde unabhängig der genauen Funktion einer Webseite in drei Kategorien eingeteilt. Dies lässt ausser acht, dass eine nicht verfügbare Seite bei für einen Onlineshop einen Ausfall an Umsatz bedeutet, während der genaue Schaden beim Ausfall einer einfachen Firmenwebseite, welche als Online-Visitenkarte dient, nicht beziffert werden kann. Weiterhin wurde für diese Beurteilung davon ausgegangen, dass die Einstellungen des Browsers und alle weiteren Einstellungen welche dies betreffen, den Standardeinstellungen entsprechen.
+Der Schaden, welcher durch einen Fehler entstehen kann, wurde unabhängig der genauen Funktion einer Webseite in drei Kategorien eingeteilt. Dies lässt ausser acht, dass eine nicht verfügbare Seite für einen Onlineshop einen Ausfall an Umsatz bedeutet, während der genaue Schaden beim Ausfall einer einfachen Firmenwebseite, welche als Online-Visitenkarte dient, nicht beziffert werden kann. Weiterhin wurde für diese Beurteilung davon ausgegangen, dass die Einstellungen des Browsers und alle weiteren Einstellungen, welche relevant sind, den Standardeinstellungen entsprechen.
 
 \begin{table}[h!]
   \centering
   \begin{tabular}{ll}
   \toprule
-    Wert & Bezeichnung\\
+    Bezeichnung & Wert\\
   \hline
-    1 & Unwesentlich\\
+    Unwesentlich & 1\\
   \hline
-    2 & Seite eingeschränkt verfügbar\\
+    Seite eingeschränkt verfügbar & 2\\
   \hline
-    3 & Seite nicht vergüfbar\\
+    Seite nicht verfügbar & 3\\
   \bottomrule
   \end{tabular}
   \caption{Bewertung des Impact}
@@ -41,7 +41,7 @@ Der Schaden, welcher durch einen Fehler entstehen kann, wurde unabhängig der ge
 
 \subsection{Frequenz}
 \label{sub:frequenz}
-Die Frequenz der Fehler wurde in vier Kategorien unterteil. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich. Bei häufig auftauchenden Fehlern wurde in den vorhandenen Logs nachgesehen um zu entscheiden ob diese täglich oder wöchentlich auftreten. Bei weniger häufig auftretenden Fehlern wurde anhand den letzten Vorkommen des Fehlers entschieden. Fehler welche in einem Webprojekt im Normalfall nur einmal vorkommen, wurden als jährlich klassifiziert.
+Die Frequenz der Fehler wurde in vier Kategorien unterteilt. Diese sind in Tabelle~\ref{tab:fehler_frequenz} ersichtlich. Bei häufig auftauchenden Fehlern wurde in den vorhandenen Logs nachgesehen um zu entscheiden, ob diese täglich oder wöchentlich auftreten. Bei weniger häufig auftretenden Fehlern wurde anhand der letzten Vorkommen des Fehlers entschieden. Fehler welche in einem Webprojekt im Normalfall nur einmal vorkommen, wurden als jährlich klassifiziert.
 
 \begin{table}[h!]
   \centering
@@ -113,7 +113,7 @@ Ein ungültiges Zertifikat kann durch den Wechsel einer Domain entstehen. Wenige
 
 \subsubsection{\acrshort{ssl} nicht erzwungen}
 \label{ssub:sslnichterzwungen}
-Wenn für eine Webseite eine sichere Verbindung benötigt wird, sollte sichergestellt werden, dass Benutzer, welche die Webseite nicht über SLL aufrufen, umgeleitet werden, damit auch sie \acrshort{ssl} verwenden. Ist dies nicht der Fall, ist die Verbindung nicht verschlüsselt.
+Wenn für eine Webseite eine sichere Verbindung benötigt wird, sollte sichergestellt werden, dass Benutzer, welche die Webseite nicht über \acrshort{ssl} aufrufen, umgeleitet werden, damit auch sie \acrshort{ssl} verwenden. Ist dies nicht der Fall, ist die Verbindung nicht verschlüsselt.
 
 \subsubsection{Externe Assets ohne \acrshort{ssl}}
 \label{ssub:externeassetsohnessl}
@@ -194,9 +194,9 @@ In Webprojekten werden häufig Libraries von Drittherstellern verwendet. Falls i
 
 \subsubsection{Unittest Fehler}
 \label{ssub:unittestfehler}
-Um sicherzustellen, dass Programmteile, welche einmal funktioniert haben, auch nach Änderungen am Programmcode noch funktionieren, werden Unittests geschrieben welche den entsprechenden Code testen. Unittests sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder durchgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, testet man nicht nach jeder Änderung alle Tests erneut. Es kann darum passieren, dass Programmcode welcher die Unittests nicht besteht in ein produktives Systemen eingespielt wird.
+Um sicherzustellen, dass Programmteile, welche einmal funktioniert haben, auch nach Änderungen am Programmcode noch funktionieren, werden Unittests geschrieben, welche den entsprechenden Code testen. Unittests sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder durchgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, testet man nicht nach jeder Änderung alle Tests erneut. Es kann darum passieren, dass Programmcode welcher die Unittests nicht besteht in ein produktives System eingespielt wird.
 
-\subsubsection{Fehler im Produktivsystem}
+\subsubsection{Fehler im Produktiv-System}
 \label{ssub:fehlerimproduktivsystem}
 Ein Fehler beim Bearbeiten eines Requests wird dem Benutzer mit einer Meldung angezeigt und gemäss dem HTTP1.1\cite{rfc2616} Standard mit einem Statuscode 500 versehen. Da nicht alle Benutzer solche Fehler melden, wird zusätzlich ein Fehlerprotokoll angelegt.
 
@@ -206,7 +206,7 @@ Als Missverhalten wird jegliches Verhalten einer Webseite angesehen, welches nic
 
 \subsubsection{Debug Modus}
 \label{ssub:debugmodus}
-Die meisten Webframeworks besitzen einen Debug Modus welcher für Testsysteme und Entwicklungssysteme vorgesehen ist. Da Applikationen im Debug Modus meistens lansamer laufen, mehr Speicher benötigen und auch mehr Ausgaben gemacht werden, sollte dieser nicht in produktiv eingesetzten Systemen verwendet werden.
+Die meisten Webframeworks besitzen einen Debug Modus, welcher für Test-Systeme und Entwicklungs-Systeme vorgesehen ist. Da Applikationen im Debug Modus meistens lansamer laufen, mehr Speicher benötigen und auch mehr Ausgaben gemacht werden, sollte dieser nicht in produktiv eingesetzten Systemen verwendet werden.
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
 \label{ssub:abhaengigkeitenmitsicherheitsluecken}
@@ -231,7 +231,7 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
 
 \subsubsection{Javascript Fehler}
 \label{ssub:javascriptfehler}
-Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit browserseitigen Applikationen welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
+Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit browserseitigen Applikationen, welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
 
 \subsubsection{\acrshort{css} Fehler}
 \label{ssub:cssfehler}
@@ -239,11 +239,11 @@ Fehler im \acrshort{css} Code haben nicht in allen Browsern dieselben Auswirkung
 
 \subsubsection{Seite lädt zu langsam}
 \label{ssub:seite_lädt_zu_langsam}
-Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer welche eine Seite frühzeitig verlassen\footnote{\url{http://rigor.com/2012/11/how-page-load-time-affects-bounce-rates/}}. Deswegen ist es wichtig, dass eine Webseite möglichst schnell geladen werden kann. Diese Ladezeit ist von diversen Faktoren abhängig und muss darum stetig überprüft werden.
+Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer, welche eine Seite frühzeitig verlassen\footnote{\url{http://rigor.com/2012/11/how-page-load-time-affects-bounce-rates/}}. Deswegen ist es wichtig, dass eine Webseite möglichst schnell geladen werden kann. Diese Ladezeit ist von diversen Faktoren abhängig und muss darum stetig überprüft werden.
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:browserspezifischeprobleme}
-Nicht alle Browser verwenden dieselbe Rendering-Engine und auch Javascript ist nicht auf allen Browsern exakt identisch implementiert. Daher gibt es Fehler welche durch eine Eigenheit eines spezifischen Browsers verursacht werden, während dieselbe Webseite auf anderen Browsern einwandfrei funktioniert.
+Nicht alle Browser verwenden dieselbe Rendering-Engine und auch Javascript ist nicht auf allen Browsern exakt identisch implementiert. Daher gibt es Fehler, welche durch eine Eigenheit eines spezifischen Browsers verursacht werden, während dieselbe Webseite auf anderen Browsern einwandfrei funktioniert.
 
 \subsubsection{Assets fehlen}
 \label{ssub:assetsfehlen}
@@ -251,7 +251,7 @@ Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen
 
 \subsubsection{Externe Abhängigkeiten nicht verfügbar}
 \label{ssub:externeabhaengigkeiten_nicht_verfügbar}
-Insbesondere Schriften aber auch Javascript Bibliotheken werden teilweise über einen externen Service eingebunden. Falls dieser Service nicht verfügbar ist wird die Webseite nicht wie vorgesehen dargestellt.
+Insbesondere Schriften aber auch Javascript Bibliotheken werden teilweise über einen externen Service eingebunden. Falls dieser Service nicht verfügbar ist, wird die Webseite nicht wie vorgesehen dargestellt.
 
 \subsubsection{Seite funktioniert nicht auf mobilen Geräten}
 \label{ssub:seitefunktioniertnichtaufmobilengeraeten}
@@ -283,11 +283,11 @@ Rechtschreibefehler sind nicht erwünscht auf einer Webseite. In den meisten Fä
 
 \subsubsection{Falsch aufbereitete Bilder}
 \label{ssub:falsch_aufbereitete_bilder}
-Viele Benutzer verfügen zuhause oder bei der Arbeit über eine Breitband Internetverbindung, dadurch ist heute der Einfluss von Dateigrössen auf die Ladezeit nicht gleich entscheidend wie vor einigen Jahren. Ist ein Benutzer jedoch über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Desswegen ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
+Viele Benutzer verfügen zuhause oder bei der Arbeit über eine Breitband Internetverbindung, dadurch ist heute der Einfluss von Dateigrössen auf die Ladezeit nicht gleich entscheidend wie vor einigen Jahren. Ist ein Benutzer jedoch über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Deswegen ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
 
 \subsubsection{Design verletzt}
 \label{ssub:design_verletzt}
-Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Seite entworfen hat, meist aktiv am Kontrollieren, ob das Design überall richtig umgesetzt wurde. Danach bemerkt der Screendesigner meistens nicht, oder nur durch Zufall, dass das Design, einer Seite durch zufügen von unpassendem Inhalt oder durch falsch Verwenden von Elementen verletzt wurde.
+Vor dem Go-Live einer Webseite ist der Screendesigner, welcher das Design der Seite entworfen hat, meist aktiv am Kontrollieren, ob das Design überall richtig umgesetzt wurde. Danach bemerkt der Screendesigner meistens nicht, oder nur durch Zufall, dass das Design, einer Seite durch Zufügen von unpassendem Inhalt oder durch falsches Verwenden von Elementen verletzt wurde.
 
 \subsubsection{Fehlmanipulation durch den Kunden}
 \label{ssub:fehlmanipulationdurchdenkunden}
@@ -308,7 +308,7 @@ Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als
 
 \subsubsection{OG Tags fehlerhaft oder nicht vorhanden}
 \label{ssub:ogtagsfehlerhaftodernichtvorhanden}
-Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite zusätzliche Informationen anzuhängen. Diese Informationen werden von verschiedenen sozialen Netzwerken verwendet um Links mit einer Beschreibung und einem Bild anzureichern. Fehlen diese Tags oder sind sie fehlerhaft, werden die falschen oder gar keine zusätzliche Informationen angezeigt was zu einer niedrigeren Klick-Rate führen kann.
+Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite zusätzliche Informationen anzuhängen. Diese Informationen werden von verschiedenen sozialen Netzwerken verwendet um Links mit einer Beschreibung und einem Bild anzureichern. Fehlen diese Tags oder sind sie fehlerhaft, werden die falschen oder gar keine zusätzliche Informationen angezeigt, was zu einer niedrigeren Klick-Rate führen kann.
 
 \subsubsection{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}
 \label{ssub:_metadescriptionundseitentitel_fehlerhaft_oder_nicht_vorhanden}
@@ -332,7 +332,7 @@ Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigen
 
 \subsubsection{Code Conventions nicht eingehalten}
 \label{ssub:codeconventions_nicht_eingehalten}
-Um häufiges Umformatieren von Programmcode zu vermeiden sollten sich alle Programmierer innerhalb eines Projektes an die zuvor festgelegen Code Konventionen halten. Diese bestehen meist aus einem Style-Guide und Namenskonventionen.
+Um häufiges Umformatieren von Programmcode zu vermeiden, sollten sich alle Programmierer innerhalb eines Projektes an die zuvor festgelegen Code Konventionen halten. Diese bestehen meist aus einem Style-Guide und Namenskonventionen.
 
 \subsubsection{Programmcode enthält Syntaxfehler}
 \label{ssub:programmcode_enthält_syntaxfehler}
