@@ -25,7 +25,7 @@ Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt
   \begin{tabular}{l>{\raggedright} p{10cm} p{2cm}}
     \toprule \textbf{Nr.} & \textbf{Test} & \textbf{Abgedeckte Fehlerszenarios} \\
     \newtnumber{Funktioniert die Webseite erwartungsgemäss? Ist offensichtliches Fehlverhalten vorhanden?}{missverhalten}{\ref{f:missverhalten}}
-    \newtnumber{Sind die verwendeten Versionen von Django, feincms etc. noch aktuell?}{abhaengigkeitenmitsicherheitsluecken}{\ref{f:abhaengigkeitenmitsicherheitsluecken}}
+    \newtnumber{Sind die verwendeten Versionen von Django, feinCMS etc. noch aktuell?}{abhaengigkeitenmitsicherheitsluecken}{\ref{f:abhaengigkeitenmitsicherheitsluecken}}
     \newtnumber{Funktioniert die Seite in den aktuellen Versionen von Safari, Firefox, Chrome und IE?}{browserspezifischeprobleme}{\ref{f:browserspezifischeprobleme}}
     \newtnumber{Sind auf der Startseite und den Landingpages offensichtliche Rechtschreibefehler?}{rechtschreibefehler}{\ref{f:rechtschreibefehler}}
     \newtnumber{Sind die verwendeten Bilder richtig aufbereitet?}{falschaufbereitetebilder}{\ref{f:falschaufbereitetebilder}}
@@ -63,9 +63,9 @@ Damit die Tests in Status Cake nicht von Hand nachgetragen werden müssen, wurde
 \label{sub:new_relic}
 Weiterhin wurde für einige Webprojekte New Relic eingeführt. Ein bestehendes Projekt mit New Relic auszurüsten ist um einiges Aufwendiger, als es mit Status Cake auszurüsten. Für die Integration von New Relic müssen Änderungen am Programmcode vorgenommen werden. Dies ist bei neuen Projekten kein Problem, da für neue Projekte ein Template verwendet wird.
 
-Das Preismodel von New Relic berechnet die Kosten anhand der Anzahl Server welche verwendet werden. Da in der allink demnächst ein grosser Teil der produktiven Systeme ersetzt werden und danach auch weniger Server eingesetzt werden, wird mit dem Einsatz von New Relic für alle Projekte gewartet, bis diese Umstellung erfolgt ist. Bis dahin werden nur zwei Projekte mit New Relic ausgestattet.
+Das Preismodel von New Relic berechnet die Kosten anhand der Anzahl Server, welche verwendet werden. Da in der allink demnächst ein grosser Teil der Produktiv-Systeme ersetzt werden und danach auch weniger Server eingesetzt werden, wird mit dem Einsatz von New Relic für alle Projekte gewartet, bis diese Umstellung erfolgt ist. Bis dahin werden nur zwei Projekte mit New Relic ausgestattet.
 
-New Relic bietet unter anderem eine Mobile Applikation welche die wichtigsten Daten einer Webseite anzeigen kann. Zudem gibt es für jedes Projekt ein Dashboard wie in Abbildung~\ref{fig:new_relic_dashboard} gezeigt wird, auf welchem man Probleme jeder Art schnell erkennen kann.
+New Relic bietet unter anderem eine Mobile Applikation, welche die wichtigsten Daten einer Webseite anzeigen kann. Zudem gibt es für jedes Projekt ein Dashboard wie in Abbildung~\ref{fig:new_relic_dashboard} gezeigt wird, auf welchem man Probleme jeder Art schnell erkennen kann.
 
 \begin{figure}[ht]
 \centering
@@ -77,17 +77,17 @@ New Relic bietet unter anderem eine Mobile Applikation welche die wichtigsten Da
 
 \subsection{allink.planer}
 \label{sub:proof_allink_planer}
-Der allink.planer wurde so erweitert, dass er die Fehlerszenarios \ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft} und \ref{f:debugmodus} abdecken kann. Dies sind Szenarios, welche ohne Probleme von ausserhalb eines Webprojektes überprüft werden können. Weiterhin wurden dem allink.planer Funktionalitäten hinzugefügt, mit denen er die Versionen von verwendeten Python Paketen aller Projektes auszulesen kann. Damit lässt sich im Falle, dass eine Sicherheitslücke bekannt wird, schnell feststellen in welchen Projekten die betroffenen Softwareversionen eingesetzt wurden. Damit wird das manuelle Überprüfen von Fehlerszenario \ref{f:abhaengigkeitenmitsicherheitsluecken} massiv vereinfacht.
+Der allink.planer wurde so erweitert, dass er die Fehlerszenarios \ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft} und \ref{f:debugmodus} abdecken kann. Dies sind Szenarios, welche ohne Probleme von ausserhalb eines Webprojektes überprüft werden können. Weiterhin wurden dem allink.planer Funktionalitäten hinzugefügt, mit denen er die Versionen von verwendeten Python Paketen aller Projekte auszulesen kann. Damit lässt sich im Falle, dass eine Sicherheitslücke bekannt wird, schnell feststellen in welchen Projekten die betroffenen Softwareversionen eingesetzt wurden. Damit wird das manuelle Überprüfen von Fehlerszenario \ref{f:abhaengigkeitenmitsicherheitsluecken} massiv vereinfacht.
 
 \section{Auswirkungen}
 \label{sec:auswirkungen}
-Mit all den neuen Tools wurde auch die Menge an E-Mails welche jeder Entwickler täglich erhält, stetig grösser. So versendet zum Beispiel Status Cake jedes mal ein E-Mail, wenn eine zu überwachende Seite nicht mehr erreichbar ist. Dies führte dazu, dass die meisten Entwickler diese E-Mails mittels Regeln direkt in eigene Ordner verschieben lassen. So fällt es nicht mehr direkt auf, wenn eine Webseite nicht mehr erreichbar ist, da das E-Mail welches darauf hinweisen soll, automatisch aus dem Posteingang entfernt wird und in einen eigenen Ordner bewegt wird, welcher für solche Benachrichtigungen vorgesehen ist. Dadurch bleibt übrigen E-Mails im Posteingang mehr Aufmerksamkeit, jedoch kann es vorkommen, dass ein schwerwiegender Fehler über einen Arbeitstag lang nicht bemerkt wird.
+Mit all den neuen Tools wurde auch die Menge an E-Mails welche jeder Entwickler täglich erhält, stetig grösser. So versendet zum Beispiel Status Cake jedesmal eine E-Mail, wenn eine zu überwachende Seite nicht mehr erreichbar ist. Dies führte dazu, dass die meisten Entwickler diese E-Mails mittels Regeln direkt in eigene Ordner verschieben lassen. So fällt es nicht mehr direkt auf, wenn eine Webseite nicht mehr erreichbar ist, da die E-Mail, welche darauf hinweisen soll, automatisch aus dem Posteingang entfernt und in einen eigenen Ordner bewegt wird, welcher für solche Benachrichtigungen vorgesehen ist. Dadurch bleibt übrigen E-Mails im Posteingang mehr Aufmerksamkeit, jedoch kann es vorkommen, dass ein schwerwiegender Fehler über einen Arbeitstag lang nicht bemerkt wird.
 
 E-Mails welche Sentry versendet, werden teilweise ignoriert, da die Fehler auch in Sentry selber noch angezeigt werden. Leider haben sich zuwenig Entwickler regelmässig die Fehlerliste in Sentry oder die Status Seite von Travis angesehen. Dies führte dazu, dass die gewünschte Wirkung nicht ganz erzielt wurde.
 
 \subsection{Status Monitor}
 \label{sub:status_monitor}
-Um sicherzustellen, dass Fehler auch wahrgenommen werden, wurde als Zusatz zu den bereits eingeführten Systemen ein Status Monitor eingeführt. Ein Bildschirm, welcher vom Arbeitsplatz sämtlicher Entwickler sichtbar ist, wurde mit einem am VESA Mount des Displays befestigten Computer ausgestattet. Dabei wurde darauf geachtet, dass der Computer einerseits genügend Leistung hat um in einem Webbrowser eine Javascript Applikation ohne Probleme zu betreiben und anderseits der Stromverbrauch des Computers deutlich unter dem Nivea eines Arbeitsplatzcomputers ist, da dieser Computer ununterbrochen laufen wird.
+Um sicherzustellen, dass Fehler auch wahrgenommen werden, wurde als Zusatz zu den bereits eingeführten Systemen ein Status Monitor eingeführt. Ein Bildschirm, welcher vom Arbeitsplatz sämtlicher Entwickler sichtbar ist, wurde mit einem am VESA Mount des Displays befestigten Computer ausgestattet. Dabei wurde darauf geachtet, dass der Computer einerseits genügend Leistung hat um in einem Webbrowser eine Javascript Applikation ohne Probleme zu betreiben und anderseits der Stromverbrauch des Computers deutlich unter dem Niveau eines Arbeitsplatzcomputers ist, da dieser Computer ununterbrochen laufen wird.
 
 \subsubsection{Software}
 \label{ssub:software}

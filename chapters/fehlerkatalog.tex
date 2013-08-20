@@ -47,15 +47,15 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteilt. Diese sind in Tabel
   \centering
   \begin{tabular}{ll}
   \toprule
-    Wert & Bezeichnung\\
+    Bezeichnung & Wert\\
   \hline
-    1 & jährlich\\
+    jährlich & 1\\
   \hline
-    2 & monatlich\\
+    monatlich & 2\\
   \hline
-    3 & wöchentlich\\
+    wöchentlich & 3\\
   \hline
-    4 & täglich\\
+    täglich & 4\\
   \bottomrule
   \end{tabular}
   \caption{Bewertung der Frequenz}
@@ -70,15 +70,15 @@ Um die Entscheidung, welche Fehlerszenarios mit eigenen Mitteln abgedeckt werden
   \centering
   \begin{tabular}{ll}
   \toprule
-    Wert & Bezeichnung\\
+    Bezeichnung & Wert\\
   \hline
-    1 & Tage\\
+    Tage & 1\\
   \hline
-    2 & Wochen\\
+    Wochen & 2\\
   \hline
-    3 & Monate\\
+    Monate & 3\\
   \hline
-    4 & Jahre\\
+    Jahre & 4\\
   \bottomrule
   \end{tabular}
   \caption{Zeitbedarf bei Eigenimplementierung}
@@ -91,16 +91,19 @@ Um die Entscheidung, welche Fehlerszenarios mit eigenen Mitteln abgedeckt werden
 \subsection{\acrshort{ssl}}
 \label{sub:fehler_ssl}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Zertifikat ausgelaufen}{zertifikatausgelaufen}{3}{1}{1}
     \newfnumber{Zertifikat ungültig}{zertifikatungultig}{3}{1}{1}
     \newfnumber{\acrshort{ssl} nicht erzwungen}{sslnichterzwungen}{2}{1}{1}
     \newfnumber{Externe Assets ohne \acrshort{ssl}}{externeassetsohnessl}{2}{1}{2}
     \bottomrule
-    \caption[Mögliche Fehler \acrshort{ssl}]{Mögliche Fehler \acrshort{ssl}}
-    \label{tab:fehler_ssl}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler \acrshort{ssl}]{Mögliche Fehler \acrshort{ssl}}
+  \label{tab:fehler_ssl}
+\end{table}
 
 
 \subsubsection{Zertifikat ausgelaufen}
@@ -122,16 +125,19 @@ Bei einer Webseite welche mit \acrshort{ssl} geschützt ist, ist es wichtig, das
 \subsection{\acrshort{dns}}
 \label{sub:fehler_dns}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Domain ausgelaufen}{domainausgelaufen}{3}{1}{1}
     \newfnumber{\acrshort{dns} Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
     \newfnumber{\acrshort{dns} Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
     \newfnumber{\acrshort{spf} Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
     \bottomrule
-    \caption[Mögliche Fehler \acrshort{dns}]{Mögliche Fehler \acrshort{dns}}
-    \label{tab:fehler_dns}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler \acrshort{dns}]{Mögliche Fehler \acrshort{dns}}
+  \label{tab:fehler_dns}
+\end{table}
 
 \subsubsection{Domain ausgelaufen}
 \label{ssub:domainausgelaufen}
@@ -152,14 +158,17 @@ Der \acrshort{spf} Eintrag in einer Domain definiert von welchen IP Adressen aus
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Cronjob Fehler}{cronjobfehler}{1}{2}{2}
     \newfnumber{Worker Fehler}{workerfehler}{2}{2}{2}
     \bottomrule
-    \caption[Mögliche Fehler Hintergrundprozesse]{Mögliche Fehler Hintergrundprozesse}
-    \label{tab:fehler_hintergrundprozesse}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler Hintergrundprozesse]{Mögliche Fehler Hintergrundprozesse}
+  \label{tab:fehler_hintergrundprozesse}
+\end{table}
 
 \subsubsection{Cronjob Fehler}
 \label{ssub:cronjobfehler}
@@ -172,7 +181,9 @@ Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webappli
 \subsection{Applikation}
 \label{sub:fehler_applikation}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Deprecated Libraries}{deprecatedlibraries}{1}{2}{3}
     \newfnumber{Unittest Fehler}{unittestfehler}{3}{3}{2}
@@ -184,9 +195,10 @@ Background Worker werden eingesetzt um rechenintensive Arbeiten aus der Webappli
     \newfnumber{Datenbank Queries laufen langsam}{datenbankquerieslaufenlangsam}{1}{1}{3}
     \newfnumber{Applikation läuft langsam}{applikationlaeuftlangsam}{1}{1}{2}
     \bottomrule
-    \caption[Mögliche Fehler Applikation]{Mögliche Fehler Applikation}
-    \label{tab:fehler_applikation}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler Applikation]{Mögliche Fehler Applikation}
+  \label{tab:fehler_applikation}
+\end{table}
 
 \subsubsection{Deprecated Libraries}
 \label{ssub:deprecatedlibraries}
@@ -215,7 +227,9 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
 \section{Frontend}
 \label{sec:frontend}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Javascript Fehler}{javascriptfehler}{2}{3}{3}
     \newfnumber{CSS Fehler}{cssfehler}{3}{1}{2}
@@ -225,9 +239,10 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliothe
     \newfnumber{Externe Abhängigkeiten nicht verfügbar}{externeabhaengigkeiten}{3}{2}{2}
     \newfnumber{Seite funktioniert nicht auf mobilen Geräten}{seitefunktioniertnichtaufmobilengeraeten}{3}{1}{4}
     \bottomrule
-    \caption[Mögliche Fehler Frontend]{Mögliche Fehler Frontend}
-    \label{tab:fehler_frontend}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler Frontend]{Mögliche Fehler Frontend}
+  \label{tab:fehler_frontend}
+\end{table}
 
 \subsubsection{Javascript Fehler}
 \label{ssub:javascriptfehler}
@@ -261,7 +276,9 @@ Da der der Anteil mobiler Geräte, welche eine Webseite besuchen immer grösser 
 \section{Inhalt}
 \label{sec:inhalt}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Seite enthält tote Links}{seiteenthaelttotelinks}{1}{3}{2}
     \newfnumber{Rechtschreibefehler}{rechtschreibefehler}{1}{2}{}
@@ -269,9 +286,10 @@ Da der der Anteil mobiler Geräte, welche eine Webseite besuchen immer grösser 
     \newfnumber{Design verletzt}{designverletzt}{1}{2}{}
     \newfnumber{Fehlmanipulation durch den Kunden}{fehlmanipulationdurchdenkunden}{2}{2}{}
     \bottomrule
-    \caption[Mögliche Fehler Inhalt]{Mögliche Fehler Inhalt}
-    \label{tab:fehler_inhalt}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler Inhalt]{Mögliche Fehler Inhalt}
+  \label{tab:fehler_inhalt}
+\end{table}
 
 \subsubsection{Seite enthält tote Links}
 \label{ssub:seite_enthält_tote_links}
@@ -296,15 +314,18 @@ Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als
 \section{\acrshort{seo} and Sharing}
 \label{sec:seo_and_sharing}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{OG Tags fehlerhaft oder nicht vorhanden}{ogtagsfehlerhaftodernichtvorhanden}{2}{1}{3}
     \newfnumber{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}{metadescriptionundseitentitel}{2}{2}{3}
     \newfnumber{Deeplinks funktionieren nicht}{deeplinksfunktionierennicht}{2}{1}{3}
     \bottomrule
-    \caption[Mögliche Fehler SEO und Sharing]{Mögliche Fehler \acrshort{seo} und Sharing}
-    \label{tab:fehler_seo_sharing}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler SEO und Sharing]{Mögliche Fehler \acrshort{seo} und Sharing}
+  \label{tab:fehler_seo_sharing}
+\end{table}
 
 \subsubsection{OG Tags fehlerhaft oder nicht vorhanden}
 \label{ssub:ogtagsfehlerhaftodernichtvorhanden}
@@ -321,14 +342,17 @@ Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigen
 \section{Programmcode}
 \label{sec:programmcode}
 
-\begin{longtable}{l>{\raggedright}p{7cm} r r r}
+\begin{table}[H]
+  \centering
+  \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Code Conventions nicht eingehalten}{codeconventions}{1}{4}{1}
     \newfnumber{Programmcode enthält Syntaxfehler}{syntaxfehler}{3}{3}{2}
     \bottomrule
-    \caption[Mögliche Fehler Programmcode]{Mögliche Fehler Programmcode}
-    \label{tab:fehler_programmcode}
-\end{longtable}
+  \end{tabular}
+  \caption[Mögliche Fehler Programmcode]{Mögliche Fehler Programmcode}
+  \label{tab:fehler_programmcode}
+\end{table}
 
 \subsubsection{Code Conventions nicht eingehalten}
 \label{ssub:codeconventions_nicht_eingehalten}

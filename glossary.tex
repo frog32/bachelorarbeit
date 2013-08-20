@@ -1,15 +1,15 @@
 %!TEX root = index.tex
-\newglossaryentry{Content Management System}
+\newglossaryentry{content_management_system}
 {
   name={Content Management System},
-  description={Content Management System}
+  description={Ein Content Management System ist ein Softwaresystem zur Verwaltung und Pflege von Inhalten von Webseiten verwendet wird. Es gibt für fast jede Webprogrammiersprache diverse CMS Lösungen, sowohl solche welche Open Source sind, wie andere welche proprietär sind.}
 }
 
 \newglossaryentry{unittest}
 {
   name=Unittest,
   plural=Unittests,
-  description={Test einer einzelnen Softwarekomponente}
+  description={Unittests auch Modultests genannt, werden in der Softwareentwicklung eingesetzt um funktionale Einzelteile automatisiert zu testen.\cite[S. 44]{books/daglib/0007083}}
 }
 
 \newglossaryentry{real_user_monitoring}
@@ -23,7 +23,7 @@
 \newacronym{ajax}{AJAX}{Asynchronous JavaScript and XML}
 \newacronym{api}{API}{Application Programming Interface}
 \newacronym{ci}{CI}{Continuous Integration}
-\newacronym{cms}{CMS}{Content Management System}
+\newglossaryentry{cms}{type=\acronymtype, name={CMS}, description={Content Management System}, see=[Glossar:]{content_management_system}}
 \newacronym{css}{CSS}{Cascading Style Sheets}
 \newacronym{dns}{DNS}{Domain Name System}
 \newglossaryentry{rum}{type=\acronymtype, name={RUM}, description={Real User Monitoring}, see=[Glossar:]{real_user_monitoring}}
@@ -31,3 +31,5 @@
 \newacronym{spf}{SPF}{Sender Policy Framework}
 \newacronym{ssl}{SSL}{Secure Sockets Layer}
 \newacronym{url}{URL}{Uniform resource locator}
+
+\renewcommand*{\glsgroupskip}{}

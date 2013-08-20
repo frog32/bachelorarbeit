@@ -4,14 +4,15 @@ Der Markt für Tools welche die Qualitätssicherung von Softwareprojekten unters
 
 \section{Monitoring}
 \label{sec:monitoring_evaluation}
-Es existiert eine grosse Zahl an Produkten, mit welchen man eine Webapplikation in regelmässigen Abständen überprüfen kann. Viele Produkte greifen nur von ausserhalb auf die Webapplikaiton zu und lösen eine Benachrichtigung aus, falls die Webapplikaiton nicht wie zuvor definiert verfügbar ist. Einige Tools setzen jedoch bereits in der Applikation an und können da auch die Zeit welche eine Applikation für eine Anfrage braucht, oder die Menge und der Zeitbedarf von Datenbankabfragen messen. Ein Real User Monitoring welches direkt im Browser des Benutzers läuft, berücksichtigt zusätzlich die Geschwindigkeit der Internet-Verbindung und den verwendeten Browser.
+Es existiert eine grosse Zahl an Produkten, mit welchen man eine Webapplikation in regelmässigen Abständen überprüfen kann. Viele Produkte greifen nur von ausserhalb auf die Webapplikaiton zu und lösen eine Benachrichtigung aus, falls die Webapplikation nicht wie zuvor definiert verfügbar ist. Einige Tools setzen jedoch bereits in der Applikation an und können da auch die Zeit welche eine Applikation für eine Anfrage braucht, oder die Menge und der Zeitbedarf von Datenbankabfragen messen. Ein Real User Monitoring\glsadd{rum}\glsadd{real_user_monitoring} welches direkt im Browser des Benutzers läuft, berücksichtigt zusätzlich die Geschwindigkeit der Internet-Verbindung und den verwendeten Browser.
 
 \ref{f:zertifikatausgelaufen}, \ref{f:zertifikatungultig}, \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:domainausgelaufen}, \ref{f:dnsservernichtverfuegbar}, \ref{f:dnseintragfehlerhaft}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:seitelaedtzulangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}, \ref{f:seiteenthaelttotelinks}
 
 \subsection{Marktanalyse}
 \label{sub:marktanalyse}
+Da der Markt für Monitoring-Tools sehr gross ist, wurden in dieser Marktanalyse nur Tools analysiert, welche als Service verfügbar sind. Die allink setzt wo immer möglich auf Services um die Kosten für Infrastruktur Unterhaltsarbeiten so gering wie möglich zu halten. Weiterhin wurden nur Services in die Analyse einbezogen, welche zu Beginn dieser Arbeit verfügbar waren, auf Agenturen anwendbar sind und Fehlerszenarios abdecken, welche nicht bereits abgedeckt werden. Diese Analyse beinhaltet jedoch nicht alle zur Zeit verfügbaren Services.
 
-\subsubsection{Sillalive}
+\subsubsection{Stillalive}
 \label{ssub:sillalive}
 
 \begin{table}[H]
@@ -35,7 +36,7 @@ Es existiert eine grosse Zahl an Produkten, mit welchen man eine Webapplikation 
   \label{tab:stillalive}
 \end{table}
 
-Stillalive scheidet schon durch die hohen Kosten aus und ist eher für Firmen welche eine einzige Webapplikation überwachen wollen geeignet.
+Stillalive scheidet schon durch die hohen Kosten aus und ist eher für Firmen, welche eine einzige Webapplikation überwachen wollen geeignet.
 
 \subsubsection{New Relic}
 \label{ssub:new_relic}
@@ -82,7 +83,7 @@ Stillalive scheidet schon durch die hohen Kosten aus und ist eher für Firmen we
   \label{tab:new_relic_enterprise}
 \end{table}
 
-New Relic kann eine Webapplikation mit einem statistischen Profiler durchleuchten und somit einen Einblick in die laufende Applikation gewähren. Zusätzlich bietet es zentrales Errorreporting, \acrlong{rum} \glsadd{real_user_monitoring} und viele kleinere Tools.
+New Relic kann eine Webapplikation mit einem statistischen Profiler durchleuchten und somit einen Einblick in die laufende Applikation gewähren. Zusätzlich bietet es zentrales Errorreporting, Real User Monitoring\glsadd{rum}\glsadd{real_user_monitoring} und viele kleinere Tools.
 
 \subsubsection{Pingdom}
 \label{ssub:pingdom}
@@ -108,7 +109,7 @@ New Relic kann eine Webapplikation mit einem statistischen Profiler durchleuchte
   \label{tab:pingdom}
 \end{table}
 
-Für Firmen, welche eine einzige Webseite oder Webapplikation entwickeln, bietet sich Pingdom an. Es bietet neben einer Push Notification fähigen iOS Applikation auch \acrlong{rum} \glsadd{real_user_monitoring}.
+Für Firmen, welche eine einzige Webseite oder Webapplikation entwickeln, bietet sich Pingdom an. Es bietet neben einer Push Notification fähigen iOS Applikation auch Real User Monitoring\glsadd{rum}\glsadd{real_user_monitoring}.
 
 \subsubsection{Status Cake}
 \label{ssub:status_cake}
@@ -134,7 +135,7 @@ Für Firmen, welche eine einzige Webseite oder Webapplikation entwickeln, bietet
   \label{tab:status_cake}
 \end{table}
 
-Status Cake bietet viel für den Preis den man bezahlt. Im Preisplan Superior ist ein automatisiertes Einfügen von neuen Webseiten, welche zu testen sind möglich. Seit kurzem bietet Status Cake aus \acrlong{rum} \glsadd{real_user_monitoring}.
+Status Cake bietet viel für den Preis den man bezahlt. Im Preisplan Superior ist ein automatisiertes Einfügen von neuen Webseiten, welche zu testen sind möglich. Seit kurzem bietet Status Cake auch Real User Monitoring\glsadd{rum}\glsadd{real_user_monitoring}.
 
 \subsubsection{Web on Duty}
 \label{ssub:web_on_duty}
@@ -164,20 +165,20 @@ Web on Duty kann keine ungültige oder abgelaufene \acrshort{ssl}-Zertifikate de
 
 \subsection{Entscheid}
 \label{sub:entscheid_monitoring}
-Es lassen sich grundsätzlich alle automatisiert testbaren Fehlerszenarios mit Eigenentwicklungen abdecken, der Aufwand um dies zu erreichen ist aber nicht verhältnismässig. Da nicht ein Produkt evaluiert wird, sondern eine Kombination aus mehreren, gibt es zu viele einzelne Kombinationen um auf jede mögliche einzugehen. Die möglichen Kombinationen wurden als mehrkriterieles Optimierungproblem angegangen. So wurden Lösungen welche von besseren Lösungen dominiert wurden ausgeschlossen und in der daraus entstehenden Lösungsmenge zwei mögliche Lösungen betrachtet.
+Es lassen sich grundsätzlich alle automatisiert testbaren Fehlerszenarios mit Eigenentwicklungen abdecken, der Aufwand um dies zu erreichen ist aber nicht verhältnismässig. Da nicht ein Produkt evaluiert wird, sondern eine Kombination aus mehreren, gibt es zu viele einzelne Kombinationen um auf jede Einzelne einzugehen. Die möglichen Kombinationen wurden als mehrkriterieles Optimierungproblem angegangen. So wurden Lösungen, welche von besseren Lösungen dominiert wurden, ausgeschlossen und in der daraus entstehenden Lösungsmenge zwei mögliche Lösungen betrachtet.
 
 
 Mit New Relic Standard und Status Cake bleiben folgende Punkte noch offen:
 
 \ref{f:sslnichterzwungen}, \ref{f:externeassetsohnessl}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}, \ref{f:datenbankquerieslaufenlangsam}, \ref{f:applikationlaeuftlangsam}, \ref{f:assetsfehlen}, \ref{f:externeabhaengigkeiten}
 
-Mit New Relic Enterprise und Status Cake und bleiben folgende Punkte noch offen:
+Mit New Relic Enterprise und Status Cake bleiben folgende Punkte noch offen:
 
 \ref{f:sslnichterzwungen}, \ref{f:spfeintragfehlerhaft}, \ref{f:deprecatedlibraries}, \ref{f:debugmodus}
 
 \section{Continuous Integration}
 \label{sec:continuous_integration_evaluation}
-Um das Fehlerszenario \ref{f:unittestfehler} automatisiert abzudecken wird ein System benötigt, welches jeweils den aktuellen Programmcode automatisch überprüft. Es gibt diverse Continous Integration Lösungen welche sich für diese Aufgabe eignen. Bei Django Projekten sind die beiden \acrshort{ci} Systeme Travis und Jenkins am weitesten verbreitet. Weiterhin wurde auch das in Python geschriebe Buildbot evaluiert.
+Um das Fehlerszenario \ref{f:unittestfehler} automatisiert abzudecken wird ein System benötigt, welches jeweils den aktuellen Programmcode automatisch überprüft. Es gibt diverse Continous Integration Lösungen, welche sich für diese Aufgabe eignen. Bei Django Projekten sind die beiden \acrshort{ci} Systeme Travis und Jenkins am weitesten verbreitet. Weiterhin wurde auch das in Python geschriebe Buildbot evaluiert.
 
 \begin{enumerate}
   \item https://travis-ci.org
@@ -195,7 +196,7 @@ Da die allink keinen eigenen \acrshort{ci} Server betreiben will, kommen nur Sys
 
 Zu den zwei verbleibenden Systemen wurde jeweils ein günstiger Anbieter, welcher dieses Produkt als Service anbietet, gesucht um sicherzustellen, dass ein solcher vorhanden ist. So wird für Travis, welches Open Source ist, vom Hersteller auch für Business-Kunden angeboten. Dieser Service findet sich unter \url{https://travis-ci.com} und ist zur Zeit nur mit einer Einladung verfügbar. Jenkins ist bei \url{http://www.cloudbees.com/} als Service erhältlich.
  
-Da in der allink zum Teil schon Erfahrungen im Umgang mit Travis bestehen und dieser Service alle Anforderungen erfüllt, entschloss man sich in Absprache mit der Informatik Leitung dazu, Travis zu verwenden.
+Da in der allink zum Teil schon Erfahrungen im Umgang mit Travis bestehen, da Open Source Projekte welche in der allink eingesetzt werden Travis verwenden, und da dieser Service alle Anforderungen erfüllt, entschloss man sich in Absprache mit der Informatik Leitung dazu, Travis zu verwenden.
 
 \section{Ergebnis}
 \label{sec:ergebnis}
