@@ -141,7 +141,7 @@ Bei einer Webseite welche mit \acrshort{ssl} geschützt ist, ist es wichtig, das
 
 \subsubsection{Domain ausgelaufen}
 \label{ssub:domainausgelaufen}
-Domainnamen werden gewöhnlich im Jahres-Rhythmus in Rechnung gestellt. Sollte eine solche Rechnung nicht bezahlt werden, wird einem die Domain wieder entzogen, was dazu führt, dass der \acrshort{dns} Eintrag entfernt wird.
+Domainnamen werden gewöhnlich im Jahresrhythmus in Rechnung gestellt. Sollte eine solche Rechnung nicht bezahlt werden, wird einem die Domain wieder entzogen, was dazu führt, dass der \acrshort{dns} Eintrag entfernt wird.
 
 \subsubsection{\acrshort{dns} Server nicht verfügbar}
 \label{ssub:dns_server_nicht_verfügbar}
@@ -153,7 +153,7 @@ Da \acrshort{dns} Einträge jeweils von Hand geändert werden, kann es vorkommen
 
 \subsubsection{\acrshort{spf} Eintrag fehlerhaft}
 \label{ssub:spfeintragfehlerhaft}
-Der \acrshort{spf} Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails. Weitere Informationen zu \acrshort{spf} finden auf der \acrshort{spf} Webseite \url{http://www.openspf.org/}.
+Der \acrshort{spf} Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails.
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
@@ -222,7 +222,7 @@ Die meisten Webframeworks besitzen einen Debug Modus, welcher für Test-Systeme 
 
 \subsubsection{Abhängigkeiten mit Sicherheitslücken}
 \label{ssub:abhaengigkeitenmitsicherheitsluecken}
-Da Webapplikationen meistens viele Abhängigkeiten in Form von Programmbibliotheken haben, können sie von Sicherheitslücken der verwendeten Bibliotheken betroffen sein. Um zu verhindern, dass eine Webapplikation von einer Sicherheitslücke betroffen ist, muss die verursachende Abhängigkeit durch eine neuere Version, welche diese Lücke schliesst, ersetzt werden.
+Da Webapplikationen meistens viele Abhängigkeiten in Form von Libraries haben, können sie von Sicherheitslücken der verwendeten Libraries betroffen sein. Um zu verhindern, dass eine Webapplikation von einer Sicherheitslücke betroffen ist, muss die verursachende Abhängigkeit durch eine neuere Version, welche diese Lücke schliesst, ersetzt werden.
 
 \section{Frontend}
 \label{sec:frontend}
@@ -258,15 +258,15 @@ Die benötigte Ladezeit einer Webseite hat Einfluss auf die Anzahl Benutzer, wel
 
 \subsubsection{Browser spezifische Probleme}
 \label{ssub:browserspezifischeprobleme}
-Nicht alle Browser verwenden dieselbe Rendering-Engine und auch Javascript ist nicht auf allen Browsern exakt identisch implementiert. Daher gibt es Fehler, welche durch eine Eigenheit eines spezifischen Browsers verursacht werden, während dieselbe Webseite auf anderen Browsern einwandfrei funktioniert.
+Nicht alle Browser verwenden dieselbe Rendering-Engine. Daher gibt es Fehler, welche durch eine Eigenheit eines spezifischen Browsers verursacht werden, während dieselbe Webseite auf anderen Browsern einwandfrei funktioniert.
 
 \subsubsection{Assets fehlen}
 \label{ssub:assetsfehlen}
-Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen HTML-Datei noch Bilder, Stylesheets und Javascripts verwendet. Diese Dateien, auch Assets genannt, werden vom Browser geladen. Können ein oder mehrere Assets nicht geladen werden, wird die Webseite nicht korrekt dargestellt.
+Für die Darstellung einer Webseite werden meistens zusätzlich zur eigentlichen HTML-Datei noch Bilder, \acrshort{css} Dateien und Javascripts verwendet. Diese Dateien, auch Assets genannt, werden vom Browser geladen. Können ein oder mehrere Assets nicht geladen werden, wird die Webseite nicht korrekt dargestellt.
 
 \subsubsection{Externe Abhängigkeiten nicht verfügbar}
 \label{ssub:externeabhaengigkeiten_nicht_verfügbar}
-Insbesondere Schriften aber auch Javascript Bibliotheken werden teilweise über einen externen Service eingebunden. Falls dieser Service nicht verfügbar ist, wird die Webseite nicht wie vorgesehen dargestellt.
+Insbesondere Schriften aber auch Javascript Libraries werden teilweise über einen externen Service eingebunden. Falls dieser Service nicht verfügbar ist, wird die Webseite nicht wie vorgesehen dargestellt.
 
 \subsubsection{Seite funktioniert nicht auf mobilen Geräten}
 \label{ssub:seitefunktioniertnichtaufmobilengeraeten}
@@ -301,7 +301,7 @@ Rechtschreibefehler sind nicht erwünscht auf einer Webseite. In den meisten Fä
 
 \subsubsection{Falsch aufbereitete Bilder}
 \label{ssub:falsch_aufbereitete_bilder}
-Viele Benutzer verfügen zuhause oder bei der Arbeit über eine Breitband Internetverbindung, dadurch ist heute der Einfluss von Dateigrössen auf die Ladezeit nicht gleich entscheidend wie vor einigen Jahren. Ist ein Benutzer jedoch über ein Mobilfunknetz online, kann die Bandbreite jedoch wieder zu einem limitierenden Faktor werden. Deswegen ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
+Viele Benutzer verfügen zuhause oder bei der Arbeit über eine Breitband Internetverbindung, dadurch ist heute der Einfluss von Dateigrössen auf die Ladezeit nicht gleich entscheidend wie vor einigen Jahren. Ist ein Benutzer jedoch über ein Mobilfunknetz online, kann die Bandbreite wieder zu einem limitierenden Faktor werden. Deswegen ist es weiterhin nötig, dass Bilder in der vorgesehenen Grösse mit einem angemessenen Komprimierungsgrad aufbereitet werden.
 
 \subsubsection{Design verletzt}
 \label{ssub:design_verletzt}
