@@ -11,13 +11,13 @@ Einige Fehlerszenarios sind nicht oder nur mit unverhältnismässigem Aufwand au
 \label{sec:teilautomatisiert_testbare_fehlerszenarios}
 Zwei Fehlerszenarios können nicht komplett automatisiert werden, sie können jedoch zu einem hohen Grad durch ein System unterstützt werden.
 
-\subsubsection{Abhängigkeiten mit Sicherheitslücken}
+\subsubsection{Abhängigkeiten mit Sicherheitslücken \ref{f:abhaengigkeitenmitsicherheitsluecken}}
 \label{ssub:kat_abhaengigkeitenmitsicherheitsluecken}
-\ref{f:abhaengigkeitenmitsicherheitsluecken} kann insofern automatisiert werden, dass ein Entwickler, welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt, ein System verwendet, welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
+Dieses Fehlerszenario kann insofern automatisiert werden, dass ein Entwickler, welcher über die Mailingliste der entsprechenden Abhängigkeit von einer Sicherheitslücke erfährt, ein System verwendet, welches ihm eine Auswertung der verwendeten Versionen dieser Abhängigkeit über alle laufenden Projekte ermöglicht.
 
-\subsubsection{Browser spezifische Probleme}
+\subsubsection{Browser spezifische Probleme \ref{f:browserspezifischeprobleme}}
 \label{ssub:kat_browser_spezifische_probleme}
-\ref{f:browserspezifischeprobleme} Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet, welche den höchsten Anteil an Besuchen haben. Um Fehler welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``\acrlong{rum}'' \glsadd{real_user_monitoring} verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerten und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
+Da es zu viele verschiedene Browser gibt um eine Webprojekt mit allen zu Testen, wird meist mit den Browsern getestet, welche die höchsten Anteile der Seitenaufrufe haben. Um Fehler, welche durch neuere Browser entstehen zu bemerken, kann jedoch ein ``Real User Monitoring''\glsadd{rum}\glsadd{real_user_monitoring} verwendet werden. Damit wird das Verhalten des Benutzers direkt aufgezeichnet. Falls nun ein Problem mit einem spezifischen Browser besteht, werden verschiedene Kennzahlen für diesen Browser von den Normalwerten abweichen. Durch ein geschicktes setzen von Toleranzwerten und Benachrichtigungen, können so die gröbsten Probleme erfasst werden.
 
 \section{Fehlerszenarios welche bereits abgedeckt werden}
 \label{sec:fehlerszenarios_welche_bereits_abgedeckt_werden}
@@ -27,7 +27,7 @@ Die im Abschnitt~\ref{sec:eingesetzte_mittel_für_die_qualitätssicherung} besch
   \centering
   \begin{tabular}{lll}
   \toprule
-    Nummer & Bezeichnung & Abgedeckte Fehler\\
+    \textbf{Nummer} & \textbf{Bezeichnung} & \textbf{Abgedeckte Fehlerszenarios}\\
   \hline
     \ref{b:precommithook} & Precommit Hook & \ref{f:codeconventions}, \ref{f:syntaxfehler}\\
   \hline
@@ -56,9 +56,9 @@ Die Fehlerszenarios welche nicht durch die bereits vorhandenen Systeme abgedeckt
 \subsubsection{Automatisiert testbar}
 \label{ssub:automatisiert_testbar}
 
-\ref{f:zertifikatausgelaufen} \fzertifikatausgelaufen, \ref{f:zertifikatungultig} \fzertifikatungultig, \ref{f:sslnichterzwungen} \fsslnichterzwungen, \ref{f:externeassetsohnessl} \fexterneassetsohnessl, \ref{f:domainausgelaufen} \fdomainausgelaufen, \ref{f:dnsservernichtverfuegbar} \fdnsservernichtverfuegbar, \ref{f:dnseintragfehlerhaft} \fdnseintragfehlerhaft, \ref{f:spfeintragfehlerhaft} \fspfeintragfehlerhaft, \ref{f:deprecatedlibraries} \fdeprecatedlibraries, \ref{f:unittestfehler} \funittestfehler, \ref{f:debugmodus} \fdebugmodus, \ref{f:datenbankquerieslaufenlangsam} \fdatenbankquerieslaufenlangsam, \ref{f:applikationlaeuftlangsam} \fapplikationlaeuftlangsam, \ref{f:seitelaedtzulangsam} \fseitelaedtzulangsam, \ref{f:assetsfehlen} \fassetsfehlen, \ref{f:externeabhaengigkeiten} \fassetsfehlen, \ref{f:seiteenthaelttotelinks} \fseiteenthaelttotelinks
+Automatisiert testbar sind die Fehlerszenarios \ref{f:zertifikatausgelaufen} \fzertifikatausgelaufen, \ref{f:zertifikatungultig} \fzertifikatungultig, \ref{f:sslnichterzwungen} \fsslnichterzwungen, \ref{f:externeassetsohnessl} \fexterneassetsohnessl, \ref{f:domainausgelaufen} \fdomainausgelaufen, \ref{f:dnsservernichtverfuegbar} \fdnsservernichtverfuegbar, \ref{f:dnseintragfehlerhaft} \fdnseintragfehlerhaft, \ref{f:spfeintragfehlerhaft} \fspfeintragfehlerhaft, \ref{f:deprecatedlibraries} \fdeprecatedlibraries, \ref{f:unittestfehler} \funittestfehler, \ref{f:debugmodus} \fdebugmodus, \ref{f:datenbankquerieslaufenlangsam} \fdatenbankquerieslaufenlangsam, \ref{f:applikationlaeuftlangsam} \fapplikationlaeuftlangsam, \ref{f:seitelaedtzulangsam} \fseitelaedtzulangsam, \ref{f:assetsfehlen} \fassetsfehlen, \ref{f:externeabhaengigkeiten} \fassetsfehlen ~und \ref{f:seiteenthaelttotelinks} \fseiteenthaelttotelinks.
 
 \subsubsection{Manuell testbar}
 \label{ssub:manuel_testbar}
 
-\ref{f:missverhalten} \fmissverhalten, \ref{f:abhaengigkeitenmitsicherheitsluecken} \fabhaengigkeitenmitsicherheitsluecken, \ref{f:browserspezifischeprobleme} \fbrowserspezifischeprobleme, \ref{f:rechtschreibefehler} \frechtschreibefehler, \ref{f:falschaufbereitetebilder} \ffalschaufbereitetebilder, \ref{f:designverletzt} \fdesignverletzt, \ref{f:fehlmanipulationdurchdenkunden} \ffehlmanipulationdurchdenkunden
+Manuell testbar sind die Fehlerszenarios \ref{f:missverhalten} \fmissverhalten, \ref{f:abhaengigkeitenmitsicherheitsluecken} \fabhaengigkeitenmitsicherheitsluecken, \ref{f:browserspezifischeprobleme} \fbrowserspezifischeprobleme, \ref{f:rechtschreibefehler} \frechtschreibefehler, \ref{f:falschaufbereitetebilder} \ffalschaufbereitetebilder, \ref{f:designverletzt} \fdesignverletzt ~und \ref{f:fehlmanipulationdurchdenkunden} \ffehlmanipulationdurchdenkunden.

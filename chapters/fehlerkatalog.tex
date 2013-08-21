@@ -26,7 +26,7 @@ Der Schaden, welcher durch einen Fehler entstehen kann, wurde unabhängig der ge
   \centering
   \begin{tabular}{ll}
   \toprule
-    Bezeichnung & Wert\\
+    \textbf{Bezeichnung} & \textbf{Wert}\\
   \hline
     Unwesentlich & 1\\
   \hline
@@ -47,7 +47,7 @@ Die Frequenz der Fehler wurde in vier Kategorien unterteilt. Diese sind in Tabel
   \centering
   \begin{tabular}{ll}
   \toprule
-    Bezeichnung & Wert\\
+    \textbf{Bezeichnung} & \textbf{Wert}\\
   \hline
     jährlich & 1\\
   \hline
@@ -70,7 +70,7 @@ Um die Entscheidung, welche Fehlerszenarios mit eigenen Mitteln abgedeckt werden
   \centering
   \begin{tabular}{ll}
   \toprule
-    Bezeichnung & Wert\\
+    \textbf{Bezeichnung} & \textbf{Wert}\\
   \hline
     Tage & 1\\
   \hline
@@ -130,9 +130,9 @@ Bei einer Webseite welche mit \acrshort{ssl} geschützt ist, ist es wichtig, das
   \begin{tabular}{l>{\raggedright}p{7cm} r r r}
     \toprule \textbf{Nr.} & \textbf{Bezeichnung} & \textbf{Impact} & \textbf{Frequenz} & \textbf{Zeitaufwand} \\
     \newfnumber{Domain ausgelaufen}{domainausgelaufen}{3}{1}{1}
-    \newfnumber{\acrshort{dns} Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
-    \newfnumber{\acrshort{dns} Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
-    \newfnumber{\acrshort{spf} Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
+    \newfnumber{DNS Server nicht verfügbar}{dnsservernichtverfuegbar}{3}{1}{1}
+    \newfnumber{DNS Eintrag fehlerhaft}{dnseintragfehlerhaft}{3}{1}{1}
+    \newfnumber{SPF Eintrag fehlerhaft}{spfeintragfehlerhaft}{2}{1}{1}
     \bottomrule
   \end{tabular}
   \caption[Mögliche Fehler \acrshort{dns}]{Mögliche Fehler \acrshort{dns}}
@@ -151,9 +151,9 @@ Für den Fall, dass ein \acrshort{dns} Server nicht verfügbar ist, sind gewöhn
 \label{ssub:dnseintragfehlerhaft}
 Da \acrshort{dns} Einträge jeweils von Hand geändert werden, kann es vorkommen, dass beim Ändern eines \acrshort{dns} Eintrages Fehler gemacht werden. Dies kann dazu führen, dass die gesamte Zone nicht mehr einwandfrei funktioniert.
 
-\subsubsection{\acrshort{spf} Eintrag fehlerhaft}
+\subsubsection{\gls{spf} Eintrag fehlerhaft}
 \label{ssub:spfeintragfehlerhaft}
-Der \acrshort{spf} Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails.
+Der \gls{spf}\glsadd{sender_policy_framework} Eintrag in einer Domain definiert von welchen IP Adressen aus E-Mails mit der entsprechenden Domain als Absender versendet werden dürfen. Ist dieser Eintrag fehlerhaft, blockieren viele E-Mail Anbieter die gesendeten E-Mails.
 
 \subsection{Hintergrundprozesse}
 \label{sub:fehler_hintergrundprozesse}
@@ -206,7 +206,7 @@ In Webprojekten werden häufig Libraries von Drittherstellern verwendet. Falls i
 
 \subsubsection{Unittest Fehler}
 \label{ssub:unittestfehler}
-Um sicherzustellen, dass Programmteile, welche einmal funktioniert haben, auch nach Änderungen am Programmcode noch funktionieren, werden Unittests geschrieben, welche den entsprechenden Code testen. Unittests sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder durchgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, testet man nicht nach jeder Änderung alle Tests erneut. Es kann darum passieren, dass Programmcode welcher die Unittests nicht besteht in ein produktives System eingespielt wird.
+Um sicherzustellen, dass Programmteile, welche einmal funktioniert haben, auch nach Änderungen am Programmcode noch funktionieren, werden Unittests geschrieben, welche den entsprechenden Code testen. Unittests sind jedoch nur dann nützlich, wenn sie auch nach jeder Änderung wieder durchgeführt werden. Da das Ausführen sämtlicher Unittests mehrere Minuten dauern kann, testet man nicht nach jeder Änderung alle Tests erneut. Es kann darum vorkommen, dass Programmcode welcher die Unittests nicht besteht in ein produktives System eingespielt wird.
 
 \subsubsection{Fehler im Produktiv-System}
 \label{ssub:fehlerimproduktivsystem}
@@ -246,7 +246,7 @@ Da Webapplikationen meistens viele Abhängigkeiten in Form von Libraries haben, 
 
 \subsubsection{Javascript Fehler}
 \label{ssub:javascriptfehler}
-Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit browserseitigen Applikationen, welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
+Da Javascript nicht in allen Browsern identisch implementiert ist, gibt es immer wieder Probleme mit Webapplikationen, welche durch einen unvorhergesehenen Javascript Fehler nicht mehr weiterlaufen. Solche Fehler können nicht ganz vermieden werden, jedoch sollte man über geeignete Fehlerreporting-Methoden bemerken, falls solche Problem bei einem Benutzer entstehen.
 
 \subsubsection{\acrshort{css} Fehler}
 \label{ssub:cssfehler}
@@ -329,7 +329,7 @@ Der Administrationsbereich einer Webseite bietet häufig mehr Möglichkeiten als
 
 \subsubsection{OG Tags fehlerhaft oder nicht vorhanden}
 \label{ssub:ogtagsfehlerhaftodernichtvorhanden}
-Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite zusätzliche Informationen anzuhängen. Diese Informationen werden von verschiedenen sozialen Netzwerken verwendet um Links mit einer Beschreibung und einem Bild anzureichern. Fehlen diese Tags oder sind sie fehlerhaft, werden die falschen oder gar keine zusätzliche Informationen angezeigt, was zu einer niedrigeren Klick-Rate führen kann.
+Die ursprünglich von Facebook eingeführten OG Tags erlauben es einer Webseite zusätzliche Informationen anzuhängen. Diese Informationen werden von verschiedenen sozialen Netzwerken verwendet, um Links mit einer Beschreibung und einem Bild anzureichern. Fehlen diese Tags oder sind sie fehlerhaft, werden die falschen oder gar keine zusätzliche Informationen angezeigt, was zu einer niedrigeren Klick-Rate führen kann.
 
 \subsubsection{``Meta Description'' und Seitentitel fehlerhaft oder nicht vorhanden}
 \label{ssub:_metadescriptionundseitentitel_fehlerhaft_oder_nicht_vorhanden}
@@ -337,7 +337,7 @@ Suchmaschinen greifen für die Anzeige der Resultate auf den Seitentitel und die
 
 \subsubsection{Deeplinks funktionieren nicht}
 \label{ssub:deeplinksfunktionierennicht}
-Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigene URL besitzen. Auf Webseiten welche \acrshort{ajax} Technologien verwenden ist dies nicht immer einfach umsetzbar und muss darum kontrolliert werden.
+Auf einer Webseite muss jede Unterseite, welche verlinkbar sein soll, eine eigene URL besitzen. Auf Webseiten, welche \acrshort{ajax} Technologien verwenden ist dies nicht immer einfach umsetzbar und muss darum kontrolliert werden.
 
 \section{Programmcode}
 \label{sec:programmcode}

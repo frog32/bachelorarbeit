@@ -6,7 +6,7 @@ Der Punkt \ref{f:deprecatedlibraries} ist theoretisch automatisch testbar. Man k
 
 \section{Wiederkehrende manuelle Tests}
 \label{sec:wiederkehrende_manuelle_tests}
-Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt, welche bei Webprojekten nach dem Go-Live regelmässig durchgegangen wird. Diese Checkliste ist in Tabelle~\ref{tab:recuring_checklist} ersichtlich.
+Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt, welche bei Webprojekten nach dem Go-Live regelmässig durchgegangen werden soll. Diese Checkliste ist in Tabelle~\ref{tab:recuring_checklist} ersichtlich.
 
 \makeatletter
 \newcounter{tnumber} \setcounter{tnumber}{0}
@@ -22,7 +22,7 @@ Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt
 
 \begin{table}[ht]
   \centering
-  \begin{tabular}{l>{\raggedright} p{10cm} p{2cm}}
+  \begin{tabular}{l>{\raggedright} p{10cm} p{3cm}}
     \toprule \textbf{Nr.} & \textbf{Test} & \textbf{Abgedeckte Fehlerszenarios} \\
     \newtnumber{Funktioniert die Webseite erwartungsgemäss? Ist offensichtliches Fehlverhalten vorhanden?}{missverhalten}{\ref{f:missverhalten}}
     \newtnumber{Sind die verwendeten Versionen von Django, feinCMS etc. noch aktuell?}{abhaengigkeitenmitsicherheitsluecken}{\ref{f:abhaengigkeitenmitsicherheitsluecken}}
@@ -39,11 +39,11 @@ Zusätzlich zu der bestehenden Go-Live Checkliste wurde eine Checkliste erstellt
 \section{Continuous Integration}
 \label{sec:continuous_integration_proof_of_concept}
 Da Travis für Unternehmen zur Zeit noch nicht frei verfügbar ist, wurde Travis angeschrieben und unsere Situation geschildert. Darauf erhielt allink die benötigte Einladung um Travis zu benutzen.
-Um Travis in den bestehenden Projekt Workflow zu integrieren, wurde im der Basiscodebase welche für jedes Django Softwareprojekt verwendet wurde ein .travis.yml erstellt, welches die genaue Testkonfiguration und den Ablauf beinhaltet.
+Um Travis in den bestehenden Projekt Workflow zu integrieren, wurde im Basisprojekt, welches für jedes Django Softwareprojekt verwendet wird, ein .travis.yml erstellt, welches die genaue Testkonfiguration und den Ablauf beinhaltet.
 
 \section{Monitoring}
 \label{sec:monitoring_proof_of_concept}
-Um alles Webprojekte automatisiert zu überprüfen wurden zwei neue Systeme eingeführt und ein bereits bestehendes System erweitert.
+Um alle Webprojekte automatisiert zu überprüfen wurden zwei neue Systeme eingeführt und ein bereits bestehendes System erweitert.
 
 \subsection{Status Cake}
 \label{sub:status_cake}
@@ -63,9 +63,9 @@ Damit die Tests in Status Cake nicht von Hand nachgetragen werden müssen, wurde
 \label{sub:new_relic}
 Weiterhin wurde für einige Webprojekte New Relic eingeführt. Ein bestehendes Projekt mit New Relic auszurüsten ist um einiges Aufwendiger, als es mit Status Cake auszurüsten. Für die Integration von New Relic müssen Änderungen am Programmcode vorgenommen werden. Dies ist bei neuen Projekten kein Problem, da für neue Projekte ein Template verwendet wird.
 
-Das Preismodel von New Relic berechnet die Kosten anhand der Anzahl Server, welche verwendet werden. Da in der allink demnächst ein grosser Teil der Produktiv-Systeme ersetzt werden und danach auch weniger Server eingesetzt werden, wird mit dem Einsatz von New Relic für alle Projekte gewartet, bis diese Umstellung erfolgt ist. Bis dahin werden nur zwei Projekte mit New Relic ausgestattet.
+Das Preismodel von New Relic berechnet die Kosten anhand der Anzahl Server, welche verwendet werden. Da in der allink demnächst ein grosser Teil der Produktiv-Systeme ersetzt und danach weniger Server eingesetzt werden, wird mit dem Einsatz von New Relic für alle Projekte gewartet, bis diese Umstellung erfolgt ist. Bis dahin werden nur zwei Projekte mit New Relic ausgestattet.
 
-New Relic bietet unter anderem eine Mobile Applikation, welche die wichtigsten Daten einer Webseite anzeigen kann. Zudem gibt es für jedes Projekt ein Dashboard wie in Abbildung~\ref{fig:new_relic_dashboard} gezeigt wird, auf welchem man Probleme jeder Art schnell erkennen kann.
+New Relic bietet unter anderem eine Mobile-Applikation, welche die wichtigsten Daten einer Webseite anzeigen kann. Zudem gibt es für jedes Projekt ein Dashboard, das in Abbildung~\ref{fig:new_relic_dashboard} gezeigt wird, auf welchem man Probleme schnell erkennen kann.
 
 \begin{figure}[ht]
 \centering
@@ -81,19 +81,21 @@ Der allink.planer wurde so erweitert, dass er die Fehlerszenarios \ref{f:sslnich
 
 \section{Auswirkungen}
 \label{sec:auswirkungen}
-Mit all den neuen Tools wurde auch die Menge an E-Mails welche jeder Entwickler täglich erhält, stetig grösser. So versendet zum Beispiel Status Cake jedesmal eine E-Mail, wenn eine zu überwachende Seite nicht mehr erreichbar ist. Dies führte dazu, dass die meisten Entwickler diese E-Mails mittels Regeln direkt in eigene Ordner verschieben lassen. So fällt es nicht mehr direkt auf, wenn eine Webseite nicht mehr erreichbar ist, da die E-Mail, welche darauf hinweisen soll, automatisch aus dem Posteingang entfernt und in einen eigenen Ordner bewegt wird, welcher für solche Benachrichtigungen vorgesehen ist. Dadurch bleibt übrigen E-Mails im Posteingang mehr Aufmerksamkeit, jedoch kann es vorkommen, dass ein schwerwiegender Fehler über einen Arbeitstag lang nicht bemerkt wird.
+Mit all den neuen Tools wurde auch die Menge an E-Mails, welche jeder Entwickler täglich erhält, stetig grösser. So versendet zum Beispiel Status Cake jedesmal eine E-Mail, wenn eine zu überwachende Seite nicht mehr erreichbar ist. Dies führte dazu, dass die meisten Entwickler diese E-Mails mittels Regeln direkt in eigene Ordner verschieben lassen. So fällt es nicht mehr direkt auf, wenn eine Webseite nicht mehr erreichbar ist, da die E-Mail, welche darauf hinweisen soll, automatisch aus dem Posteingang entfernt und in einen eigenen Ordner bewegt wird. Dadurch bleibt übrigen E-Mails im Posteingang mehr Aufmerksamkeit, jedoch kann es vorkommen, dass ein schwerwiegender Fehler über einen Arbeitstag lang nicht bemerkt wird.
 
 E-Mails welche Sentry versendet, werden teilweise ignoriert, da die Fehler auch in Sentry selber noch angezeigt werden. Leider haben sich zuwenig Entwickler regelmässig die Fehlerliste in Sentry oder die Status Seite von Travis angesehen. Dies führte dazu, dass die gewünschte Wirkung nicht ganz erzielt wurde.
 
+Eine mögliche Lösung wird im Kapitel~\ref{sub:status_monitor} betrachtet.
+
 \subsection{Status Monitor}
 \label{sub:status_monitor}
-Um sicherzustellen, dass Fehler auch wahrgenommen werden, wurde als Zusatz zu den bereits eingeführten Systemen ein Status Monitor eingeführt. Ein Bildschirm, welcher vom Arbeitsplatz sämtlicher Entwickler sichtbar ist, wurde mit einem am VESA Mount des Displays befestigten Computer ausgestattet. Dabei wurde darauf geachtet, dass der Computer einerseits genügend Leistung hat um in einem Webbrowser eine Javascript Applikation ohne Probleme zu betreiben und anderseits der Stromverbrauch des Computers deutlich unter dem Niveau eines Arbeitsplatzcomputers ist, da dieser Computer ununterbrochen laufen wird.
+Um sicherzustellen, dass Fehler auch wahrgenommen werden, wurde als Zusatz zu den bereits eingeführten Systemen ein Status Monitor eingeführt. Ein Bildschirm, welcher vom Arbeitsplatz sämtlicher Entwickler sichtbar ist, wurde mit einem am VESA Mount\footnote{Flat Display Mounting Interface Standard \url{http://www.vesa.org/}} des Displays befestigten Computer ausgestattet. Dabei wurde darauf geachtet, dass der Computer einerseits genügend Leistung hat, um in einem Webbrowser eine Javascript Applikation ohne Probleme zu betreiben und anderseits der Stromverbrauch des Computers deutlich unter dem Niveau eines Arbeitsplatzcomputers ist, da dieser Computer ununterbrochen laufen wird.
 
 \subsubsection{Software}
 \label{ssub:software}
 Das Backend der Software, welche die Daten aus verschiedenen Quellen aggregiert, wurde mit dem Twisted\footnote{\url{http://twistedmatrix.com/}} Framework in der Programmiersprache Python erstellt. Das Interface welches im Webbrowser läuft wurde als Backbone\footnote{\url{http://backbonejs.org/}} Applikation realisiert um auch clientseitig eine Templateengine zu haben.
 
-Das Frontend kommuniziert mit dem Backend über einen Websocket. Damit lassen sich Daten asynchron zwischen Frontend und Backend austauschen. Die ganze Software wurde modular aufgebaut, damit sich in Zukunft weitere Syteme daran anbinden lassen.
+Das Frontend kommuniziert mit dem Backend über einen Websocket\footnote{In RFC6455 standardisiertes Protokoll}. Damit lassen sich Daten asynchron zwischen Frontend und Backend austauschen. Die ganze Software wurde modular aufgebaut, damit sich in Zukunft weitere Syteme daran anbinden lassen.
 
 \begin{figure}[ht]
 \centering
